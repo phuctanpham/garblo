@@ -61,4 +61,5 @@
 **/.env.*.local
 
 # Private KeyKey
-**/garblo-251202
+**/key.pem
+**/passphare.txt
