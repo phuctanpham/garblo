@@ -1,5 +1,8 @@
 #!/bin/bash
 computerName=$(hostname);
+chmod 600 ./key.pem;
+eval "$(ssh-agent -s)";
+ssh-add ssot/ssh/key.pem;
 git init;
 git config user.name "${computerName}";
 echo "${computerName}" >> ./hello.txt;

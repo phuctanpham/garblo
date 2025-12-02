@@ -5,7 +5,7 @@ cat <<EOT >> ~/.ssh/config
 Host github.com
   HostName github.com
   User git
-  IdentityFile $(pwd)/ssot/ssh/garblo-251202
+  IdentityFile $(pwd)/ssot/ssh/key.pem
   IdentitiesOnly yes
 EOT
 chmod 600 ~/.ssh/config
