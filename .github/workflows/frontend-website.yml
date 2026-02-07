@@ -1,0 +1,52 @@
+name: Deploy Website
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'The branch to deploy'
+        required: true
+      sha:
+        description: 'The SHA to deploy'
+        required: true
+  workflow_call:
+    inputs:
+      branch:
+        description: 'The branch to deploy'
+        required: true
+        type: string
+      sha:
+        description: 'The SHA to deploy'
+        required: true
+        type: string
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.sha }}
+
+      - name: Set up Node.js
+        uses: ./.github/actions/setup-node
+
+      - name: Build website
+        id: build
+        uses: ./.github/actions/build-statics
+        working-directory: frontend/website
+
+      - name: Deploy to Cloudflare Pages
+        if: inputs.branch == 'main'
+        uses: ./.github/actions/deploy-cloudflare-pages
+        with:
+          project_name: garblo-frontend-website
+          directory: ${{ steps.build.outputs.build_dir }}
+          branch: ${{ inputs.branch }}
+
+      - name: Deploy to Azure Static Web Apps
+        if: inputs.branch != 'main'
+        uses: ./.github/actions/deploy-azure-static-web-apps
+        with:
+          build_dir: ${{ steps.build.outputs.build_dir }}
