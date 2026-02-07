@@ -1,64 +1,40 @@
-name: Deploy Website
+name: Frontend Website CI
 
 on:
-  push:
-    paths:
-      - 'frontend/website/**'
-  workflow_dispatch:
-    inputs:
-      branch:
-        description: 'The branch to deploy'
-        required: true
-      sha:
-        description: 'The SHA to deploy'
-        required: true
   workflow_call:
     inputs:
       branch:
-        description: 'The branch to deploy'
         required: true
         type: string
       sha:
-        description: 'The SHA to deploy'
         required: true
         type: string
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    env:
-      BRANCH: ${{ (github.event_name == 'push' && github.ref_name) || inputs.branch }}
-      SHA: ${{ (github.event_name == 'push' && github.sha) || inputs.sha }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: ${{ env.SHA }}
+          ref: ${{ inputs.sha }}
 
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: ./.github/actions/setup-node
-        with:
-          node-version: '20'
-          package-manager: 'pnpm'
-          working-directory: 'frontend/website'
 
-      - name: Build website
-        id: build
-        uses: ./.github/actions/build-statics
+      - name: Install NPM Dependencies
+        uses: ./.github/actions/install-npm-dependencies
         with:
-          working-directory: frontend/website
-          package-manager: 'pnpm'
+          working-directory: './frontend/website'
+
+      - name: Build Docusaurus site
+        run: npm run build
+        working-directory: ./frontend/website
 
       - name: Deploy to Cloudflare Pages
-        if: env.BRANCH == 'main'
         uses: ./.github/actions/deploy-cloudflare-pages
         with:
-          project_name: garblo-frontend-website
-          directory: ${{ steps.build.outputs.build_dir }}
-          branch: ${{ env.BRANCH }}
-
-      - name: Deploy to Azure Static Web Apps
-        if: env.BRANCH != 'main'
-        uses: ./.github/actions/deploy-azure-static-web-apps
-        with:
-          build_dir: ${{ steps.build.outputs.build_dir }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: 'garblo' # <-- IMPORTANT: Please replace this
+          directory: 'frontend/website/build'

@@ -1,49 +1,15 @@
-name: 'Set up Node.js'
-description: 'Sets up Node.js and installs dependencies using a specific package manager.'
-
-inputs:
-  node-version:
-    description: 'The Node.js version to use.'
-    required: true
-    default: '20'
-  package-manager:
-    description: 'The package manager to use (npm, pnpm, yarn).'
-    required: true
-    default: 'npm'
-  working-directory:
-    description: 'The directory to run the install command in.'
-    required: false
-    default: '.'
-
+name: 'Setup Node.js and PNPM'
+description: 'Sets up a Node.js environment and configures pnpm'
 runs:
   using: 'composite'
   steps:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ inputs.node-version }}
+        node-version: '18'
+        cache: 'pnpm'
 
-    - name: Install and set up pnpm
-      if: inputs.package-manager == 'pnpm'
-      run: |
-        npm install -g pnpm
-        pnpm setup
-      shell: bash
-
-    - name: Install dependencies with pnpm
-      if: inputs.package-manager == 'pnpm'
-      run: pnpm install
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-
-    - name: Install dependencies with npm
-      if: inputs.package-manager == 'npm'
-      run: npm ci
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
-
-    - name: Install dependencies with yarn
-      if: inputs.package-manager == 'yarn'
-      run: yarn install --frozen-lockfile
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}
+    - name: Set up pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
