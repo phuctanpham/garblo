@@ -19,11 +19,11 @@ jobs:
           filters: |
             website: 'frontend/website/**'
 
-  deploy-site:
+  deploy-website:
     needs: detect-changes
     if: needs.detect-changes.outputs.website == 'true'
-    uses: ./.github/workflows/cloudflare-pages.yml
+    uses: ./.github/workflows/website.yml
     secrets: inherit
     with:
       project-name: garblo
-      working-directory: .frontend/website/
+      working-directory: ./website

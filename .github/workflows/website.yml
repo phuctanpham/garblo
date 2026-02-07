@@ -22,11 +22,11 @@ jobs:
 
       - name: Install dependencies
         working-directory: ${{ inputs.working-directory }}
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Build
         working-directory: ${{ inputs.working-directory }}
-        run: npm run build
+        run: pnpm --filter website build
 
       - name: Detect build output
         id: build-dir
