@@ -1,0 +1,16 @@
+name: 'Build Statics'
+description: 'Builds static assets and outputs the build directory'
+outputs:
+  build_dir:
+    description: 'The directory containing the built assets'
+runs:
+  using: 'composite'
+  steps:
+    - name: Build static assets
+      id: build
+      run: npm run build
+      shell: bash
+    - name: Set output directory
+      id: set_output
+      shell: bash
+      run: echo "build_dir=build" >> $GITHUB_OUTPUT

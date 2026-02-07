@@ -1,0 +1,18 @@
+name: 'Deploy Azure Static Web Apps'
+description: 'Builds and deploys an Azure Static Web App'
+inputs:
+  build_dir:
+    description: 'The directory where the built assets are located'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Build and deploy
+      uses: azure/static-web-apps-deploy@v1
+      with:
+        azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+        action: 'upload'
+        app_location: '/'
+        api_location: 'api'
+        output_location: ${{ inputs.build_dir }}

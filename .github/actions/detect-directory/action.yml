@@ -1,0 +1,22 @@
+name: 'Detect Directory'
+description: 'Outputs the directory that has changed'
+inputs:
+  path:
+    description: 'The path to check for changes'
+    required: true
+outputs:
+  changed:
+    description: 'Whether the directory has changed'
+runs:
+  using: 'composite'
+  steps:
+    - name: Check for changes
+      id: check_changes
+      shell: bash
+      run: |
+        if git diff --quiet HEAD^ HEAD ${{ inputs.path }};
+        then
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
