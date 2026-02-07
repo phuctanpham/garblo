@@ -1,15 +1,17 @@
-name: 'Setup Node.js and PNPM'
-description: 'Sets up a Node.js environment and configures pnpm'
-runs:
-  using: 'composite'
-  steps:
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: 'pnpm'
+name: Setup Node.js
+description: Setup Node.js with npm caching
 
-    - name: Set up pnpm
-      uses: pnpm/action-setup@v2
+inputs:
+  working-directory:
+    description: Working directory
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
       with:
-        version: 8
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: ${{ inputs.working-directory }}/package-lock.json

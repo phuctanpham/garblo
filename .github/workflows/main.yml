@@ -1,34 +1,29 @@
-name: Main Workflow
+name: Deploy Services
 
 on:
   push:
-    branches:
-      - '**'
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
-  trigger-website-workflow:
+  detect-changes:
     runs-on: ubuntu-latest
+    outputs:
+      website: ${{ steps.filter.outputs.website }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
         with:
-          fetch-depth: 0
+          filters: |
+            website: 'frontend/website/**'
 
-      - name: Detect Branch
-        id: detect-branch
-        uses: ./.github/actions/detect-branch
-
-      - name: Detect Directory Changes
-        id: detect-directory-changes
-        uses: ./.github/actions/detect-directory
-        with:
-          directory: 'frontend/website'
-          before_sha: ${{ github.event.before }}
-          after_sha: ${{ github.sha }}
-
-      - name: Trigger frontend-website workflow
-        if: steps.detect-directory-changes.outputs.changed == 'true'
-        uses: ./.github/workflows/frontend-website.yml
-        with:
-          branch: ${{ steps.detect-branch.outputs.branch }}
-          sha: ${{ github.sha }}
+  deploy-site:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.website == 'true'
+    uses: ./.github/workflows/cloudflare-pages.yml
+    secrets: inherit
+    with:
+      project-name: garblo
+      working-directory: .frontend/website/

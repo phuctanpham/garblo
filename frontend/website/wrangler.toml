@@ -1,12 +1,4 @@
-name = "website"
-compatibility_date = "2024-03-04"
-
-[pages]
-# The name of your project. It's used in the URL of your deployed application.
-project_name = "website"
-
-[build]
-# The command to build your application
-command = "npm run build"
-# The directory to upload to Cloudflare Pages
-upload_dir = "build"
+# website/
+name = "garblo"
+compatibility_date = "2025-10-17"
+pages_build_output_dir = "./build"
