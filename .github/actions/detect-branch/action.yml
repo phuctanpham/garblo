@@ -1,12 +1,12 @@
 name: 'Detect Branch'
-description: 'Outputs the current branch name'
+description: 'Detects the current branch and provides it as an output'
 outputs:
   branch:
-    description: 'The current branch name'
+    description: 'The name of the current branch'
 runs:
   using: 'composite'
   steps:
-    - name: Get branch name
-      id: get_branch
+    - name: Set branch output
+      id: set_branch
       shell: bash
-      run: echo "branch=${GITHUB_REF#refs/heads/}" >> $GITHUB_OUTPUT
+      run: echo "branch=${{ github.ref_name }}" >> $GITHUB_OUTPUT

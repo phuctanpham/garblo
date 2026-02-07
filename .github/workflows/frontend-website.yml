@@ -1,6 +1,9 @@
 name: Deploy Website
 
 on:
+  push:
+    paths:
+      - 'frontend/website/**'
   workflow_dispatch:
     inputs:
       branch:
@@ -23,11 +26,14 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      BRANCH: ${{ (github.event_name == 'push' && github.ref_name) || inputs.branch }}
+      SHA: ${{ (github.event_name == 'push' && github.sha) || inputs.sha }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
         with:
-          ref: ${{ inputs.sha }}
+          ref: ${{ env.SHA }}
 
       - name: Set up Node.js
         uses: ./.github/actions/setup-node
@@ -44,15 +50,15 @@ jobs:
           package-manager: 'pnpm'
 
       - name: Deploy to Cloudflare Pages
-        if: inputs.branch == 'main'
+        if: env.BRANCH == 'main'
         uses: ./.github/actions/deploy-cloudflare-pages
         with:
           project_name: garblo-frontend-website
           directory: ${{ steps.build.outputs.build_dir }}
-          branch: ${{ inputs.branch }}
+          branch: ${{ env.BRANCH }}
 
       - name: Deploy to Azure Static Web Apps
-        if: inputs.branch != 'main'
+        if: env.BRANCH != 'main'
         uses: ./.github/actions/deploy-azure-static-web-apps
         with:
           build_dir: ${{ steps.build.outputs.build_dir }}

@@ -1,4 +1,4 @@
-name: CI
+name: Main Workflow
 
 on:
   push:
@@ -6,23 +6,24 @@ on:
       - '**'
 
 jobs:
-  detect-changes:
+  trigger-website-workflow:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+      - name: Detect Branch
+        id: detect-branch
+        uses: ./.github/actions/detect-branch
 
-      - name: Detect website directory changes
-        id: detect-directory
+      - name: Detect Directory Changes
+        id: detect-directory-changes
         uses: ./.github/actions/detect-directory
         with:
-          path: frontend/website
+          directory: 'frontend/website'
+          before_sha: ${{ github.event.before }}
+          after_sha: ${{ github.sha }}
 
-      - name: Trigger website workflow
-        if: steps.detect-directory.outputs.changed == 'true'
+      - name: Trigger frontend-website workflow
+        if: steps.detect-directory-changes.outputs.changed == 'true'
         uses: ./.github/workflows/frontend-website.yml
         with:
-          branch: ${{ github.ref_name }}
+          branch: ${{ steps.detect-branch.outputs.branch }}
           sha: ${{ github.sha }}

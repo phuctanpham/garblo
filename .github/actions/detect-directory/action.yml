@@ -1,22 +1,36 @@
-name: 'Detect Directory'
-description: 'Outputs the directory that has changed'
+name: 'Detect Directory Changes'
+description: 'Detects if files have changed in a specific directory'
 inputs:
-  path:
-    description: 'The path to check for changes'
+  directory:
+    description: 'The directory to check for changes'
+    required: true
+  before_sha:
+    description: 'The starting commit SHA'
+    required: true
+  after_sha:
+    description: 'The ending commit SHA'
     required: true
 outputs:
   changed:
-    description: 'Whether the directory has changed'
+    description: 'True if there are changes, false otherwise'
 runs:
   using: 'composite'
   steps:
-    - name: Check for changes
-      id: check_changes
+    - name: Checkout code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Get changed files
+      id: changed-files
       shell: bash
       run: |
-        if git diff --quiet HEAD^ HEAD ${{ inputs.path }};
-        then
-          echo "changed=false" >> $GITHUB_OUTPUT
-        else
+        echo "files=$(git diff --name-only ${{ inputs.before_sha }} ${{ inputs.after_sha }})" >> $GITHUB_OUTPUT
+    - name: Check for directory changes
+      id: check-changes
+      shell: bash
+      run: |
+        if echo "${{ steps.changed-files.outputs.files }}" | grep -q "${{ inputs.directory }}"; then
           echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "changed=false" >> $GITHUB_OUTPUT
         fi
