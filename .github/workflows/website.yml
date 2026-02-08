@@ -20,7 +20,7 @@ jobs:
         with:
           filters: |
             website: 'frontend/website/**'
-  deploy:
+  deploy-website:
     needs: detect-changes
     if: needs.detect-changes.outputs.website == 'true'
     runs-on: ubuntu-latest
