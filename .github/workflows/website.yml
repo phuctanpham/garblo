@@ -4,9 +4,26 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'frontend/website/**'
+      - '.github/workflows/website.yml'
 
 jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    outputs:
+      website: ${{ steps.filter.outputs.website }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            website: 'frontend/website/**'
   deploy:
+    needs: detect-changes
+    if: needs.detect-changes.outputs.website == 'true'
+    secrets: inherit
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
