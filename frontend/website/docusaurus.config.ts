@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic'
 
 const config: Config = {
   title: 'Garblo',
-  tagline: 'Reinvent Fashion 2025',
+  tagline: 'Reinvent Fashion',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
