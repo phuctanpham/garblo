@@ -75,9 +75,9 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'My Site',
+      title: 'Garblo',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Garblo Logo',
         src: 'img/logo.svg',
       },
       items: [
