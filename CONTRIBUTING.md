@@ -49,7 +49,7 @@ The body is optional. Use it to explain _what_ and _why_ vs. _how_.
 
 ### Footer
 
-The footer is optional. It can contain information about breaking changes and references to issues that this commit closes. It must end with `by <your code name>` where `<your code name>` is the name you have configured in git (e.g. if your name is Pham Tan Phuc, your codename might be phucpt).
+The footer is optional. It can contain information about breaking changes and references to issues that this commit closes. It must end with `by <your code name>` where `<your code name>` is the name you have configured in git user.name (e.g. if your name is Pham Tan Phuc, your codename might be phucpt).
 
 ### Example
 
