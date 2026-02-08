@@ -32,8 +32,8 @@ jobs:
         uses: ./.github/actions/setup-node
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
+        run: pnpm --filter website deploy
+        shell: bash
+        env:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pnpm --filter website deploy
