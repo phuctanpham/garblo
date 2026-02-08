@@ -31,9 +31,11 @@ jobs:
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-node
 
+      - name: Build stactics
+        run: pnpm --filter website run build
+
       - name: Deploy to Cloudflare Pages
-        run: pnpm --filter website deploy
-        shell: bash
+        run: pnpm --filter website run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
