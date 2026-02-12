@@ -10,6 +10,7 @@
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@eslint/eslintrc": "^3.3.3",
     "@garblo/ui": "workspace:*",
     "next": "15.5.10",
     "react": "^18",

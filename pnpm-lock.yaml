@@ -96,6 +96,9 @@ importers:
 
   frontend/appAuth:
     dependencies:
+      '@eslint/eslintrc':
+        specifier: ^3.3.3
+        version: 3.3.3
       '@garblo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
@@ -118,6 +121,9 @@ importers:
 
   frontend/appConsumer:
     dependencies:
+      '@eslint/eslintrc':
+        specifier: ^3.3.3
+        version: 3.3.3
       '@garblo/ui':
         specifier: workspace:*
         version: link:../../packages/ui
