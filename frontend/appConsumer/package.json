@@ -6,13 +6,17 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "clean": "rm -rf .next"
   },
   "dependencies": {
+    "@garblo/ui": "workspace:*",
     "next": "15.5.10",
     "react": "^18",
-    "react-dom": "^18",
-    "@garblo/ui": "workspace:*"
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "eslint-config-next": "15.5.10"
   }
 }

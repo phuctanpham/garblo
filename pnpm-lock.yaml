@@ -130,6 +130,13 @@ importers:
       react-dom:
         specifier: ^18
         version: 18.3.1(react@18.3.1)
+    devDependencies:
+      eslint:
+        specifier: ^9.39.2
+        version: 9.39.2(jiti@2.6.1)
+      eslint-config-next:
+        specifier: 15.5.10
+        version: 15.5.10(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
 
   frontend/mvp:
     dependencies:
