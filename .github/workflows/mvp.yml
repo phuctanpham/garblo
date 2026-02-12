@@ -9,7 +9,7 @@ jobs:
   detect-changes:
     runs-on: ubuntu-latest
     outputs:
-      website: ${{ steps.filter.outputs.website }}
+      mvp: ${{ steps.filter.outputs.mvp }}
     steps:
       - uses: actions/checkout@v4
       - uses: dorny/paths-filter@v3
