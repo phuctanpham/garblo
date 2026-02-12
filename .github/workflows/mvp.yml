@@ -3,7 +3,7 @@ name: Deploy Website
 on:
   push:
     paths:
-      - 'frontend/website/**'
+      - 'frontend/mvp/**'
 
 jobs:
   detect-changes:
@@ -16,10 +16,10 @@ jobs:
         id: filter
         with:
           filters: |
-            website: 'frontend/website/**'
+            mvp: 'frontend/mvp/**'
   deploy-website:
     needs: detect-changes
-    if: needs.detect-changes.outputs.website == 'true'
+    if: needs.detect-changes.outputs.mvp == 'true'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -28,18 +28,15 @@ jobs:
       - name: Setup Node and Install Dependencies
         uses: ./.github/actions/setup-node
 
-      - name: Build stactics
-        run: pnpm --filter website run build
-
       - name: Deploy to Cloudflare
         if: github.ref == 'refs/heads/main'
-        run: pnpm --filter website run deploy
+        run: pnpm --filter mvp run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
       - name: Deploy to Cloudflare (branch)
         if: github.ref != 'refs/heads/main'
-        run: pnpm --filter website run deploy
+        run: pnpm --filter mvp run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

@@ -1,5 +1,3 @@
 packages:
-  - 'frontend/appConsumer'
-  - 'frontend/appAuth'
-  - 'packages/ui'
-  - 'frontend/website'
+  - 'frontend/*'
+  - 'packages/*'
