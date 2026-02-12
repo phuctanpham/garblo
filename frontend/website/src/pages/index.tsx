@@ -1,44 +1,20 @@
-import type {ReactNode} from 'react';
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
+/* frontend/website/src/pages/index.tsx */
+import React from 'react'
+import Layout from '@theme/Layout'
+import Section1 from '@site/src/components/Section1' // Import khối Section 1 vào
 
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-export default function Home(): ReactNode {
-  const {siteConfig} = useDocusaurusContext();
+export default function Home(): JSX.Element {
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      title="Garblo - Reinvent Fashion"
+      description="AI Fashion Infrastructure for Modern Brands"
+    >
       <main>
-        <HomepageFeatures />
+        {/* Hiển thị Section 1 */}
+        <Section1 />
+
+        {/* Sau này làm Section 2, 3 sẽ thêm vào đây */}
       </main>
     </Layout>
-  );
+  )
 }

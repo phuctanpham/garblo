@@ -1,0 +1,137 @@
+/* frontend/website/src/components/Section1/styles.module.css */
+
+.hero-container {
+  position: relative;
+  background-color: var(--garblo-white);
+  padding: 4rem 2rem;
+  min-height: 85vh; /* Chiếm 85% chiều cao màn hình */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-wrapper {
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Chia đôi màn hình */
+  gap: 4rem;
+  align-items: center;
+}
+
+/* --- CỘT TRÁI (TEXT) --- */
+.left-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  z-index: 10;
+}
+
+.tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #eef2ff; /* Nền xanh rất nhạt */
+  color: var(--ifm-color-primary);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--garblo-black);
+  margin: 0;
+}
+
+.highlight {
+  color: var(--ifm-color-primary); /* Chữ màu Indigo */
+}
+
+.description {
+  font-size: 1.15rem;
+  color: var(--garblo-gray);
+  line-height: 1.6;
+  max-width: 540px;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.primary-btn {
+  background-color: var(--garblo-black);
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+  border: 1px solid var(--garblo-black);
+}
+
+.primary-btn:hover {
+  transform: translateY(-2px);
+  background-color: #333;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  color: var(--garblo-black) !important;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #e4e4e7;
+  transition: all 0.2s;
+}
+
+.secondary-btn:hover {
+  border-color: var(--garblo-black);
+  background-color: #fafafa;
+}
+
+/* --- CỘT PHẢI (IMAGE) --- */
+.right-content {
+  position: relative;
+  height: 600px;
+  background: #f4f4f5;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 10%);
+}
+
+.mockup-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive cho điện thoại */
+@media (width <= 996px) {
+  .hero-wrapper {
+    grid-template-columns: 1fr; /* Về 1 cột */
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .left-content {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .right-content {
+    height: 400px;
+  }
+}
