@@ -7,6 +7,9 @@ inputs:
 runs:
   using: 'composite'
   steps:
+    - name: Clean & Clear
+      shell: bash
+      run: rm -rf node_modules packages/*/node_modules frontend/*/node_modules packages/*/dist frontend/*/.next frontend/*/build
     - name: Install pnpm
       uses: pnpm/action-setup@v4
     - name: Setup Node.js
