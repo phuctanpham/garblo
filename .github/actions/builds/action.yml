@@ -7,10 +7,6 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Clean
-      shell: bash
-      run: pnpm clean --filter ${{ inputs.project }}
-
     - name: Build
       shell: bash
       run: pnpm build --filter ${{ inputs.project }}
