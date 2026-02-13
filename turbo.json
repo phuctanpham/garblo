@@ -9,6 +9,10 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "launch": {
+      "dependsOn": ["build"],
+      "env": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "BRANCH"]
     }
   }
 }
