@@ -1,0 +1,12 @@
+name: 'Lint'
+description: 'Lint a specific project'
+inputs:
+  project:
+    description: 'The project to lint'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Lint
+      shell: bash
+      run: pnpm lint --filter ${{ inputs.project }}
