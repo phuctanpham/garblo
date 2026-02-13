@@ -1,0 +1,24 @@
+name: 'Deploy to Cloudflare'
+description: 'Deploy the project to Cloudflare'
+inputs:
+  project:
+    description: 'The project to deploy'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Deploy
+      if: github.ref == 'refs/heads/main'
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        command: pnpm deploy --filter ${{ inputs.project }}
+    - name: Preview
+      if: github.ref != 'refs/heads/main'
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        branch: ${{ github.head_ref }}
+        command: pnpm deploy --filter ${{ inputs.project }}
