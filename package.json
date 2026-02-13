@@ -13,7 +13,7 @@
     "prepare": "husky",
     "commit": "git-cz",
     "release": "standard-version",
-    "deploy": "turbo run deploy"
+    "launch": "turbo run launch"
   },
   "dependencies": {
     "next": "16.1.6",
