@@ -14,7 +14,7 @@
     "write-heading-ids": "docusaurus write-heading-ids",
     "typecheck": "tsc",
     "preview": "npx wrangler pages dev ./build",
-    "deploy": "wrangler pages deploy ./build"
+    "deploy": "npx wrangler pages deploy ./build"
   },
   "dependencies": {
     "@docusaurus/core": "3.9.2",
