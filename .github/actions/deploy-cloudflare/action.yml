@@ -4,20 +4,25 @@ inputs:
   project:
     description: 'The project to deploy'
     required: true
+  working_directory:
+    description: 'The working directory'
+    required: true
 runs:
   using: 'composite'
   steps:
     - name: Deploy
       if: github.ref == 'refs/heads/main'
       shell: bash
-      run: pnpm --filter ${{ inputs.project }} deploy
+      working-directory: ${{ inputs.project }}
+      run: pnpm deploy
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     - name: Preview
       if: github.ref != 'refs/heads/main'
       shell: bash
-      run: pnpm --filter ${{ inputs.project }} deploy
+      working-directory: ${{ inputs.project }}
+      run: pnpm deploy
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
