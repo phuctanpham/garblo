@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "pnpm run build && vite preview",
-    "deploy": "npx wrangler deploy dist",
+    "launch": "npx wrangler deploy dist",
     "cf-typegen": "wrangler types",
     "clean": "rm -rf dist"
   },
