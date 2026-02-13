@@ -9,15 +9,15 @@ runs:
   steps:
     - name: Deploy
       if: github.ref == 'refs/heads/main'
-      run: pnpm deploy --filter ${{ inputs.project }}
       shell: bash
+      run: pnpm deploy --filter ${{ inputs.project }}
       env:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
     - name: Preview
       if: github.ref != 'refs/heads/main'
-      run: pnpm deploy --filter ${{ inputs.project }}
       shell: bash
+      run: pnpm deploy --filter ${{ inputs.project }}
       env:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
