@@ -1,0 +1,16 @@
+name: 'Build'
+description: 'Build a specific application'
+inputs:
+  project:
+    description: 'The project to install dependencies for'
+    required: true
+runs:
+  using: 'composite'
+  steps:
+    - name: Clean
+      shell: bash
+      run: pnpm clean --filter ${{ inputs.project }}
+
+    - name: Build
+      shell: bash
+      run: pnpm build --filter ${{ inputs.project }}
