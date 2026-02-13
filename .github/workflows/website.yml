@@ -1,10 +1,6 @@
 name: 'website'
 on:
   workflow_call:
-    inputs:
-      working_directory:
-        required: true
-        type: string
 
 jobs:
   ci:
@@ -41,4 +37,3 @@ jobs:
         uses: ./.github/actions/deploy-cloudflare
         with:
           project: website
-          working_directory: ${{ inputs.working_directory }}
