@@ -1,4 +1,4 @@
-import { Button } from '@garblo/ui/src/components/button'
+import { Button } from '@garblo/ui'
 
 export default function Home() {
   return (
