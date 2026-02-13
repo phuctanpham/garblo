@@ -1,0 +1,37 @@
+name: 'CI'
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  detect-changes:
+    name: 'Detect Changes'
+    runs-on: ubuntu-latest
+    outputs:
+      mvp: ${{ steps.filter.outputs.mvp }}
+      website: ${{ steps.filter.outputs.website }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Path Filter
+        uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            mvp:
+              - 'frontend/mvp/**'
+            website:
+              - 'frontend/website/**'
+
+  mvp:
+    name: 'CI/CD - mvp'
+    needs: detect-changes
+    if: needs.detect-changes.outputs.mvp == 'true'
+    uses: ./.github/workflows/mvp.yml
+
+  website:
+    name: 'CI/CD - website'
+    needs: detect-changes
+    if: needs.detect-changes.outputs.website == 'true'
+    uses: ./.github/workflows/website.yml
