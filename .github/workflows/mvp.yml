@@ -1,6 +1,10 @@
 name: 'mvp'
 on:
   workflow_call:
+    inputs:
+      working_directory:
+        required: true
+        type: string
 
 jobs:
   ci:
@@ -37,3 +41,4 @@ jobs:
         uses: ./.github/actions/deploy-cloudflare
         with:
           project: mvp
+          working_directory: ${{ inputs.working_directory }}
