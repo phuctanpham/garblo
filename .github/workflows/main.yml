@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       mvp: ${{ steps.filter.outputs.mvp }}
-      mvp_dir: ${{ steps.set-dirs.outputs.mvp_dir }}
       website: ${{ steps.filter.outputs.website }}
-      website_dir: ${{ steps.set-dirs.outputs.website_dir }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -25,24 +23,15 @@ jobs:
               - 'frontend/mvp/**'
             website:
               - 'frontend/website/**'
-      - name: Set directories
-        id: set-dirs
-        run: |
-          echo "mvp_dir=frontend/mvp" >> $GITHUB_OUTPUT
-          echo "website_dir=frontend/website" >> $GITHUB_OUTPUT
 
   mvp:
     name: 'mvp'
     needs: detect-changes
     if: needs.detect-changes.outputs.mvp == 'true'
     uses: ./.github/workflows/mvp.yml
-    with:
-      working_directory: ${{ needs.detect-changes.outputs.mvp_dir }}
 
   website:
     name: 'website'
     needs: detect-changes
     if: needs.detect-changes.outputs.website == 'true'
     uses: ./.github/workflows/website.yml
-    with:
-      working_directory: ${{ needs.detect-changes.outputs.website_dir }}
