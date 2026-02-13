@@ -25,7 +25,7 @@ export default function Section1(): JSX.Element {
           </p>
 
           <div className={styles.actions}>
-            <Link to="/start-trial" className={styles['primary-btn']}>
+            <Link to="/" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
             <Link to="#how-it-works" className={styles['secondary-btn']}>
