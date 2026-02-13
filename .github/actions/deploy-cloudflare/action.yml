@@ -14,7 +14,7 @@ runs:
       if: github.ref == 'refs/heads/main'
       shell: bash
       working-directory: ${{ inputs.project }}
-      run: pnpm deploy --filter ${{ inputs.project }}
+      run: pnpm deploy
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
@@ -22,7 +22,7 @@ runs:
       if: github.ref != 'refs/heads/main'
       shell: bash
       working-directory: ${{ inputs.project }}
-      run: pnpm deploy --filter ${{ inputs.project }}
+      run: pnpm deploy
       env:
         CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
