@@ -25,13 +25,13 @@ jobs:
               - 'frontend/website/**'
 
   mvp:
-    name: 'CI/CD - mvp'
+    name: 'mvp'
     needs: detect-changes
     if: needs.detect-changes.outputs.mvp == 'true'
     uses: ./.github/workflows/mvp.yml
 
   website:
-    name: 'CI/CD - website'
+    name: 'website'
     needs: detect-changes
     if: needs.detect-changes.outputs.website == 'true'
     uses: ./.github/workflows/website.yml
