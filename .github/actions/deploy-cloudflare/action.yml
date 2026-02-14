@@ -25,6 +25,40 @@ runs:
         echo "Current directory: $(pwd)"
         echo "Target directory: ${{ inputs.working-directory }}/${{ inputs.project }}"
         ls -la ${{ inputs.working-directory }}/${{ inputs.project }}
+
+    - name: Configure Wrangler credentials
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}/${{ inputs.project }}
+      run: |
+        # Find wrangler config file
+        if [ -f "wrangler.toml" ]; then
+          CONFIG_FILE="wrangler.toml"
+          echo "Found wrangler.toml"
+          # Append variables to wrangler.toml if not already present
+          if ! grep -q "CLOUDFLARE_API_TOKEN" wrangler.toml; then
+            echo "" >> wrangler.toml
+            echo "[vars]" >> wrangler.toml
+            echo "CLOUDFLARE_API_TOKEN = \"${{ inputs.cloudflare-api-token }}\"" >> wrangler.toml
+            echo "CLOUDFLARE_ACCOUNT_ID = \"${{ inputs.cloudflare-account-id }}\"" >> wrangler.toml
+            echo "BRANCH = \"${{ github.head_ref || github.ref_name }}\"" >> wrangler.toml
+          fi
+        elif [ -f "wrangler.jsonc" ]; then
+          CONFIG_FILE="wrangler.jsonc"
+          echo "Found wrangler.jsonc"
+        else
+          echo "No wrangler config file found"
+          exit 1
+        fi
+
+        # Export as environment variables
+        export CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}"
+        export CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}"
+        export BRANCH="${{ github.head_ref || github.ref_name }}"
+
+        echo "CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}" >> $GITHUB_ENV
+        echo "CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}" >> $GITHUB_ENV
+        echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
+
     - name: Deploy to Cloudflare
       uses: cloudflare/wrangler-action@v3
       with:
