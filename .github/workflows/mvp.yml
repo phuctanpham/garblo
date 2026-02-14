@@ -6,15 +6,20 @@ jobs:
   ci:
     name: 'CI'
     runs-on: ubuntu-latest
-    if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
     steps:
+      - name: Skip CI
+        if: github.ref_name != 'main' && !startsWith(github.ref_name, 'release') && !startsWith(github.ref_name, 'test')
+        run: echo "skip ci"
       - name: Checkout
+        if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
         uses: actions/checkout@v4
       - name: Install dependencies
+        if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
         uses: ./.github/actions/install
         with:
           project: mvp
       - name: Lint
+        if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
         uses: ./.github/actions/lint
         with:
           project: mvp
