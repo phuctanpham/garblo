@@ -19,45 +19,19 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Debug current location
+    - name: Debug credentials
       shell: bash
       run: |
-        echo "Current directory: $(pwd)"
-        echo "Target directory: ${{ inputs.working-directory }}/${{ inputs.project }}"
-        ls -la ${{ inputs.working-directory }}/${{ inputs.project }}
+        TOKEN="${{ inputs.cloudflare-api-token }}"
+        ACCOUNT="${{ inputs.cloudflare-account-id }}"
 
-    - name: Configure Wrangler credentials
-      shell: bash
-      working-directory: ${{ inputs.working-directory }}/${{ inputs.project }}
-      run: |
-        # Find wrangler config file
-        if [ -f "wrangler.toml" ]; then
-          CONFIG_FILE="wrangler.toml"
-          echo "Found wrangler.toml"
-          # Append variables to wrangler.toml if not already present
-          if ! grep -q "CLOUDFLARE_API_TOKEN" wrangler.toml; then
-            echo "" >> wrangler.toml
-            echo "[vars]" >> wrangler.toml
-            echo "CLOUDFLARE_API_TOKEN = \"${{ inputs.cloudflare-api-token }}\"" >> wrangler.toml
-            echo "CLOUDFLARE_ACCOUNT_ID = \"${{ inputs.cloudflare-account-id }}\"" >> wrangler.toml
-            echo "BRANCH = \"${{ github.head_ref || github.ref_name }}\"" >> wrangler.toml
-          fi
-        elif [ -f "wrangler.jsonc" ]; then
-          CONFIG_FILE="wrangler.jsonc"
-          echo "Found wrangler.jsonc"
-        else
-          echo "No wrangler config file found"
-          exit 1
-        fi
+        echo "API Token length: ${#TOKEN}"
+        echo "API Token last 4: ${TOKEN: -4}"
+        echo "API Token last 4 equals 'yQ_C': $([ "${TOKEN: -4}" = "yQ_C" ] && echo "YES" || echo "NO")"
 
-        # Export as environment variables
-        export CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}"
-        export CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}"
-        export BRANCH="${{ github.head_ref || github.ref_name }}"
-
-        echo "CLOUDFLARE_API_TOKEN=${CLOUDFLARE_API_TOKEN}" >> $GITHUB_ENV
-        echo "CLOUDFLARE_ACCOUNT_ID=${CLOUDFLARE_ACCOUNT_ID}" >> $GITHUB_ENV
-        echo "BRANCH=${BRANCH}" >> $GITHUB_ENV
+        echo "Account ID length: ${#ACCOUNT}"
+        echo "Account ID last 4: ${ACCOUNT: -4}"
+        echo "Account ID last 4 equals 'e01b': $([ "${ACCOUNT: -4}" = "e01b" ] && echo "YES" || echo "NO")"
 
     - name: Deploy to Cloudflare
       uses: cloudflare/wrangler-action@v3
@@ -66,3 +40,7 @@ runs:
         accountId: ${{ inputs.cloudflare-account-id }}
         workingDirectory: ${{ inputs.working-directory }}/${{ inputs.project }}
         command: ${{ inputs.command }}
+      env:
+        CLOUDFLARE_API_TOKEN: ${{ inputs.cloudflare-api-token }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ inputs.cloudflare-account-id }}
+        BRANCH: ${{ github.head_ref || github.ref_name }}
