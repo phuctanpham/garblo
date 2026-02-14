@@ -6,17 +6,18 @@ jobs:
   ci:
     name: 'CI'
     runs-on: ubuntu-latest
+    if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      #- name: Install dependencies
-      #  uses: ./.github/actions/install
-      #  with:
-      #    project: mvp
-      #- name: Lint
-      #  uses: ./.github/actions/lint
-      #  with:
-      #    project: mvp
+      - name: Install dependencies
+        uses: ./.github/actions/install
+        with:
+          project: mvp
+      - name: Lint
+        uses: ./.github/actions/lint
+        with:
+          project: mvp
 
   cd:
     name: 'CD'
