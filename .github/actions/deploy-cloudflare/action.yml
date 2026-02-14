@@ -16,8 +16,8 @@ runs:
     - name: Deploy
       if: github.ref == 'refs/heads/main'
       shell: bash
-      run: CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}" CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}" pnpm launch --filter ${{ inputs.project }}
+      run: export CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}" && export CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}" && pnpm launch --filter ${{ inputs.project }}
     - name: Preview
       if: github.ref != 'refs/heads/main'
       shell: bash
-      run: CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}" CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}" BRANCH="${{ github.head_ref }}" pnpm launch --filter ${{ inputs.project }}
+      run: export CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}" && export CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}" && export BRANCH="${{ github.head_ref }}" && pnpm launch --filter ${{ inputs.project }}
