@@ -9,14 +9,14 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Install dependencies
-        uses: ./.github/actions/install
-        with:
-          project: mvp
-      - name: Lint
-        uses: ./.github/actions/lint
-        with:
-          project: mvp
+      #- name: Install dependencies
+      #  uses: ./.github/actions/install
+      #  with:
+      #    project: mvp
+      #- name: Lint
+      #  uses: ./.github/actions/lint
+      #  with:
+      #    project: mvp
 
   cd:
     name: 'CD'

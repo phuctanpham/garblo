@@ -18,4 +18,3 @@ runs:
       with:
         workingDirectory: ${{ inputs.working-directory }}/${{ inputs.project }}
         command: ${{ inputs.command }}
-      shell: bash
