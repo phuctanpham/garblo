@@ -29,9 +29,11 @@ jobs:
     needs: detect-changes
     if: needs.detect-changes.outputs.mvp == 'true'
     uses: ./.github/workflows/mvp.yml
+    secrets: inherit
 
   website:
     name: 'website'
     needs: detect-changes
     if: needs.detect-changes.outputs.website == 'true'
     uses: ./.github/workflows/website.yml
+    secrets: inherit
