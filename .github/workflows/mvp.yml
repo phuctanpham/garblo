@@ -44,6 +44,6 @@ jobs:
         with:
           project: mvp
           working-directory: ./frontend
-          command: npx wranler deploy
+          command: npx wrangler deploy
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
