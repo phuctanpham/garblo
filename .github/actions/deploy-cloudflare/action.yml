@@ -19,19 +19,43 @@ inputs:
 runs:
   using: 'composite'
   steps:
-    - name: Debug credentials
+    - name: Debug credentials and directories
       shell: bash
       run: |
         TOKEN="${{ inputs.cloudflare-api-token }}"
         ACCOUNT="${{ inputs.cloudflare-account-id }}"
 
-        echo "API Token length: ${#TOKEN}"
-        echo "API Token last 4: ${TOKEN: -4}"
-        echo "API Token last 4 equals 'yQ_C': $([ "${TOKEN: -4}" = "yQ_C" ] && echo "YES" || echo "NO")"
+        echo "=== Directory Information ==="
+        echo "Current directory: $(pwd)"
+        echo "Working directory: ${{ inputs.working-directory }}/${{ inputs.project }}"
 
-        echo "Account ID length: ${#ACCOUNT}"
-        echo "Account ID last 4: ${ACCOUNT: -4}"
-        echo "Account ID last 4 equals 'e01b': $([ "${ACCOUNT: -4}" = "e01b" ] && echo "YES" || echo "NO")"
+        echo ""
+        echo "=== API Token Check ==="
+        if [ -z "$TOKEN" ]; then
+          echo "❌ Cannot get GitHub secret CLOUDFLARE_API_TOKEN"
+        else
+          echo "API Token length: ${#TOKEN}"
+          echo "API Token last 4: ${TOKEN: -4}"
+          if [ "${TOKEN: -4}" = "yQ_C" ]; then
+            echo "✅ API Token last 4 equals 'yQ_C': YES"
+          else
+            echo "❌ API Token last 4 equals 'yQ_C': NO"
+          fi
+        fi
+
+        echo ""
+        echo "=== Account ID Check ==="
+        if [ -z "$ACCOUNT" ]; then
+          echo "❌ Cannot get GitHub secret CLOUDFLARE_ACCOUNT_ID"
+        else
+          echo "Account ID length: ${#ACCOUNT}"
+          echo "Account ID last 4: ${ACCOUNT: -4}"
+          if [ "${ACCOUNT: -4}" = "e01b" ]; then
+            echo "✅ Account ID last 4 equals 'e01b': YES"
+          else
+            echo "❌ Account ID last 4 equals 'e01b': NO"
+          fi
+        fi
 
     - name: Deploy to Cloudflare
       uses: cloudflare/wrangler-action@v3
