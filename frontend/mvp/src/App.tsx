@@ -52,9 +52,7 @@ function App() {
           Edit <code>worker/index.ts</code> to change the name
         </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p className="read-the-docs">Click on Garblo to learn more</p>
     </>
   )
 }
