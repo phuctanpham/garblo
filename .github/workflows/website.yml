@@ -44,6 +44,6 @@ jobs:
         with:
           project: website
           working-directory: ./frontend
-          command: pages deploy ./build
+          command: npx wrangler pages deploy ./build
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
