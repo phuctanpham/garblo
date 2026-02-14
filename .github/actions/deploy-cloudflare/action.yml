@@ -7,12 +7,6 @@ inputs:
   working-directory:
     description: 'Working directory for the project'
     required: true
-  cloudflare-api-token:
-    description: 'Cloudflare API token'
-    required: true
-  cloudflare-account-id:
-    description: 'Cloudflare account ID'
-    required: true
   command:
     description: 'Wrangler command to run'
     required: true
@@ -22,9 +16,9 @@ runs:
     - name: Deploy to Cloudflare
       uses: cloudflare/wrangler-action@v3
       with:
-        apiToken: ${{ inputs.cloudflare-api-token }}
-        accountId: ${{ inputs.cloudflare-account-id }}
         workingDirectory: ${{ inputs.working-directory }}/${{ inputs.project }}
         command: ${{ inputs.command }}
       env:
         BRANCH: ${{ github.head_ref }}
+        CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
