@@ -4,20 +4,27 @@ inputs:
   project:
     description: 'The project to deploy'
     required: true
+  working-directory:
+    description: 'Working directory for the project'
+    required: true
   cloudflare-api-token:
     description: 'Cloudflare API token'
     required: true
   cloudflare-account-id:
     description: 'Cloudflare account ID'
     required: true
+  command:
+    description: 'Wrangler command to run'
+    required: true
 runs:
   using: 'composite'
   steps:
-    - name: Deploy
-      if: github.ref == 'refs/heads/main'
-      shell: bash
-      run: CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}" CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}" pnpm launch --filter ${{ inputs.project }}
-    - name: Preview
-      if: github.ref != 'refs/heads/main'
-      shell: bash
-      run: CLOUDFLARE_API_TOKEN="${{ inputs.cloudflare-api-token }}" CLOUDFLARE_ACCOUNT_ID="${{ inputs.cloudflare-account-id }}" BRANCH="${{ github.head_ref }}" pnpm launch --filter ${{ inputs.project }}
+    - name: Deploy to Cloudflare
+      uses: cloudflare/wrangler-action@v3
+      with:
+        apiToken: ${{ inputs.cloudflare-api-token }}
+        accountId: ${{ inputs.cloudflare-account-id }}
+        workingDirectory: ${{ inputs.working-directory }}/${{ inputs.project }}
+        command: ${{ inputs.command }}
+      env:
+        BRANCH: ${{ github.head_ref }}

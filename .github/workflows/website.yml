@@ -29,9 +29,15 @@ jobs:
         uses: ./.github/actions/install
         with:
           project: website
+      - name: Build
+        uses: ./.github/actions/builds
+        with:
+          project: website
       - name: Deploy
         uses: ./.github/actions/deploy-cloudflare
         with:
           project: website
+          working-directory: ./frontend
+          command: pages deploy ./build
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

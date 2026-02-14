@@ -2,7 +2,7 @@ name: 'Build'
 description: 'Build a specific application'
 inputs:
   project:
-    description: 'The project to install dependencies for'
+    description: 'building the project'
     required: true
 runs:
   using: 'composite'

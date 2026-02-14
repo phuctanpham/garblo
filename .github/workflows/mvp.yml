@@ -29,9 +29,15 @@ jobs:
         uses: ./.github/actions/install
         with:
           project: mvp
+      - name: Build
+        uses: ./.github/actions/builds
+        with:
+          project: mvp
       - name: Deploy
         uses: ./.github/actions/deploy-cloudflare
         with:
           project: mvp
+          working-directory: ./frontend
+          command: deploy
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
