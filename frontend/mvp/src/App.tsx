@@ -49,7 +49,7 @@ function App() {
           Name from API is: {name}
         </button>
         <p>
-          Edit <code>worker/index.ts</code> to change the name
+          Edit <code>worker/index.ts</code> to change name
         </p>
       </div>
       <p className="read-the-docs">Click on Garblo to learn more</p>
