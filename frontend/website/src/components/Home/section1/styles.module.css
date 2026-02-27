@@ -4,7 +4,7 @@
   position: relative;
   background-color: var(--garblo-white);
   padding: 4rem 2rem;
-  min-height: 85vh; /* Chiếm 85% chiều cao màn hình */
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,7 +15,7 @@
   max-width: 1280px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Chia đôi màn hình */
+  grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
 }
@@ -26,21 +26,6 @@
   flex-direction: column;
   gap: 1.5rem;
   z-index: 10;
-}
-
-.tagline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: #eef2ff; /* Nền xanh rất nhạt */
-  color: var(--ifm-color-primary);
-  padding: 8px 16px;
-  border-radius: 100px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  width: fit-content;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 .title {
@@ -118,7 +103,7 @@
 /* Responsive cho điện thoại */
 @media (width <= 996px) {
   .hero-wrapper {
-    grid-template-columns: 1fr; /* Về 1 cột */
+    grid-template-columns: 1fr;
     text-align: center;
     gap: 3rem;
   }

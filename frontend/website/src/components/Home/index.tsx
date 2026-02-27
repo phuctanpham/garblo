@@ -1,72 +1,49 @@
-import type { ReactNode } from 'react'
-import clsx from 'clsx'
-import Heading from '@theme/Heading'
+/* frontend/website/src/components/HomepageFeatures/section2/index.tsx */
+import React from 'react'
 import styles from './styles.module.css'
-import DocusaurusMountain from '@site/static/img/undraw_docusaurus_mountain.svg'
-import DocusaurusTree from '@site/static/img/undraw_docusaurus_tree.svg'
-import DocusaurusReact from '@site/static/img/undraw_docusaurus_react.svg'
 
-type FeatureItem = {
-  title: string
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>
-  description: ReactNode
-}
-
-const FeatureList: FeatureItem[] = [
-  {
-    title: 'Easy to Use',
-    Svg: DocusaurusMountain,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: DocusaurusTree,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: DocusaurusReact,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },
-]
-
-function Feature({ title, Svg, description }: FeatureItem) {
+export default function Section2(): JSX.Element {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles['feature-svg']} role="img" />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
-      </div>
-    </div>
-  )
-}
+    <section className={styles['section-container']}>
+      <div className={styles['section-wrapper']}>
+        {/* CỘT TRÁI: Hình ảnh tính năng */}
+        <div className={styles['image-col']}>
+          <div className={styles['image-frame']}>
+            {/* Ảnh minh họa khách hàng đang mua sắm trực tuyến (sẽ thay bằng UI của Garblo sau) */}
+            <img
+              src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2515&auto=format&fit=crop"
+              alt="Virtual Try-On Experience"
+              className={styles['feature-image']}
+            />
+          </div>
+        </div>
 
-export default function HomepageFeatures(): ReactNode {
-  return (
-    <section className={styles.features}>
-      <div className="container">
-        <div className="row">
-          {FeatureList.map((props, idx) => (
-            <Feature key={idx} {...props} />
-          ))}
+        {/* CỘT PHẢI: Nội dung thuyết phục */}
+        <div className={styles['text-col']}>
+          <div className={styles.subtitle}>Virtual Try-On Solution</div>
+
+          <h2 className={styles.title}>
+            Help them visualize. <br />
+            Watch your sales grow.
+          </h2>
+
+          <p className={styles.description}>
+            Shoppers hesitate when they can't visualize the fit. Garblo's AI
+            plug-in lets your customers try on outfits virtually right on your
+            website, transforming hesitation into purchase confidence.
+          </p>
+
+          {/* Khối số liệu đắt giá đánh vào tâm lý chủ shop */}
+          <div className={styles['stats-grid']}>
+            <div className={styles['stat-item']}>
+              <h4>-83%</h4>
+              <p>Cart Abandonment</p>
+            </div>
+            <div className={styles['stat-item']}>
+              <h4>-20%</h4>
+              <p>Return Rate</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
