@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 
 export default function Section2(): JSX.Element {
   return (
-    <section className={styles['section-container']}>
+    <section id="features" className={styles['section-container']}>
       <div className={styles['section-wrapper']}>
         {/* CỘT TRÁI: Hình ảnh tính năng */}
         <div className={styles['image-col']}>
