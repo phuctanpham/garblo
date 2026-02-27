@@ -10,11 +10,15 @@ export default function Section1(): JSX.Element {
         <div className={styles['left-content']}>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
 =======
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+          {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
           <h1 className={styles.title}>
             <span className={styles.highlight}>Revolutionize</span> <br />
             Your Fashion Store.
@@ -32,6 +36,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -45,6 +50,9 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="/#section2" className={styles['secondary-btn']}>
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+            <Link to="#features" className={styles['secondary-btn']}>
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
               Explore Solutions
             </Link>
           </div>
@@ -53,6 +61,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -77,6 +86,12 @@ export default function Section1(): JSX.Element {
             src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
             alt="Garblo AI Generated Fashion Lookbook"
 >>>>>>> e35f76c (refactor(website): remove unused component and update styles)
+=======
+          {/* Đã thay bằng ảnh tĩnh chất lượng cao, sang trọng, không bao giờ bị lỗi */}
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop"
+            alt="Garblo Modern Fashion Retail"
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
             className={styles['mockup-image']}
           />
 =======

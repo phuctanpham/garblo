@@ -10,11 +10,14 @@
 =======
   padding: 4rem 2rem;
   min-height: 85vh;
+<<<<<<< HEAD
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
 =======
   padding: 0 2rem;
   min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
   display: flex;
   align-items: center;
   justify-content: center;
