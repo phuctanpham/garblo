@@ -4,8 +4,18 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React from 'react';
 import Layout from '@theme/Layout';
+=======
+import React from 'react'
+import Layout from '@theme/Layout'
+=======
+<<<<<<< HEAD
+import React from 'react';
+import Layout from '@theme/Layout';
+>>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+>>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
 
 <<<<<<< HEAD
 // Import đầy đủ cả 2 Section ở đây
@@ -73,8 +83,20 @@ import Section3 from '@site/src/components/Home/section3'
 // Import đầy đủ cả 2 Section ở đây
 import Section1 from '@site/src/components/Home/section1';
 import Section3 from '@site/src/components/Home/section3';
+<<<<<<< HEAD
 >>>>>>> 4469530 (fix: apply all remaining PR review comment fixes)
+<<<<<<< HEAD
 >>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
+=======
+=======
+=======
+import React from 'react'
+import Layout from '@theme/Layout'
+import Section1 from '@site/src/components/HomepageFeatures/section1' // Import khối Section 1 vào
+import HowItWorks from '@site/src/components/HomepageFeatures/section2'
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+>>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+>>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
 
 export default function Home(): JSX.Element {
   return (

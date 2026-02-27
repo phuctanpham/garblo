@@ -12,6 +12,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
           {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
@@ -22,6 +23,11 @@ export default function Section1(): JSX.Element {
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
 =======
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+=======
+          {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+>>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
           <h1 className={styles.title}>
             <span className={styles.highlight}>Revolutionize</span> <br />
             Your Fashion Store.
@@ -43,6 +49,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -68,6 +75,16 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="/#section2" className={styles['secondary-btn']}>
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+=======
+<<<<<<< HEAD
+            <Link to="#section2" className={styles['secondary-btn']}>
+=======
+            <Link to="#features" className={styles['secondary-btn']}>
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+>>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+>>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
               Explore Solutions
             </Link>
           </div>
@@ -140,12 +157,16 @@ export default function Section1(): JSX.Element {
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
+<<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
 =======
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+<<<<<<< HEAD
+>>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
           <video
             autoPlay /* Tự động chạy khi load trang */
             loop /* Lặp lại liên tục */
@@ -160,6 +181,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
 =======
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
@@ -167,6 +189,22 @@ export default function Section1(): JSX.Element {
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
 =======
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+=======
+<<<<<<< HEAD
+          <img
+            src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
+            alt="Garblo AI Generated Fashion Lookbook"
+=======
+          {/* Đã thay bằng ảnh tĩnh chất lượng cao, sang trọng, không bao giờ bị lỗi */}
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop"
+            alt="Garblo Modern Fashion Retail"
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+            className={styles['mockup-image']}
+          />
+>>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+>>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
         </div>
       </div>
     </section>
