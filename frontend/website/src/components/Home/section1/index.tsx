@@ -9,13 +9,10 @@ export default function Section1(): JSX.Element {
       <div className={styles['hero-wrapper']}>
         {/* CỘT TRÁI: Nội dung Text */}
         <div className={styles['left-content']}>
-          <div className={styles.tagline}>
-            <span>✨</span> B2B Fashion SaaS Platform
-          </div>
-
+          {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
           <h1 className={styles.title}>
-            Revolutionize Your <br />
-            Fashion Store with <span className={styles.highlight}>AI.</span>
+            <span className={styles.highlight}>Revolutionize</span> <br />
+            Your Fashion Store.
           </h1>
 
           <p className={styles.description}>
@@ -28,18 +25,18 @@ export default function Section1(): JSX.Element {
             <Link to="/" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="#how-it-works" className={styles['secondary-btn']}>
-              See How It Works
+            <Link to="#features" className={styles['secondary-btn']}>
+              Explore Solutions
             </Link>
           </div>
         </div>
 
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         <div className={styles['right-content']}>
-          {/* Tạm thời dùng ảnh mẫu Unsplash chất lượng cao */}
+          {/* Đã thay bằng ảnh tĩnh chất lượng cao, sang trọng, không bao giờ bị lỗi */}
           <img
-            src="https://images.unsplash.com/photo-1550614000-4b951987967d?q=80&w=2574&auto=format&fit=crop"
-            alt="Garblo AI Fashion Tech"
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop"
+            alt="Garblo Modern Fashion Retail"
             className={styles['mockup-image']}
           />
         </div>
