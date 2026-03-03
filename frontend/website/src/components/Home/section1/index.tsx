@@ -50,41 +50,55 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-            <Link to="#section2" className={styles['secondary-btn']}>
-=======
-            <Link to="#features" className={styles['secondary-btn']}>
->>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
-=======
-            <Link to="#section2" className={styles['secondary-btn']}>
->>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
-=======
-            <Link to="/#section2" className={styles['secondary-btn']}>
->>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
-=======
-            <Link to="/#section2" className={styles['secondary-btn']}>
->>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
-=======
-            <Link to="#features" className={styles['secondary-btn']}>
->>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
-=======
-            <Link to="#section2" className={styles['secondary-btn']}>
->>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
-=======
-            <Link to="/#section2" className={styles['secondary-btn']}>
->>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
-=======
-            <Link to="/#section2" className={styles['secondary-btn']}>
->>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
-=======
-            <Link to="/#section2" className={styles['secondary-btn']}>
-=======
 <<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+=======
+            <Link to="#section2" className={styles['secondary-btn']}>
+>>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+            <Link to="#features" className={styles['secondary-btn']}>
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+=======
+            <Link to="#section2" className={styles['secondary-btn']}>
+>>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+=======
+>>>>>>> adce0d9 (refactor(website): adjust layout of virtual try-on section)
+            <Link to="/#section2" className={styles['secondary-btn']}>
+=======
+=======
+>>>>>>> a7330a9 (refactor(website): adjust layout of virtual try-on section)
+<<<<<<< HEAD
+            <Link to="#section2" className={styles['secondary-btn']}>
+=======
+            <Link to="#features" className={styles['secondary-btn']}>
+>>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
+=======
+=======
+=======
+            <Link to="#section2" className={styles['secondary-btn']}>
+>>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
+>>>>>>> a7330a9 (refactor(website): adjust layout of virtual try-on section)
+>>>>>>> adce0d9 (refactor(website): adjust layout of virtual try-on section)
               Explore Solutions
             </Link>
           </div>
