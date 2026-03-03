@@ -37,6 +37,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -53,6 +54,9 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="#features" className={styles['secondary-btn']}>
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+=======
+            <Link to="#section2" className={styles['secondary-btn']}>
+>>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
               Explore Solutions
             </Link>
           </div>
