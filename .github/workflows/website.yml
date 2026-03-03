@@ -7,13 +7,19 @@ jobs:
     name: 'CI'
     runs-on: ubuntu-latest
     steps:
+      - name: Skip CI
+        if: github.ref_name != 'main' && !startsWith(github.ref_name, 'release') && !startsWith(github.ref_name, 'test')
+        run: echo "skip ci"
       - name: Checkout
+        if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
         uses: actions/checkout@v4
       - name: Install dependencies
+        if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
         uses: ./.github/actions/install
         with:
           project: website
       - name: Lint
+        if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
         uses: ./.github/actions/lint
         with:
           project: website
@@ -22,7 +28,6 @@ jobs:
     name: 'CD'
     needs: ci
     runs-on: ubuntu-latest
-    if: github.ref_name == 'main' || startsWith(github.ref_name, 'release') || startsWith(github.ref_name, 'test')
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -1,8 +1,8 @@
 /* frontend/website/src/pages/index.tsx */
 import React from 'react'
 import Layout from '@theme/Layout'
-import Section1 from '@site/src/components/HomepageFeatures/section1' // Import khối Section 1 vào
-import HowItWorks from '@site/src/components/HomepageFeatures/section2'
+import Section1 from '@site/src/components/Home/section1' // Import khối Section 1 vào
+import HowItWorks from '@site/src/components/Home/HowItWorks'
 
 export default function Home(): JSX.Element {
   return (
