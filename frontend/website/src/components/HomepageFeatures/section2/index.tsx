@@ -4,7 +4,7 @@ import styles from './styles.module.css'
 
 export default function Section2(): JSX.Element {
   return (
-    <section id="features" className={styles['section-container']}>
+    <section id="section2" className={styles['section-container']}>
       <div className={styles['section-wrapper']}>
         {/* CỘT TRÁI: Hình ảnh tính năng */}
         <div className={styles['image-col']}>
@@ -12,7 +12,7 @@ export default function Section2(): JSX.Element {
             {/* Ảnh minh họa khách hàng đang mua sắm trực tuyến (sẽ thay bằng UI của Garblo sau) */}
             <img
               src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?q=80&w=2515&auto=format&fit=crop"
-              alt="Virtual Try-On Experience"
+              alt="Virtual Try-On Experience 2026"
               className={styles['feature-image']}
             />
           </div>
