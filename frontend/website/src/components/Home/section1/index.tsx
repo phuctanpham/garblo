@@ -22,7 +22,7 @@ export default function Section1(): JSX.Element {
             <Link to="/" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="#features" className={styles['secondary-btn']}>
+            <Link to="#section2" className={styles['secondary-btn']}>
               Explore Solutions
             </Link>
           </div>
