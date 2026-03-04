@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 .section-container {
   padding: 0 2rem;
   background-color: #fafafa;
   min-height: 100vh;
   display: flex;
   align-items: center;
+=======
+/* frontend/website/src/components/Home/section2/styles.module.css */
+
+.section-container {
+  padding: 6rem 2rem;
+  background-color: #fafafa; /* Màu xám rất nhạt để phân tách với nền trắng của Section 1 */
+  display: flex;
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
   justify-content: center;
   overflow: hidden;
 }
@@ -17,6 +26,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 /* --- CỘT TRÁI (3 KHỐI TÍNH NĂNG MỚI) --- */
 .features-list {
   order: 1;
@@ -69,6 +79,28 @@
 }
 
 /* --- CỘT PHẢI (VĂN BẢN VÀ SỐ LIỆU) --- */
+=======
+/* --- CỘT TRÁI (HÌNH ẢNH) --- */
+.image-col {
+  order: 1; /* Đặt hình ảnh bên trái */
+  position: relative;
+}
+
+.image-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 8%);
+  aspect-ratio: 4/5; /* Tỉ lệ chuẩn của ảnh thời trang */
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- CỘT PHẢI (VĂN BẢN) --- */
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
 .text-col {
   order: 2;
   display: flex;
@@ -97,15 +129,23 @@
   line-height: 1.6;
 }
 
+<<<<<<< HEAD
 /* Bố cục số liệu như hình vẽ mẫu */
 .stats-grid {
   display: flex;
+=======
+/* --- KHỐI SỐ LIỆU --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
   gap: 2rem;
   margin-top: 1rem;
   padding-top: 2rem;
   border-top: 1px solid #e4e4e7;
 }
 
+<<<<<<< HEAD
 .stat-item {
   flex: 1;
   padding-left: 2rem;
@@ -119,6 +159,10 @@
 
 .stat-item h4 {
   font-size: 3rem;
+=======
+.stat-item h4 {
+  font-size: 2.5rem;
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
   color: var(--garblo-black);
   margin: 0;
   line-height: 1;
@@ -131,22 +175,38 @@
   font-weight: 500;
 }
 
+<<<<<<< HEAD
+=======
+/* Responsive cho điện thoại */
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
 @media (width <= 996px) {
   .section-wrapper {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+<<<<<<< HEAD
   .features-list {
     order: 2;
   } /* Trên mobile thì 3 thẻ nằm dưới chữ */
   .text-col {
     order: 1;
   }
+=======
+
+  .image-col {
+    order: 2;
+  } /* Trên điện thoại đẩy ảnh xuống dưới */
+  .text-col {
+    order: 1;
+  }
+
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
   .title {
     font-size: 2.25rem;
   }
 
   .stats-grid {
+<<<<<<< HEAD
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -161,5 +221,8 @@
   .stat-item:first-child {
     border-top: none;
     padding-top: 0;
+=======
+    gap: 1rem;
+>>>>>>> 74fa2db (feat(website): update about us section with new content)
   }
 }
