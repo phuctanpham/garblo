@@ -92,11 +92,22 @@ import Section3 from '@site/src/components/Home/section3';
 =======
 import React from 'react'
 import Layout from '@theme/Layout'
+<<<<<<< HEAD
 import Section1 from '@site/src/components/HomepageFeatures/section1' // Import khối Section 1 vào
 import HowItWorks from '@site/src/components/HomepageFeatures/section2'
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
+=======
+=======
+=======
+import Section1 from '@site/src/components/Home/section1' // Import khối Section 1 vào
+import Section2 from '@site/src/components/Home/section2'
+>>>>>>> 2fe9656 (refactor(website): change props of section2 component)
+>>>>>>> 8b363cf (refactor(website): change props of section2 component)
+>>>>>>> 3408c0b (refactor(website): change props of section2 component)
 
 export default function Home(): JSX.Element {
   return (
@@ -106,6 +117,7 @@ export default function Home(): JSX.Element {
       
       <main>
         <Section1 />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -127,10 +139,16 @@ export default function Home(): JSX.Element {
         <Section3 />
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
 =======
+=======
+>>>>>>> 3408c0b (refactor(website): change props of section2 component)
         <div id="section2">
           <Section2 />
         </div>
+=======
+<<<<<<< HEAD
+>>>>>>> 8b363cf (refactor(website): change props of section2 component)
         <Section3 />
+<<<<<<< HEAD
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
 >>>>>>> 2fe9656 (refactor(website): change props of section2 component)
@@ -146,6 +164,13 @@ export default function Home(): JSX.Element {
         </div>
         <Section3 />
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+=======
+
+        {/* Sau này làm Section 2, 3 sẽ thêm vào đây */}
+        <Section2 />
+>>>>>>> 2fe9656 (refactor(website): change props of section2 component)
+>>>>>>> 3408c0b (refactor(website): change props of section2 component)
       </main>
       
     </Layout>
