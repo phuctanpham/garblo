@@ -9,9 +9,14 @@ import Section3 from '@site/src/components/Home/section3';
 =======
 import React from 'react'
 import Layout from '@theme/Layout'
+<<<<<<< HEAD
 import Section1 from '@site/src/components/HomepageFeatures/section1' // Import khối Section 1 vào
 import HowItWorks from '@site/src/components/HomepageFeatures/section2'
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+=======
+import Section1 from '@site/src/components/Home/section1' // Import khối Section 1 vào
+import Section2 from '@site/src/components/Home/section2'
+>>>>>>> 2fe9656 (refactor(website): change props of section2 component)
 
 export default function Home(): JSX.Element {
   return (
@@ -21,7 +26,13 @@ export default function Home(): JSX.Element {
       
       <main>
         <Section1 />
+<<<<<<< HEAD
         <Section3 />
+=======
+
+        {/* Sau này làm Section 2, 3 sẽ thêm vào đây */}
+        <Section2 />
+>>>>>>> 2fe9656 (refactor(website): change props of section2 component)
       </main>
       
     </Layout>
