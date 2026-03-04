@@ -1,8 +1,8 @@
 /* frontend/website/src/pages/index.tsx */
 import React from 'react'
 import Layout from '@theme/Layout'
-import Section1 from '@site/src/components/HomepageFeatures/section1' // Import khối Section 1 vào
-import HowItWorks from '@site/src/components/HomepageFeatures/section2'
+import Section1 from '@site/src/components/Home/section1' // Import khối Section 1 vào
+import Section2 from '@site/src/components/Home/section2'
 
 export default function Home(): JSX.Element {
   return (
@@ -15,7 +15,7 @@ export default function Home(): JSX.Element {
         <Section1 />
 
         {/* Sau này làm Section 2, 3 sẽ thêm vào đây */}
-        <HowItWorks />
+        <Section2 />
       </main>
     </Layout>
   )
