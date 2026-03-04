@@ -1,4 +1,4 @@
-/* frontend/website/src/components/HomepageFeatures/section2/index.tsx */
+/* frontend/website/src/components/Home/section2/index.tsx */
 import React from 'react'
 import styles from './styles.module.css'
 
