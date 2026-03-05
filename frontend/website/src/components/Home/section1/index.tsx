@@ -182,9 +182,12 @@ export default function Section1(): JSX.Element {
 >>>>>>> f350fa4 (refactor(website): remove unused component and update styles)
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
+<<<<<<< HEAD
 =======
         {/* CỘT PHẢI: Hình ảnh minh họa */}
 >>>>>>> 0bc4374 (refactor(website): remove unused component and update styles)
+=======
+>>>>>>> 8aaad7c (feat(website): update hero section content and styles)
         <div className={styles['right-content']}>
 <<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
@@ -226,6 +229,7 @@ export default function Section1(): JSX.Element {
 >>>>>>> bd999e0 (feat(website): add new section and update existing components)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <img
             src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
             alt="Garblo AI Generated Fashion Lookbook"
@@ -248,8 +252,27 @@ export default function Section1(): JSX.Element {
 >>>>>>> e35f76c (refactor(website): remove unused component and update styles)
             className={styles['mockup-image']}
           />
+<<<<<<< HEAD
 >>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
+=======
+=======
+=======
+          <video
+            autoPlay /* Tự động chạy khi load trang */
+            loop /* Lặp lại liên tục */
+            muted /* Bắt buộc phải tắt tiếng thì trình duyệt mới cho autoPlay */
+            playsInline /* Hỗ trợ chạy mượt trên Safari/iPhone */
+            className={
+              styles['mockup-image']
+            } /* Giữ nguyên class này để video vừa khít cái khung */
+          >
+            <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
+          </video>
+>>>>>>> c20a7f8 (feat(website): update hero section content and styles)
+>>>>>>> 8aaad7c (feat(website): update hero section content and styles)
+>>>>>>> c84ffce (feat(website): update hero section content and styles)
         </div>
       </div>
     </section>
