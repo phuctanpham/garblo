@@ -68,6 +68,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 <<<<<<< HEAD
@@ -123,6 +124,11 @@ export default function Section1(): JSX.Element {
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
+        {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
+        <div className={styles['right-content']}>
+>>>>>>> c20a7f8 (feat(website): update hero section content and styles)
           <video
             autoPlay /* Tự động chạy khi load trang */
             loop /* Lặp lại liên tục */
@@ -135,9 +141,12 @@ export default function Section1(): JSX.Element {
             <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
           </video>
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
 =======
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+>>>>>>> c20a7f8 (feat(website): update hero section content and styles)
         </div>
       </div>
     </section>
