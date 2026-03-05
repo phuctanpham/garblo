@@ -117,6 +117,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 <<<<<<< HEAD
@@ -177,8 +178,13 @@ export default function Section1(): JSX.Element {
 =======
 =======
 >>>>>>> 1433ee8 (feat(website): add new section and update existing components)
+=======
+>>>>>>> f350fa4 (refactor(website): remove unused component and update styles)
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
+=======
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
+>>>>>>> 0bc4374 (refactor(website): remove unused component and update styles)
         <div className={styles['right-content']}>
 <<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
@@ -219,6 +225,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 >>>>>>> bd999e0 (feat(website): add new section and update existing components)
 <<<<<<< HEAD
+<<<<<<< HEAD
           <img
             src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
             alt="Garblo AI Generated Fashion Lookbook"
@@ -234,6 +241,11 @@ export default function Section1(): JSX.Element {
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
             alt="Garblo AI Fashion Tech"
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+          <img
+            src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
+            alt="Garblo AI Generated Fashion Lookbook"
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
             className={styles['mockup-image']}
           />
 >>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
