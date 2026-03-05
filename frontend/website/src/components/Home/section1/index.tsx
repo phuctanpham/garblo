@@ -13,11 +13,15 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 1433ee8 (feat(website): add new section and update existing components)
 =======
           {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
 =======
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+<<<<<<< HEAD
 =======
           {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
@@ -28,6 +32,8 @@ export default function Section1(): JSX.Element {
           {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
 >>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
+=======
+>>>>>>> 1433ee8 (feat(website): add new section and update existing components)
           <h1 className={styles.title}>
             <span className={styles.highlight}>Revolutionize</span> <br />
             Your Fashion Store.
@@ -110,6 +116,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 <<<<<<< HEAD
@@ -168,6 +175,8 @@ export default function Section1(): JSX.Element {
         <div className={styles['right-content']}>
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
+=======
+>>>>>>> 1433ee8 (feat(website): add new section and update existing components)
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
@@ -205,6 +214,10 @@ export default function Section1(): JSX.Element {
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
 =======
+=======
+        <div className={styles['right-content']}>
+<<<<<<< HEAD
+>>>>>>> bd999e0 (feat(website): add new section and update existing components)
 <<<<<<< HEAD
           <img
             src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
@@ -215,6 +228,12 @@ export default function Section1(): JSX.Element {
             src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop"
             alt="Garblo Modern Fashion Retail"
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+=======
+          {/* Ảnh mới: Mang tính chất công nghệ AI quét 3D quần áo/cơ thể */}
+          <img
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+            alt="Garblo AI Fashion Tech"
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
             className={styles['mockup-image']}
           />
 >>>>>>> 6244652 (feat(appConsumer): add virtual try-on section)
