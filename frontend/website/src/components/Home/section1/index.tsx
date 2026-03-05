@@ -27,11 +27,11 @@ export default function Section1(): JSX.Element {
           </div>
         </div>
 
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
         <div className={styles['right-content']}>
-          {/* Ảnh mới: Mang tính chất công nghệ AI quét 3D quần áo/cơ thể */}
           <img
-            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
-            alt="Garblo AI Fashion Tech"
+            src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
+            alt="Garblo AI Generated Fashion Lookbook"
             className={styles['mockup-image']}
           />
         </div>
