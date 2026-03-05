@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles.module.css'
 
@@ -84,10 +85,12 @@ export default function Section2(): JSX.Element {
         {/* CỘT PHẢI: Nội dung và Số liệu đếm ngược */}
 =======
 /* frontend/website/src/components/Home/section2/index.tsx */
+=======
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles.module.css'
 
-// Component đếm số cực mượt do tôi tự viết cho Garblo
+// Component đếm số tự động
 const AnimatedStat = ({ endValue, suffix = '' }) => {
   const [value, setValue] = useState(0)
   const ref = useRef(null)
@@ -97,7 +100,7 @@ const AnimatedStat = ({ endValue, suffix = '' }) => {
       ([entry]) => {
         if (entry.isIntersecting) {
           let start = 0
-          const duration = 2000 // Chạy trong 2 giây
+          const duration = 2000
           const step = endValue / (duration / 16)
           const timer = setInterval(() => {
             start += step
@@ -108,11 +111,11 @@ const AnimatedStat = ({ endValue, suffix = '' }) => {
               setValue(Math.round(start))
             }
           }, 16)
-          observer.disconnect() // Chạy 1 lần rồi thôi
+          observer.disconnect()
         }
       },
       { threshold: 0.5 },
-    ) // Cuộn đến giữa khối mới chạy
+    )
 
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
@@ -130,23 +133,52 @@ export default function Section2(): JSX.Element {
   return (
     <section id="section2" className={styles['section-container']}>
       <div className={styles['section-wrapper']}>
-        {/* CỘT TRÁI: Hình ảnh - Đã thay bằng ảnh một người đang dùng điện thoại di động */}
-        <div className={styles['image-col']}>
-          <div className={styles['image-frame']}>
-            <img
-              src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2574&auto=format&fit=crop"
-              alt="Garblo Virtual Try-On App Interface"
-              className={styles['feature-image']}
-            />
+        {/* CỘT TRÁI: 3 Khối tính năng theo yêu cầu mới */}
+        <div className={styles['features-list']}>
+          <div className={styles['feature-card']}>
+            <div className={styles['icon-box']}>✨</div>
+            <div className={styles['feature-info']}>
+              <h3>Instant Try-On</h3>
+              <p>
+                Shoppers upload a simple photo to virtually wear any item in
+                your catalog in seconds.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles['feature-card']}>
+            <div className={styles['icon-box']}>📏</div>
+            <div className={styles['feature-info']}>
+              <h3>Size Confidence</h3>
+              <p>
+                Eliminate guesswork. Customers see exactly how the garment fits
+                their unique body shape.
+              </p>
+            </div>
+          </div>
+
+          <div className={styles['feature-card']}>
+            <div className={styles['icon-box']}>⚡</div>
+            <div className={styles['feature-info']}>
+              <h3>Seamless Integration</h3>
+              <p>
+                Deploy our plug-in to your e-commerce store in minutes. Zero
+                complex coding required.
+              </p>
+            </div>
           </div>
         </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
         {/* CỘT PHẢI: Nội dung thuyết phục */}
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
 =======
         {/* CỘT PHẢI: Nội dung trực diện, sắc bén */}
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+        {/* CỘT PHẢI: Nội dung và Số liệu đếm ngược */}
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
         <div className={styles['text-col']}>
           <div className={styles.subtitle}>Virtual Try-On Solution</div>
 
@@ -163,6 +195,7 @@ export default function Section2(): JSX.Element {
             instantly, transforming hesitation into purchase confidence.
           </p>
 
+<<<<<<< HEAD
           <div className={styles['stats-grid']}>
             <div className={styles['stat-item']}>
               <AnimatedStat endValue={-83} suffix="%" />
@@ -186,6 +219,8 @@ export default function Section2(): JSX.Element {
           </p>
 
           {/* Khối số liệu đắt giá với hiệu ứng động và nét đứt dọc */}
+=======
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
           <div className={styles['stats-grid']}>
             <div className={styles['stat-item']}>
               <AnimatedStat endValue={-83} suffix="%" />

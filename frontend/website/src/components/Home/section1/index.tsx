@@ -67,6 +67,7 @@ export default function Section1(): JSX.Element {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 <<<<<<< HEAD
@@ -101,12 +102,19 @@ export default function Section1(): JSX.Element {
             alt="Garblo Modern Fashion Retail"
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
 =======
+=======
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
         <div className={styles['right-content']}>
-          {/* Ảnh mới: Mang tính chất công nghệ AI quét 3D quần áo/cơ thể */}
           <img
+<<<<<<< HEAD
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
             alt="Garblo AI Fashion Tech"
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+            src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
+            alt="Garblo AI Generated Fashion Lookbook"
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
             className={styles['mockup-image']}
           />
 =======
