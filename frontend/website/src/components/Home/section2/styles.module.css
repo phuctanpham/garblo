@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .section-container {
   padding: 0 2rem;
   background-color: #fafafa;
@@ -8,10 +9,12 @@
 =======
 /* frontend/website/src/components/Home/section2/styles.module.css */
 
+=======
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
 .section-container {
   padding: 0 2rem;
   background-color: #fafafa;
-  min-height: 100vh; /* Vừa vặn đúng 1 màn hình */
+  min-height: 100vh;
   display: flex;
 <<<<<<< HEAD
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
@@ -31,6 +34,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 /* --- CỘT TRÁI (3 KHỐI TÍNH NĂNG MỚI) --- */
@@ -90,28 +94,68 @@
 =======
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
 .image-col {
+=======
+/* --- CỘT TRÁI (3 KHỐI TÍNH NĂNG MỚI) --- */
+.features-list {
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
   order: 1;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.image-frame {
+.feature-card {
+  background: var(--garblo-white);
+  padding: 2rem;
   border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgb(0 0 0 / 8%);
-  aspect-ratio: 4/5;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 4%);
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  border: 1px solid #f4f4f5;
+  transition: all 0.3s ease;
 }
 
-.feature-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.feature-card:hover {
+  transform: translateY(-5px);
+  border-color: #c7d2fe; /* Viền màu Indigo nhạt khi hover */
+  box-shadow: 0 20px 40px rgb(99 102 241 / 8%);
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* --- CỘT PHẢI (VĂN BẢN) --- */
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
 =======
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+.icon-box {
+  background: #eef2ff;
+  font-size: 1.75rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-info h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem;
+  color: var(--garblo-black);
+}
+
+.feature-info p {
+  margin: 0;
+  color: var(--garblo-gray);
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+/* --- CỘT PHẢI (VĂN BẢN VÀ SỐ LIỆU) --- */
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
 .text-col {
   order: 2;
   display: flex;
@@ -142,6 +186,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Bố cục số liệu như hình vẽ mẫu */
 .stats-grid {
   display: flex;
@@ -153,6 +198,9 @@
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
 =======
 /* Bố cục số liệu ĐÚNG NHƯ HÌNH BẠN YÊU CẦU */
+=======
+/* Bố cục số liệu như hình vẽ mẫu */
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
 .stats-grid {
   display: flex;
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
@@ -174,11 +222,14 @@
 .stat-item {
   flex: 1;
   padding-left: 2rem;
-  border-left: 2px solid #e4e4e7; /* Đường kẻ dọc */
+  border-left: 2px solid #e4e4e7;
 }
 
+<<<<<<< HEAD
 /* Khối đầu tiên không cần đường kẻ dọc bên trái */
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
 .stat-item:first-child {
   padding-left: 0;
   border-left: none;
@@ -220,6 +271,7 @@
     gap: 3rem;
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
   .features-list {
     order: 2;
   } /* Trên mobile thì 3 thẻ nằm dưới chữ */
@@ -229,14 +281,19 @@
 =======
 
   .image-col {
+=======
+  .features-list {
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
     order: 2;
-  }
-
+  } /* Trên mobile thì 3 thẻ nằm dưới chữ */
   .text-col {
     order: 1;
   }
+<<<<<<< HEAD
 
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
   .title {
     font-size: 2.25rem;
   }

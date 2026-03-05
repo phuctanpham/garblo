@@ -42,7 +42,9 @@ export default function Section1(): JSX.Element {
           </div>
         </div>
 
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
         <div className={styles['right-content']}>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           <img
@@ -60,6 +62,11 @@ export default function Section1(): JSX.Element {
             src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
             alt="Garblo AI Fashion Tech"
 >>>>>>> 30701e0 (feat(website): add new section and update existing components)
+=======
+          <img
+            src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
+            alt="Garblo AI Generated Fashion Lookbook"
+>>>>>>> e35f76c (refactor(website): remove unused component and update styles)
             className={styles['mockup-image']}
           />
         </div>
