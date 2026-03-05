@@ -43,7 +43,9 @@ export default function Section1(): JSX.Element {
         </div>
 
         {/* CỘT PHẢI: Hình ảnh minh họa */}
+        {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -69,6 +71,19 @@ export default function Section1(): JSX.Element {
 >>>>>>> e35f76c (refactor(website): remove unused component and update styles)
             className={styles['mockup-image']}
           />
+=======
+          <video
+            autoPlay /* Tự động chạy khi load trang */
+            loop /* Lặp lại liên tục */
+            muted /* Bắt buộc phải tắt tiếng thì trình duyệt mới cho autoPlay */
+            playsInline /* Hỗ trợ chạy mượt trên Safari/iPhone */
+            className={
+              styles['mockup-image']
+            } /* Giữ nguyên class này để video vừa khít cái khung */
+          >
+            <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
+          </video>
+>>>>>>> c20a7f8 (feat(website): update hero section content and styles)
         </div>
       </div>
     </section>
