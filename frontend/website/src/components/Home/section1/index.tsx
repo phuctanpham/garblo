@@ -14,7 +14,7 @@ export default function Section1(): JSX.Element {
           </h1>
           <p className={styles.description}>
             The all-in-one platform for modern brands. Enable{' '}
-            <strong>Virtual Try-On 2026</strong> to boost sales, and generate{' '}
+            <strong>Virtual Try-On</strong> to boost sales, and generate{' '}
             <strong>Pro Lookbooks</strong> instantly without studio costs.
           </p>
           <div className={styles.actions}>
@@ -27,7 +27,6 @@ export default function Section1(): JSX.Element {
           </div>
         </div>
 
-        {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
           <video
