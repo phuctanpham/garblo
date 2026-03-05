@@ -9,10 +9,15 @@
 /* frontend/website/src/components/Home/section2/styles.module.css */
 
 .section-container {
-  padding: 6rem 2rem;
-  background-color: #fafafa; /* Màu xám rất nhạt để phân tách với nền trắng của Section 1 */
+  padding: 0 2rem;
+  background-color: #fafafa;
+  min-height: 100vh; /* Vừa vặn đúng 1 màn hình */
   display: flex;
+<<<<<<< HEAD
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+  align-items: center;
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
   justify-content: center;
   overflow: hidden;
 }
@@ -26,6 +31,7 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 /* --- CỘT TRÁI (3 KHỐI TÍNH NĂNG MỚI) --- */
 .features-list {
@@ -81,8 +87,10 @@
 /* --- CỘT PHẢI (VĂN BẢN VÀ SỐ LIỆU) --- */
 =======
 /* --- CỘT TRÁI (HÌNH ẢNH) --- */
+=======
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
 .image-col {
-  order: 1; /* Đặt hình ảnh bên trái */
+  order: 1;
   position: relative;
 }
 
@@ -90,7 +98,7 @@
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgb(0 0 0 / 8%);
-  aspect-ratio: 4/5; /* Tỉ lệ chuẩn của ảnh thời trang */
+  aspect-ratio: 4/5;
 }
 
 .feature-image {
@@ -99,8 +107,11 @@
   object-fit: cover;
 }
 
+<<<<<<< HEAD
 /* --- CỘT PHẢI (VĂN BẢN) --- */
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
 .text-col {
   order: 2;
   display: flex;
@@ -130,6 +141,7 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* Bố cục số liệu như hình vẽ mẫu */
 .stats-grid {
   display: flex;
@@ -139,6 +151,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+/* Bố cục số liệu ĐÚNG NHƯ HÌNH BẠN YÊU CẦU */
+.stats-grid {
+  display: flex;
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
   gap: 2rem;
   margin-top: 1rem;
   padding-top: 2rem;
@@ -146,23 +163,38 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .stat-item {
   flex: 1;
   padding-left: 2rem;
   border-left: 2px solid #e4e4e7;
 }
 
+=======
+.stat-item {
+  flex: 1;
+  padding-left: 2rem;
+  border-left: 2px solid #e4e4e7; /* Đường kẻ dọc */
+}
+
+/* Khối đầu tiên không cần đường kẻ dọc bên trái */
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
 .stat-item:first-child {
   padding-left: 0;
   border-left: none;
 }
 
+<<<<<<< HEAD
 .stat-item h4 {
   font-size: 3rem;
 =======
 .stat-item h4 {
   font-size: 2.5rem;
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+.stat-item h4 {
+  font-size: 3rem;
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
   color: var(--garblo-black);
   margin: 0;
   line-height: 1;
@@ -176,9 +208,12 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /* Responsive cho điện thoại */
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
 @media (width <= 996px) {
   .section-wrapper {
     grid-template-columns: 1fr;
@@ -195,7 +230,8 @@
 
   .image-col {
     order: 2;
-  } /* Trên điện thoại đẩy ảnh xuống dưới */
+  }
+
   .text-col {
     order: 1;
   }
@@ -207,6 +243,9 @@
 
   .stats-grid {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
     flex-direction: column;
     gap: 1.5rem;
   }
@@ -221,8 +260,11 @@
   .stat-item:first-child {
     border-top: none;
     padding-top: 0;
+<<<<<<< HEAD
 =======
     gap: 1rem;
 >>>>>>> 74fa2db (feat(website): update about us section with new content)
+=======
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
   }
 }

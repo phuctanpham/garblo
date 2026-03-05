@@ -4,12 +4,17 @@
   position: relative;
   background-color: var(--garblo-white);
 <<<<<<< HEAD
+<<<<<<< HEAD
   padding: 0 2rem;
   min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
 =======
   padding: 4rem 2rem;
   min-height: 85vh;
 >>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
+=======
+  padding: 0 2rem;
+  min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
+>>>>>>> 30701e0 (feat(website): add new section and update existing components)
   display: flex;
   align-items: center;
   justify-content: center;
