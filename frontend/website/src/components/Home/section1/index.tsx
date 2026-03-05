@@ -8,7 +8,6 @@ export default function Section1(): JSX.Element {
     <section className={styles['hero-container']}>
       <div className={styles['hero-wrapper']}>
         <div className={styles['left-content']}>
-          {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
           <h1 className={styles.title}>
             <span className={styles.highlight}>Revolutionize</span> <br />
             Your Fashion Store.
@@ -28,13 +27,11 @@ export default function Section1(): JSX.Element {
           </div>
         </div>
 
-        {/* CỘT PHẢI: Hình ảnh minh họa */}
-        {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
-          {/* Đã thay bằng ảnh tĩnh chất lượng cao, sang trọng, không bao giờ bị lỗi */}
+          {/* Ảnh mới: Mang tính chất công nghệ AI quét 3D quần áo/cơ thể */}
           <img
-            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop"
-            alt="Garblo Modern Fashion Retail"
+            src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2000&auto=format&fit=crop"
+            alt="Garblo AI Fashion Tech"
             className={styles['mockup-image']}
           />
         </div>

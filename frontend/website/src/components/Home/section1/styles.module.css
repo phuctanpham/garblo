@@ -3,8 +3,8 @@
 .hero-container {
   position: relative;
   background-color: var(--garblo-white);
-  padding: 4rem 2rem;
-  min-height: 85vh;
+  padding: 0 2rem;
+  min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
   display: flex;
   align-items: center;
   justify-content: center;
