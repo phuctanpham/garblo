@@ -63,3 +63,6 @@
 # Private KeyKey
 **/key.pem
 **/passphare.txt
+
+# Uploaded files, image,...
+**/uploads/*
