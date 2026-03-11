@@ -4,6 +4,7 @@ import { uploadItem, getItems } from '../controllers/itemController'
 
 const router = Router()
 <<<<<<< HEAD
+<<<<<<< HEAD
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -18,6 +19,9 @@ const upload = multer({
     }
   },
 })
+=======
+const upload = multer({ storage: multer.memoryStorage() })
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 const upload = multer({ storage: multer.memoryStorage() })
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)

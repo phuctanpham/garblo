@@ -1,9 +1,15 @@
 import 'dotenv/config'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import path from 'path'
 import multer from 'multer'
+=======
+import express from 'express'
+import cors from 'cors'
+import path from 'path'
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 import express from 'express'
 import cors from 'cors'
@@ -28,6 +34,7 @@ app.use('/api/outfits', outfitRoutes)
 app.get('/health', (_req, res) => res.json({ status: 'ok' }))
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Centralized error handler: maps Multer errors (incl. fileFilter rejections) to 400
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   if (err instanceof multer.MulterError) {
@@ -37,6 +44,8 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).json({ error: err.message })
 })
 
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 connectDB()

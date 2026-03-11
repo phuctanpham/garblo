@@ -20,6 +20,7 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!Types.ObjectId.isValid(modelId)) {
       res.status(400).json({ error: 'Invalid modelId' })
       return
@@ -31,6 +32,8 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       return
     }
 
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const [model, items] = await Promise.all([
@@ -47,10 +50,13 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       return
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (items.length !== itemIds.length) {
       res.status(404).json({ error: 'One or more items not found' })
       return
     }
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 

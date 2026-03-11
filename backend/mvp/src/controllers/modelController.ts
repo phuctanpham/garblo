@@ -6,6 +6,7 @@ import { createStorage } from '../services/storage/storageFactory'
 const storage = createStorage()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 const ALLOWED_MIME_TYPES = new Set<string>([
   'image/jpeg',
   'image/png',
@@ -19,6 +20,8 @@ const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 // 5 MB
 
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 export async function uploadModel(req: Request, res: Response): Promise<void> {
   try {
     if (!req.file) {
@@ -26,6 +29,7 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
     const { mimetype, originalname, size } = req.file
     const ext = (path.extname(originalname) || '.jpg').toLowerCase()
@@ -48,12 +52,19 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
 =======
     const ext = path.extname(req.file.originalname) || '.jpg'
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+    const ext = path.extname(req.file.originalname) || '.jpg'
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const filename = `model-${Date.now()}${ext}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
 <<<<<<< HEAD
+<<<<<<< HEAD
       mimetype,
+=======
+      mimetype: req.file.mimetype,
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
       mimetype: req.file.mimetype,
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)

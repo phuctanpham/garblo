@@ -13,6 +13,7 @@ export async function uploadItem(req: Request, res: Response): Promise<void> {
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     const allowedMimeTypes: Record<string, string> = {
       'image/png': '.png',
       'image/jpeg': '.jpg',
@@ -34,12 +35,17 @@ export async function uploadItem(req: Request, res: Response): Promise<void> {
       filename,
       mimetype: mimeType,
 =======
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const ext = path.extname(req.file.originalname) || '.png'
     const filename = `item-${Date.now()}${ext}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
       mimetype: req.file.mimetype,
+<<<<<<< HEAD
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     })
 

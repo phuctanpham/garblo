@@ -10,6 +10,7 @@ export class HFAdapter implements IImageGenerator {
     model = process.env.HF_MODEL ?? 'stabilityai/stable-diffusion-2',
   ) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     if (!apiKey || !apiKey.trim()) {
       throw new Error(
         'HFAdapter configuration error: HF_API_KEY (or provided apiKey) must be a non-empty string.',
@@ -22,6 +23,8 @@ export class HFAdapter implements IImageGenerator {
       )
     }
 
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     this.apiKey = apiKey
