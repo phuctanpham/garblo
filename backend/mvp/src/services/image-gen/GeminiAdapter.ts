@@ -13,6 +13,9 @@ export class GeminiAdapter implements IImageGenerator {
   ) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const normalizedApiKey = apiKey.trim()
     if (!normalizedApiKey) {
       throw new Error('GEMINI_API_KEY is not configured')
@@ -29,10 +32,13 @@ export class GeminiAdapter implements IImageGenerator {
     this.apiKey = apiKey
     this.model = model
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+<<<<<<< HEAD
 =======
     this.apiKey = apiKey
     this.model = model
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
   }
 
   async generate({ prompt }: GenerateOptions): Promise<Buffer> {
@@ -60,12 +66,16 @@ export class GeminiAdapter implements IImageGenerator {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
       const textPart = parts.find((p) => p.text)
       const detail = textPart?.text ? `: ${textPart.text}` : ''
       throw new Error(`Gemini returned no image in response${detail}`)
 =======
       throw new Error('Gemini returned no image in response')
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+<<<<<<< HEAD
 =======
       throw new Error('Gemini returned no image in response')
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
@@ -74,6 +84,8 @@ export class GeminiAdapter implements IImageGenerator {
       const detail = textPart?.text ? `: ${textPart.text}` : ''
       throw new Error(`Gemini returned no image in response${detail}`)
 >>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     }
 
     return Buffer.from(imagePart.inlineData.data, 'base64')

@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 require("dotenv").config();
 <<<<<<< HEAD
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+require('dotenv').config()
+=======
+require("dotenv").config();
+<<<<<<< HEAD
+>>>>>>> b61a30f (feat(mvp): implement backend MVP with controllers, services, and tests)
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 // The main API server is implemented in TypeScript. Use the npm scripts:
 //   npm run dev   – start in development mode with ts-node-dev
 //   npm run build – compile TypeScript to dist/
@@ -10,11 +19,21 @@ require("dotenv").config();
 console.error(
   'Run "npm run dev" or "npm start" to start the API server. ' +
     'See examples/azure-vision-prototype.js for the Azure Vision prototype.',
+<<<<<<< HEAD
 );
 process.exit(1);
 =======
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+<<<<<<< HEAD
+)
+process.exit(1)
+=======
+);
+process.exit(1);
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 const express = require("express");
 const multer = require("multer");
 const fs = require("fs");
@@ -106,6 +125,11 @@ app.post("/api/upload-clothing", upload.single("image"), async (req, res) => {
 
 app.listen(3000, () => console.log("Server running on port 3000"));
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+>>>>>>> b61a30f (feat(mvp): implement backend MVP with controllers, services, and tests)
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)

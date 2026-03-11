@@ -11,6 +11,9 @@ export class HFAdapter implements IImageGenerator {
   ) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     if (!apiKey || !apiKey.trim()) {
       throw new Error(
         'HFAdapter configuration error: HF_API_KEY (or provided apiKey) must be a non-empty string.',
@@ -25,8 +28,11 @@ export class HFAdapter implements IImageGenerator {
 
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+<<<<<<< HEAD
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     this.apiKey = apiKey
     this.model = model
   }

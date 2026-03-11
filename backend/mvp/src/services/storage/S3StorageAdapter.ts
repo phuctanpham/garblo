@@ -9,6 +9,9 @@ export class S3StorageAdapter implements IStorage {
   constructor(
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     bucket: string | undefined = process.env.S3_BUCKET,
     region: string | undefined = process.env.S3_REGION ?? 'us-east-1',
     accessKeyId: string | undefined = process.env.S3_ACCESS_KEY,
@@ -40,10 +43,21 @@ export class S3StorageAdapter implements IStorage {
     this.region = resolvedRegion
     this.client = new S3Client({
       region: resolvedRegion,
+<<<<<<< HEAD
       credentials: { accessKeyId: resolvedAccessKeyId, secretAccessKey: resolvedSecretAccessKey },
 =======
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+<<<<<<< HEAD
+      credentials: {
+        accessKeyId: resolvedAccessKeyId,
+        secretAccessKey: resolvedSecretAccessKey,
+      },
+=======
+      credentials: { accessKeyId: resolvedAccessKeyId, secretAccessKey: resolvedSecretAccessKey },
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     bucket = process.env.S3_BUCKET ?? '',
     region = process.env.S3_REGION ?? 'us-east-1',
     accessKeyId = process.env.S3_ACCESS_KEY ?? '',
@@ -55,9 +69,14 @@ export class S3StorageAdapter implements IStorage {
       region,
       credentials: { accessKeyId, secretAccessKey },
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+>>>>>>> b61a30f (feat(mvp): implement backend MVP with controllers, services, and tests)
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     })
   }
 

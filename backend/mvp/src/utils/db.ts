@@ -5,13 +5,19 @@ export async function connectDB(): Promise<void> {
   await mongoose.connect(uri)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
   // Log a sanitized URI to avoid leaking credentials in output
   const sanitized = uri.replace(/:\/\/[^@]+@/, '://<credentials>@')
   console.log('MongoDB connected:', sanitized)
 =======
   console.log('MongoDB connected:', uri)
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+<<<<<<< HEAD
 =======
   console.log('MongoDB connected:', uri)
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 }
