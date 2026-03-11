@@ -11,6 +11,7 @@ export class GeminiAdapter implements IImageGenerator {
     apiKey = process.env.GEMINI_API_KEY ?? '',
     model = process.env.GEMINI_MODEL ?? 'gemini-2.0-flash-exp-image-generation',
   ) {
+<<<<<<< HEAD
     const normalizedApiKey = apiKey.trim()
     if (!normalizedApiKey) {
       throw new Error('GEMINI_API_KEY is not configured')
@@ -23,6 +24,10 @@ export class GeminiAdapter implements IImageGenerator {
 
     this.apiKey = normalizedApiKey
     this.model = normalizedModel
+=======
+    this.apiKey = apiKey
+    this.model = model
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
   }
 
   async generate({ prompt }: GenerateOptions): Promise<Buffer> {
@@ -47,9 +52,13 @@ export class GeminiAdapter implements IImageGenerator {
     const parts = response.data.candidates[0]?.content?.parts ?? []
     const imagePart = parts.find((p) => p.inlineData)
     if (!imagePart?.inlineData) {
+<<<<<<< HEAD
       const textPart = parts.find((p) => p.text)
       const detail = textPart?.text ? `: ${textPart.text}` : ''
       throw new Error(`Gemini returned no image in response${detail}`)
+=======
+      throw new Error('Gemini returned no image in response')
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     }
 
     return Buffer.from(imagePart.inlineData.data, 'base64')

@@ -19,6 +19,7 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       return
     }
 
+<<<<<<< HEAD
     if (!Types.ObjectId.isValid(modelId)) {
       res.status(400).json({ error: 'Invalid modelId' })
       return
@@ -30,6 +31,8 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       return
     }
 
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const [model, items] = await Promise.all([
       Model.findById(modelId),
       Item.find({ _id: { $in: itemIds.map((id) => new Types.ObjectId(id)) } }),
@@ -43,10 +46,13 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       res.status(404).json({ error: 'No items found' })
       return
     }
+<<<<<<< HEAD
     if (items.length !== itemIds.length) {
       res.status(404).json({ error: 'One or more items not found' })
       return
     }
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 
     const itemNames = items.map((i) => i.name).join(', ')
     const prompt = `A fashion model wearing ${itemNames}. Professional fashion photography, clean white background, full body shot, high quality.`

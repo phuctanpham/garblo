@@ -3,6 +3,7 @@ import multer from 'multer'
 import { uploadModel, getModels } from '../controllers/modelController'
 
 const router = Router()
+<<<<<<< HEAD
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -18,6 +19,9 @@ const upload = multer({
     }
   },
 })
+=======
+const upload = multer({ storage: multer.memoryStorage() })
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 
 router.post('/', upload.single('image'), uploadModel)
 router.get('/', getModels)

@@ -5,6 +5,7 @@ import { createStorage } from '../services/storage/storageFactory'
 
 const storage = createStorage()
 
+<<<<<<< HEAD
 const ALLOWED_MIME_TYPES = new Set<string>([
   'image/jpeg',
   'image/png',
@@ -16,6 +17,8 @@ const ALLOWED_EXTENSIONS = new Set<string>(['.jpg', '.jpeg', '.png', '.gif', '.w
 
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 // 5 MB
 
+=======
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 export async function uploadModel(req: Request, res: Response): Promise<void> {
   try {
     if (!req.file) {
@@ -23,6 +26,7 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
+<<<<<<< HEAD
     const { mimetype, originalname, size } = req.file
     const ext = (path.extname(originalname) || '.jpg').toLowerCase()
 
@@ -41,11 +45,18 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
+=======
+    const ext = path.extname(req.file.originalname) || '.jpg'
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const filename = `model-${Date.now()}${ext}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
+<<<<<<< HEAD
       mimetype,
+=======
+      mimetype: req.file.mimetype,
+>>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     })
 
     const model = await Model.create({
