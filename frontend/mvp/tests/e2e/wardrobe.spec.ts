@@ -64,12 +64,17 @@ test.describe('Garblo Wardrobe', () => {
     await page.locator('[data-testid="generate-btn"]').click()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     // 8. Wait for the status badge to transition from "Generating…" to "AI Fitting Active",
     //    which confirms the API call completed successfully and the result was applied.
     await expect(page.locator('[data-testid="outfit-status-badge"]')).toContainText(
       'AI Fitting Active',
       { timeout: 90_000 },
     )
+=======
+    // 8. Wait for result (AI generation can take up to 60s)
+    await expect(page.locator('[data-testid="outfit-result"]')).toBeVisible({ timeout: 90_000 })
+>>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
 =======
     // 8. Wait for result (AI generation can take up to 60s)
     await expect(page.locator('[data-testid="outfit-result"]')).toBeVisible({ timeout: 90_000 })

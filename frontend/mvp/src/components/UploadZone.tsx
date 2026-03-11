@@ -1,5 +1,8 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { ChangeEvent } from 'react'
+=======
+>>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
 =======
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
 import { UploadCloud, Loader2 } from 'lucide-react'
@@ -20,7 +23,11 @@ export default function UploadZone({
   label = 'Upload',
 }: Props) {
 <<<<<<< HEAD
+<<<<<<< HEAD
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+=======
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+>>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
 =======
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
