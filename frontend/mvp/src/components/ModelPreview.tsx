@@ -26,11 +26,17 @@ export default function ModelPreview({ model, outfitUrl, generating }: Props) {
         <span
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           data-testid="outfit-status-badge"
 =======
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
 =======
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
+=======
+          data-testid="outfit-status-badge"
+=======
+>>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
+>>>>>>> acebc80 (feat(mvp): implement frontend MVP with pages, services, and tests)
           className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm border border-white/20 backdrop-blur-md ${
             generating
               ? 'bg-emerald-500 text-white'

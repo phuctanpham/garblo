@@ -17,13 +17,19 @@ export default defineConfig({
   // Assumes both servers are already running when running e2e tests.
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> acebc80 (feat(mvp): implement frontend MVP with pages, services, and tests)
   // Start them with:
   //   cd backend/mvp && npm run dev   (API on http://localhost:3001)
   //   cd frontend/mvp && npm run dev  (Vite on http://localhost:5173)
 =======
   // Start them with: cd backend && npm run dev  AND  cd frontend && npm run dev
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
+<<<<<<< HEAD
 =======
   // Start them with: cd backend && npm run dev  AND  cd frontend && npm run dev
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
+=======
+>>>>>>> acebc80 (feat(mvp): implement frontend MVP with pages, services, and tests)
 })
