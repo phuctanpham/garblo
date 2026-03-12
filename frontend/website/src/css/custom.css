@@ -36,3 +36,17 @@ h6 {
   font-family: var(--garblo-font-heading);
   letter-spacing: -0.02em;
 }
+/* --- ÉP CĂN GIỮA FOOTER --- */
+.footer {
+  text-align: center;
+}
+.footer__links {
+  justify-content: center !important;
+}
+.footer__col {
+  flex: none !important;
+  margin: 0 3rem; /* Tạo khoảng cách đều giữa các cột */
+}
+.footer__copyright {
+  text-align: center;
+}
