@@ -11,8 +11,6 @@
   overflow: hidden;
 }
 
-/* ... Giữ nguyên toàn bộ code cũ từ đoạn .hero-wrapper trở xuống ... */
-
 .hero-wrapper {
   max-width: 1280px;
   width: 100%;
