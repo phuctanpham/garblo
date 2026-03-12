@@ -7,21 +7,15 @@
 /* You can override the default Infima variables here. */
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
 
+/* frontend/website/src/css/custom.css */
 :root {
-  /* Màu sắc chủ đạo: Trắng - Đen - Indigo */
-  --ifm-color-primary: #6366f1;
-  --ifm-color-primary-dark: #4f46e5;
-  --ifm-color-primary-darker: #4338ca;
-  --ifm-color-primary-darkest: #3730a3;
-  --ifm-color-primary-light: #818cf8;
-  --ifm-color-primary-lighter: #a5b4fc;
-  --ifm-color-primary-lightest: #c7d2fe;
-  --garblo-black: #09090b;
-  --garblo-white: #fff;
-  --garblo-gray: #52525b;
-  --garblo-bg-light: #fafafa;
-
-  /* Font chữ */
+  --ifm-color-primary: #111827;
+  --ifm-color-primary-dark: #0f1522;
+  --ifm-color-primary-darker: #0e1420;
+  --ifm-color-primary-darkest: #0b101a;
+  --ifm-color-primary-light: #2c3445;
+  --ifm-color-primary-lighter: #3a4253;
+  --ifm-color-primary-lightest: #626a7a;
   --garblo-font-heading: 'Syne', sans-serif;
   --garblo-font-body: 'Plus Jakarta Sans', sans-serif;
 }
