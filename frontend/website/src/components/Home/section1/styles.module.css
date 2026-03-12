@@ -71,6 +71,20 @@
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s;
+<<<<<<< HEAD
+=======
+  border: 1px solid var(--garblo-black);
+}
+
+.primary-btn {
+  background-color: #111827 !important; /* Đã sửa thành mã màu cứng */
+  color: #ffffff !important;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+>>>>>>> e2378e7 (feat(website): add new sections to homepage)
   border: 1px solid #111827;
 }
 
