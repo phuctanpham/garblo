@@ -7,8 +7,15 @@
  */
 
 /* You can override the default Infima variables here. */
+<<<<<<< HEAD
 :root {
 <<<<<<< HEAD
+=======
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
+
+/* frontend/website/src/css/custom.css */
+:root {
+>>>>>>> f3c5824 (feat(blog): add new post on mastering body shapes with AI)
   --ifm-color-primary: #111827;
   --ifm-color-primary-dark: #0f1522;
   --ifm-color-primary-darker: #0e1420;
