@@ -79,18 +79,13 @@ const config: Config = {
       title: 'Garblo',
       logo: {
         alt: 'Garblo Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.svg', // Giữ nguyên tên file logo hiện tại của bạn
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
+        // Đã xóa 'Tutorial'
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/phuctanpham/garblo', // Link GitHub chuẩn
           label: 'GitHub',
           position: 'right',
         },
@@ -100,28 +95,11 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Garblo',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
-          ],
-        },
-        {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'X',
-              href: 'https://x.com/docusaurus',
+              label: 'Blog',
+              to: '/blog',
             },
           ],
         },
@@ -129,17 +107,13 @@ const config: Config = {
           title: 'More',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/phuctanpham/garblo',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © 2026 Garblo. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
