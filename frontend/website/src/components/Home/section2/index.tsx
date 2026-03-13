@@ -2,9 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles.module.css'
 
 // Component đếm số tự động
-const AnimatedStat = ({ endValue, suffix = '' }) => {
+interface AnimatedStatProps {
+  endValue: number
+  suffix?: string
+}
+
+const AnimatedStat = ({ endValue, suffix = '' }: AnimatedStatProps) => {
   const [value, setValue] = useState(0)
-  const ref = useRef(null)
+  const ref = useRef<HTMLHeadingElement | null>(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
