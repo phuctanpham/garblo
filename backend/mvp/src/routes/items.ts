@@ -1,4 +1,4 @@
-import { Router } from 'express'
+import { Router, Request, Response, NextFunction } from 'express'
 import multer from 'multer'
 import { uploadItem, getItems } from '../controllers/itemController'
 
@@ -18,7 +18,20 @@ const upload = multer({
   },
 })
 
-router.post('/', upload.single('image'), uploadItem)
+router.post(
+  '/',
+  (req: Request, res: Response, next: NextFunction) => {
+    upload.single('image')(req, res, (err: any) => {
+      if (err) {
+        if (err instanceof Error && err.message === 'Only image uploads are allowed') {
+          return res.status(400).json({ error: err.message })
+        }
+        return next(err)
+      }
+      return uploadItem(req, res, next)
+    })
+  }
+)
 router.get('/', getItems)
 
 export default router
