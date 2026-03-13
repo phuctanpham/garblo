@@ -1,6 +1,7 @@
 import 'dotenv/config'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import path from 'path'
@@ -15,6 +16,12 @@ import express from 'express'
 import cors from 'cors'
 import path from 'path'
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+import express, { NextFunction, Request, Response } from 'express'
+import cors from 'cors'
+import path from 'path'
+import multer from 'multer'
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
 import { connectDB } from './utils/db'
 import itemRoutes from './routes/items'
 import modelRoutes from './routes/models'
@@ -35,6 +42,9 @@ app.get('/health', (_req, res) => res.json({ status: 'ok' }))
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
 // Centralized error handler: maps Multer errors (incl. fileFilter rejections) to 400
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   if (err instanceof multer.MulterError) {
@@ -44,10 +54,13 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   res.status(500).json({ error: err.message })
 })
 
+<<<<<<< HEAD
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
 connectDB()
   .then(() => {
     app.listen(PORT, () => console.log(`API running on http://localhost:${PORT}`))

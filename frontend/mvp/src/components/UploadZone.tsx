@@ -1,10 +1,14 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import type { ChangeEvent } from 'react'
 =======
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
 =======
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
+=======
+import type { ChangeEvent } from 'react'
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
 import { UploadCloud, Loader2 } from 'lucide-react'
 
 interface Props {
@@ -24,6 +28,7 @@ export default function UploadZone({
 }: Props) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
 =======
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +36,9 @@ export default function UploadZone({
 =======
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 >>>>>>> 26a2d1d (feat(mvp): implement frontend MVP with pages, services, and tests)
+=======
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
     const file = e.target.files?.[0]
     if (file) {
       onUpload(file)

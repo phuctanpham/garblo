@@ -51,14 +51,20 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
     }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
     if (items.length !== itemIds.length) {
       res.status(404).json({ error: 'One or more items not found' })
       return
     }
+<<<<<<< HEAD
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
 =======
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
 
     const itemNames = items.map((i) => i.name).join(', ')
     const prompt = `A fashion model wearing ${itemNames}. Professional fashion photography, clean white background, full body shot, high quality.`

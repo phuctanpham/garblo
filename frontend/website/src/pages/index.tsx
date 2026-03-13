@@ -34,6 +34,7 @@ import Section2 from '@site/src/components/Home/section2'
 import React from 'react';
 import Layout from '@theme/Layout';
 
+<<<<<<< HEAD
 // Import đầy đủ cả 3 Section ở đây
 <<<<<<< HEAD
 import Section1 from '@site/src/components/Home/section1';
@@ -46,6 +47,7 @@ import Section3 from '@site/src/components/Home/section3';
 import Section1 from '@site/src/components/Home/section1'
 import Section2 from '@site/src/components/Home/section2'
 import Section3 from '@site/src/components/Home/section3'
+<<<<<<< HEAD
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
 import Section1 from '@site/src/components/HomepageFeatures/section1' // Import khối Section 1 vào
@@ -66,6 +68,13 @@ import Section1 from '@site/src/components/Home/section1'
 import Section2 from '@site/src/components/Home/section2'
 import Section3 from '@site/src/components/Home/section3'
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+=======
+=======
+// Import đầy đủ cả 2 Section ở đây
+import Section1 from '@site/src/components/Home/section1';
+import Section3 from '@site/src/components/Home/section3';
+>>>>>>> 4469530 (fix: apply all remaining PR review comment fixes)
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
 
 export default function Home(): JSX.Element {
   return (

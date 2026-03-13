@@ -59,6 +59,7 @@ export class GeminiAdapter implements IImageGenerator {
     if (!imagePart?.inlineData) {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       const textPart = parts.find((p) => p.text)
       const detail = textPart?.text ? `: ${textPart.text}` : ''
       throw new Error(`Gemini returned no image in response${detail}`)
@@ -68,6 +69,11 @@ export class GeminiAdapter implements IImageGenerator {
 =======
       throw new Error('Gemini returned no image in response')
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+      const textPart = parts.find((p) => p.text)
+      const detail = textPart?.text ? `: ${textPart.text}` : ''
+      throw new Error(`Gemini returned no image in response${detail}`)
+>>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
     }
 
     return Buffer.from(imagePart.inlineData.data, 'base64')
