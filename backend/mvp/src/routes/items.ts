@@ -14,7 +14,7 @@ const upload = multer({
     if (ALLOWED_IMAGE_MIME_TYPES.includes(file.mimetype)) {
       cb(null, true)
     } else {
-      cb(new multer.MulterError('LIMIT_UNEXPECTED_FILE', 'image'))
+      cb(null, false)
     }
   },
 })
