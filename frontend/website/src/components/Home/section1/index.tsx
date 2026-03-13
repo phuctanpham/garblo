@@ -31,6 +31,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -41,11 +42,15 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="/#section2" className={styles['secondary-btn']}>
 >>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
               Explore Solutions
             </Link>
           </div>
         </div>
 
+<<<<<<< HEAD
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 <<<<<<< HEAD
@@ -75,6 +80,11 @@ export default function Section1(): JSX.Element {
             className={styles['mockup-image']}
           />
 =======
+=======
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
+        {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
+        <div className={styles['right-content']}>
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
           <video
             autoPlay /* Tự động chạy khi load trang */
             loop /* Lặp lại liên tục */
@@ -86,7 +96,10 @@ export default function Section1(): JSX.Element {
           >
             <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
           </video>
+<<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
+=======
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
         </div>
       </div>
     </section>
