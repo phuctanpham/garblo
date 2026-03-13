@@ -17,10 +17,14 @@
     "express": "^4.19.2",
     "mongoose": "^8.5.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "multer": "1.4.5-lts.2"
 =======
     "multer": "^1.4.5-lts.1"
 >>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
+=======
+    "multer": "1.4.5-lts.2"
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
