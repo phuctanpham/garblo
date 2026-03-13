@@ -36,17 +36,32 @@ h6 {
   font-family: var(--garblo-font-heading);
   letter-spacing: -0.02em;
 }
+
 /* --- ÉP CĂN GIỮA FOOTER --- */
 .footer {
   text-align: center;
 }
-.footer__links {
+
+.footer-links {
   justify-content: center !important;
 }
-.footer__col {
+
+.footer-col {
   flex: none !important;
   margin: 0 3rem; /* Tạo khoảng cách đều giữa các cột */
 }
-.footer__copyright {
+
+.footer-copyright {
   text-align: center;
+}
+
+.primary-btn {
+  background-color: #111827 !important; /* Đã sửa thành mã màu cứng */
+  color: #fff !important;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s;
+  border: 1px solid #111827;
 }
