@@ -1,7 +1,113 @@
-.how-it-works {
-  height: 100vh;
+/* frontend/website/src/components/HomepageFeatures/section2/styles.module.css */
+
+.section-container {
+  padding: 6rem 2rem;
+  background-color: #fafafa; /* Màu xám rất nhạt để phân tách với nền trắng của Section 1 */
   display: flex;
   justify-content: center;
+  overflow: hidden;
+}
+
+.section-wrapper {
+  max-width: 1280px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
   align-items: center;
-  background-color: #f0f0f0;
+}
+
+/* --- CỘT TRÁI (HÌNH ẢNH) --- */
+.image-col {
+  order: 1; /* Đặt hình ảnh bên trái */
+  position: relative;
+}
+
+.image-frame {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgb(0 0 0 / 8%);
+  aspect-ratio: 4/5; /* Tỉ lệ chuẩn của ảnh thời trang */
+}
+
+.feature-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- CỘT PHẢI (VĂN BẢN) --- */
+.text-col {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.subtitle {
+  color: var(--ifm-color-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  color: var(--garblo-black);
+  margin: 0;
+}
+
+.description {
+  font-size: 1.15rem;
+  color: var(--garblo-gray);
+  line-height: 1.6;
+}
+
+/* --- KHỐI SỐ LIỆU --- */
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e4e4e7;
+}
+
+.stat-item h4 {
+  font-size: 2.5rem;
+  color: var(--garblo-black);
+  margin: 0;
+  line-height: 1;
+}
+
+.stat-item p {
+  font-size: 1rem;
+  color: var(--garblo-gray);
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+/* Responsive cho điện thoại */
+@media (width <= 996px) {
+  .section-wrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .image-col {
+    order: 2;
+  } /* Trên điện thoại đẩy ảnh xuống dưới */
+  .text-col {
+    order: 1;
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+
+  .stats-grid {
+    gap: 1rem;
+  }
 }
