@@ -12,6 +12,7 @@
 :root {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@600;700;800&display=swap');
 
@@ -36,6 +37,8 @@
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
 >>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
+=======
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
   --ifm-color-primary: #855b39;
   --ifm-color-primary-dark: #785133;
   --ifm-color-primary-darker: #714c30;
@@ -52,6 +55,8 @@
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
 =======
+=======
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
   --ifm-color-primary: #111827;
   --ifm-color-primary-dark: #0f1522;
   --ifm-color-primary-darker: #0e1420;
@@ -64,8 +69,25 @@
   --garblo-white: #ffffff;
   --garblo-black: #111827;
   --garblo-gray: #6b7280;
+<<<<<<< HEAD
 >>>>>>> 4469530 (fix: apply all remaining PR review comment fixes)
+<<<<<<< HEAD
 >>>>>>> 9614619 (fix: apply all remaining PR review comment fixes)
+=======
+=======
+=======
+  --ifm-color-primary: #855b39;
+  --ifm-color-primary-dark: #785133;
+  --ifm-color-primary-darker: #714c30;
+  --ifm-color-primary-darkest: #5d3e28;
+  --ifm-color-primary-light: #92653f;
+  --ifm-color-primary-lighter: #996a42;
+  --ifm-color-primary-lightest: #ad794c;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgb(0 0 0 / 10%);
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */

@@ -26,6 +26,7 @@ import Layout from '@theme/Layout';
 >>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 // Import đầy đủ cả 2 Section ở đây
 import Section1 from '@site/src/components/Home/section1';
 import Section3 from '@site/src/components/Home/section3';
@@ -61,6 +62,9 @@ import Section1 from '@site/src/components/Home/section1';
 import Section3 from '@site/src/components/Home/section3';
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
 =======
+=======
+<<<<<<< HEAD
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
 // Import đầy đủ cả 3 Section ở đây
 import Section1 from '@site/src/components/Home/section1'
 import Section2 from '@site/src/components/Home/section2'
@@ -88,6 +92,8 @@ import Section3 from '@site/src/components/Home/section3'
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 =======
 =======
+=======
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
 // Import đầy đủ cả 2 Section ở đây
 import Section1 from '@site/src/components/Home/section1';
 import Section3 from '@site/src/components/Home/section3';
@@ -130,8 +136,20 @@ import Layout from '@theme/Layout';
 import Section1 from '@site/src/components/Home/section1';
 import Section3 from '@site/src/components/Home/section3';
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
+<<<<<<< HEAD
 >>>>>>> a882223 (feat(website): add new sections to homepage)
+<<<<<<< HEAD
 >>>>>>> 085c72e (feat(website): add new sections to homepage)
+=======
+=======
+=======
+// Import đầy đủ cả 3 Section ở đây
+import Section1 from '@site/src/components/Home/section1'
+import Section2 from '@site/src/components/Home/section2'
+import Section3 from '@site/src/components/Home/section3'
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
 
 export default function Home(): JSX.Element {
   return (
@@ -141,6 +159,7 @@ export default function Home(): JSX.Element {
       
       <main>
         <Section1 />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -171,6 +190,8 @@ export default function Home(): JSX.Element {
 >>>>>>> 085c72e (feat(website): add new sections to homepage)
 =======
 >>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
         <div id="section2">
           <Section2 />
         </div>
@@ -183,6 +204,9 @@ export default function Home(): JSX.Element {
 =======
 <<<<<<< HEAD
 >>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+<<<<<<< HEAD
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
         <Section3 />
 <<<<<<< HEAD
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
@@ -200,6 +224,7 @@ export default function Home(): JSX.Element {
         </div>
         <Section3 />
 >>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+<<<<<<< HEAD
 =======
 =======
 
@@ -216,6 +241,8 @@ export default function Home(): JSX.Element {
         <Section3 />
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
 >>>>>>> 085c72e (feat(website): add new sections to homepage)
+=======
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
       </main>
       
     </Layout>

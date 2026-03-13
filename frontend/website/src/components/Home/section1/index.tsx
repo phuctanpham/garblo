@@ -58,6 +58,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -88,12 +89,16 @@ export default function Section1(): JSX.Element {
 >>>>>>> adce0d9 (refactor(website): adjust layout of virtual try-on section)
 =======
 >>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
             <Link to="/#section2" className={styles['secondary-btn']}>
 =======
 =======
 >>>>>>> a7330a9 (refactor(website): adjust layout of virtual try-on section)
 =======
 >>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
 <<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
@@ -117,13 +122,23 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="/#section2" className={styles['secondary-btn']}>
 >>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+<<<<<<< HEAD
 >>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+<<<<<<< HEAD
 >>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+=======
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
               Explore Solutions
             </Link>
           </div>
         </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -197,9 +212,13 @@ export default function Section1(): JSX.Element {
 >>>>>>> f350fa4 (refactor(website): remove unused component and update styles)
 =======
 >>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
         {/* CỘT PHẢI: Hình ảnh minh họa */}
 =======
 >>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+=======
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
 <<<<<<< HEAD
 =======
@@ -278,6 +297,11 @@ export default function Section1(): JSX.Element {
 =======
 =======
 =======
+=======
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
+        {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
+        <div className={styles['right-content']}>
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
           <video
             autoPlay /* Tự động chạy khi load trang */
             loop /* Lặp lại liên tục */
@@ -289,9 +313,18 @@ export default function Section1(): JSX.Element {
           >
             <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
           </video>
+<<<<<<< HEAD
 >>>>>>> c20a7f8 (feat(website): update hero section content and styles)
+<<<<<<< HEAD
 >>>>>>> 8aaad7c (feat(website): update hero section content and styles)
+<<<<<<< HEAD
 >>>>>>> c84ffce (feat(website): update hero section content and styles)
+=======
+=======
+=======
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 1482cc6 (fix: resolve broken anchor links and stylelint errors)
+>>>>>>> 6c552b6 (fix: resolve broken anchor links and stylelint errors)
         </div>
       </div>
     </section>
