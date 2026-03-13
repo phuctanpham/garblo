@@ -42,13 +42,13 @@ export default function Section3(): JSX.Element {
         <div className={styles['image-col']}>
           {/* Ảnh Before (Chiếc áo chụp phẳng) */}
           <img
-            src="/img/section3/before-suit.png"
+            src="img/section3/after-model.png"
             alt="Garment Flatlay Before"
             className={styles['img-before']}
           />
           {/* Ảnh After (Người mẫu AI mặc chiếc áo đó) */}
           <img
-            src="img/section3/after-model.png"
+            src="/img/section3/before-suit.png"
             alt="AI Generated Fashion Model"
             className={styles['img-after']}
           />
