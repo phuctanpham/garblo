@@ -13,6 +13,10 @@ export class GeminiAdapter implements IImageGenerator {
   ) {
     this.apiKey = apiKey
     this.model = model
+
+    if (!this.apiKey) {
+      throw new Error('GEMINI_API_KEY is required for GeminiAdapter but was not provided.')
+    }
   }
 
   async generate({ prompt }: GenerateOptions): Promise<Buffer> {
@@ -34,7 +38,15 @@ export class GeminiAdapter implements IImageGenerator {
       },
     )
 
-    const parts = response.data.candidates[0]?.content?.parts ?? []
+    if (
+      !response.data ||
+      !Array.isArray(response.data.candidates) ||
+      response.data.candidates.length === 0
+    ) {
+      throw new Error('Gemini API returned no candidates or an unexpected response shape')
+    }
+
+    const parts = response.data.candidates?.[0]?.content?.parts ?? []
     const imagePart = parts.find((p) => p.inlineData)
     if (!imagePart?.inlineData) {
       throw new Error('Gemini returned no image in response')
