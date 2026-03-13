@@ -24,6 +24,7 @@ export default function ModelPreview({ model, outfitUrl, generating }: Props) {
       {/* Status badge */}
       <div className="absolute top-6 left-6">
         <span
+          data-testid="outfit-status-badge"
           className={`px-4 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-sm border border-white/20 backdrop-blur-md ${
             generating
               ? 'bg-emerald-500 text-white'
