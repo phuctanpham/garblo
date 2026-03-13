@@ -57,6 +57,7 @@ export default function Section1(): JSX.Element {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -85,10 +86,14 @@ export default function Section1(): JSX.Element {
 =======
 =======
 >>>>>>> adce0d9 (refactor(website): adjust layout of virtual try-on section)
+=======
+>>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
             <Link to="/#section2" className={styles['secondary-btn']}>
 =======
 =======
 >>>>>>> a7330a9 (refactor(website): adjust layout of virtual try-on section)
+=======
+>>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
 <<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
@@ -103,13 +108,23 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="#section2" className={styles['secondary-btn']}>
 >>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> a7330a9 (refactor(website): adjust layout of virtual try-on section)
+<<<<<<< HEAD
 >>>>>>> adce0d9 (refactor(website): adjust layout of virtual try-on section)
+=======
+=======
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+>>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
+>>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
               Explore Solutions
             </Link>
           </div>
         </div>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -180,7 +195,11 @@ export default function Section1(): JSX.Element {
 >>>>>>> 1433ee8 (feat(website): add new section and update existing components)
 =======
 >>>>>>> f350fa4 (refactor(website): remove unused component and update styles)
+=======
+>>>>>>> 3ae5a14 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
         {/* CỘT PHẢI: Hình ảnh minh họa */}
+=======
+>>>>>>> 7bf249a (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
 <<<<<<< HEAD
 =======
