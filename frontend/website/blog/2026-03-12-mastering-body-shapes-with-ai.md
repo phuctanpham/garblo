@@ -7,8 +7,6 @@ tags: [Fashion Guide, Virtual Try-On, AI Recommendations]
 
 We've all been there: you see a stunning dress online, add it to your cart, and wait excitedly for its arrival. But when you try it on, the proportions feel entirely wrong. The culprit? E-commerce has traditionally forced us to buy clothes based on how they look on a standard model, rather than how they complement our unique body shapes.
 
-<!-- truncate -->
-
 Understanding your body shape is the foundation of great personal style. Today, we're breaking down the four primary body silhouettes and exploring how AI technology is finally bridging the gap between digital catalogs and the perfect physical fit.
 
 ## The 4 Core Body Shapes (And What Flatters Them)

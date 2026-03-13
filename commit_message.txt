@@ -1,0 +1,5 @@
+feat(appConsumer): add virtual try-on section
+
+Adds a new virtual try-on section to the application.
+
+by nghibg

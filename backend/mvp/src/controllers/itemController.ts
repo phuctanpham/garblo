@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import path from 'path'
 import { Item } from '../models/Item'
 import { createStorage } from '../services/storage/storageFactory'
 
@@ -12,12 +11,26 @@ export async function uploadItem(req: Request, res: Response): Promise<void> {
       return
     }
 
-    const ext = path.extname(req.file.originalname) || '.png'
-    const filename = `item-${Date.now()}${ext}`
+    const allowedMimeTypes: Record<string, string> = {
+      'image/png': '.png',
+      'image/jpeg': '.jpg',
+      'image/jpg': '.jpg',
+      'image/webp': '.webp',
+    }
+
+    const mimeType = req.file.mimetype
+    const normalizedExt = allowedMimeTypes[mimeType]
+
+    if (!normalizedExt) {
+      res.status(400).json({ error: 'Unsupported file type' })
+      return
+    }
+
+    const filename = `item-${Date.now()}${normalizedExt}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
-      mimetype: req.file.mimetype,
+      mimetype: mimeType,
     })
 
     const item = await Item.create({
