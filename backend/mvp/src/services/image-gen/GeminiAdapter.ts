@@ -11,8 +11,18 @@ export class GeminiAdapter implements IImageGenerator {
     apiKey = process.env.GEMINI_API_KEY ?? '',
     model = process.env.GEMINI_MODEL ?? 'gemini-2.0-flash-exp-image-generation',
   ) {
-    this.apiKey = apiKey
-    this.model = model
+    const normalizedApiKey = apiKey.trim()
+    if (!normalizedApiKey) {
+      throw new Error('GEMINI_API_KEY is not configured')
+    }
+
+    const normalizedModel = model.trim()
+    if (!normalizedModel) {
+      throw new Error('GEMINI_MODEL is not configured')
+    }
+
+    this.apiKey = normalizedApiKey
+    this.model = normalizedModel
   }
 
   async generate({ prompt }: GenerateOptions): Promise<Buffer> {
