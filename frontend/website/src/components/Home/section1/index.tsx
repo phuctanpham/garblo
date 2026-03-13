@@ -27,6 +27,7 @@ export default function Section1(): JSX.Element {
           </div>
         </div>
 
+        {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
           <video
