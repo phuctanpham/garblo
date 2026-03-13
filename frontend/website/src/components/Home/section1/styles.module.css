@@ -3,8 +3,8 @@
 .hero-container {
   position: relative;
   background-color: var(--garblo-white);
-  padding: 0 2rem;
-  min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
+  padding: 4rem 2rem;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -51,17 +51,6 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
-}
-
-.primary-btn {
-  background-color: var(--garblo-black);
-  color: #fff !important;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s;
-  border: 1px solid var(--garblo-black);
 }
 
 .primary-btn {

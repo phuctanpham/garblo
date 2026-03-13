@@ -8,6 +8,7 @@ export default function Section1(): JSX.Element {
     <section className={styles['hero-container']}>
       <div className={styles['hero-wrapper']}>
         <div className={styles['left-content']}>
+          {/* Tiêu đề mới: Đưa chữ Revolutionize lên đầu, bôi màu xanh và bỏ chữ "with AI" */}
           <h1 className={styles.title}>
             <span className={styles.highlight}>Revolutionize</span> <br />
             Your Fashion Store.
@@ -21,7 +22,7 @@ export default function Section1(): JSX.Element {
             <Link to="/" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="#section2" className={styles['secondary-btn']}>
+            <Link to="#features" className={styles['secondary-btn']}>
               Explore Solutions
             </Link>
           </div>
@@ -30,17 +31,12 @@ export default function Section1(): JSX.Element {
         {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
-          <video
-            autoPlay /* Tự động chạy khi load trang */
-            loop /* Lặp lại liên tục */
-            muted /* Bắt buộc phải tắt tiếng thì trình duyệt mới cho autoPlay */
-            playsInline /* Hỗ trợ chạy mượt trên Safari/iPhone */
-            className={
-              styles['mockup-image']
-            } /* Giữ nguyên class này để video vừa khít cái khung */
-          >
-            <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
-          </video>
+          {/* Đã thay bằng ảnh tĩnh chất lượng cao, sang trọng, không bao giờ bị lỗi */}
+          <img
+            src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?q=80&w=2670&auto=format&fit=crop"
+            alt="Garblo Modern Fashion Retail"
+            className={styles['mockup-image']}
+          />
         </div>
       </div>
     </section>
