@@ -15,7 +15,7 @@ const AnimatedStat = ({ endValue, suffix = '' }) => {
           const step = endValue / (duration / 16)
           const timer = setInterval(() => {
             start += step
-            if (start <= endValue) {
+            if ((step > 0 && start >= endValue) || (step < 0 && start <= endValue)) {
               setValue(endValue)
               clearInterval(timer)
             } else {
