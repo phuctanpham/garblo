@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* frontend/website/src/pages/index.tsx */
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -19,12 +20,13 @@ import Section1 from '@site/src/components/Home/section1' // Import khối Secti
 import Section2 from '@site/src/components/Home/section2'
 >>>>>>> 2fe9656 (refactor(website): change props of section2 component)
 =======
+=======
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
 import React from 'react';
 import Layout from '@theme/Layout';
 
 // Import đầy đủ cả 3 Section ở đây
 import Section1 from '@site/src/components/Home/section1';
-import Section2 from '@site/src/components/Home/section2';
 import Section3 from '@site/src/components/Home/section3';
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
 
@@ -38,6 +40,7 @@ export default function Home(): JSX.Element {
         <Section1 />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <Section3 />
 =======
 
@@ -46,6 +49,8 @@ export default function Home(): JSX.Element {
 >>>>>>> 2fe9656 (refactor(website): change props of section2 component)
 =======
         <Section2 />
+=======
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
         <Section3 />
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
       </main>

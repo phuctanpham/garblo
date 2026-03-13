@@ -30,6 +30,7 @@ export default function Section1(): JSX.Element {
             </Link>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Link to="#section2" className={styles['secondary-btn']}>
 =======
             <Link to="#features" className={styles['secondary-btn']}>
@@ -37,12 +38,14 @@ export default function Section1(): JSX.Element {
 =======
             <Link to="#section2" className={styles['secondary-btn']}>
 >>>>>>> e76b32f (refactor(website): adjust layout of virtual try-on section)
+=======
+            <Link to="/#section2" className={styles['secondary-btn']}>
+>>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
               Explore Solutions
             </Link>
           </div>
         </div>
 
-        {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
 <<<<<<< HEAD
