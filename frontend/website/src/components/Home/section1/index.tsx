@@ -21,13 +21,12 @@ export default function Section1(): JSX.Element {
             <Link to="/" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="#section2" className={styles['secondary-btn']}>
+            <Link to="/#section2" className={styles['secondary-btn']}>
               Explore Solutions
             </Link>
           </div>
         </div>
 
-        {/* CỘT PHẢI: Hình ảnh minh họa */}
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
           <video
