@@ -12,6 +12,22 @@ export class S3StorageAdapter implements IStorage {
     accessKeyId = process.env.S3_ACCESS_KEY ?? '',
     secretAccessKey = process.env.S3_SECRET_KEY ?? '',
   ) {
+    if (!bucket) {
+      throw new Error(
+        'S3StorageAdapter configuration error: missing S3_BUCKET (bucket name must be provided).',
+      )
+    }
+    if (!accessKeyId) {
+      throw new Error(
+        'S3StorageAdapter configuration error: missing S3_ACCESS_KEY (access key ID must be provided).',
+      )
+    }
+    if (!secretAccessKey) {
+      throw new Error(
+        'S3StorageAdapter configuration error: missing S3_SECRET_KEY (secret access key must be provided).',
+      )
+    }
+
     this.bucket = bucket
     this.region = region
     this.client = new S3Client({
