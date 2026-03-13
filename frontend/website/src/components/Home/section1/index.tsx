@@ -21,19 +21,26 @@ export default function Section1(): JSX.Element {
             <Link to="/" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="#section2" className={styles['secondary-btn']}>
+            <Link to="/#section2" className={styles['secondary-btn']}>
               Explore Solutions
             </Link>
           </div>
         </div>
 
         {/* CỘT PHẢI: Hình ảnh minh họa */}
+        {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
-          <img
-            src="https://images.unsplash.com/photo-1549062572-544a64fb0c56?q=80&w=2574&auto=format&fit=crop"
-            alt="Garblo AI Generated Fashion Lookbook"
-            className={styles['mockup-image']}
-          />
+          <video
+            autoPlay /* Tự động chạy khi load trang */
+            loop /* Lặp lại liên tục */
+            muted /* Bắt buộc phải tắt tiếng thì trình duyệt mới cho autoPlay */
+            playsInline /* Hỗ trợ chạy mượt trên Safari/iPhone */
+            className={
+              styles['mockup-image']
+            } /* Giữ nguyên class này để video vừa khít cái khung */
+          >
+            <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </section>

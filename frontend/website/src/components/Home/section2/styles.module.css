@@ -25,26 +25,30 @@
   gap: 1.5rem;
 }
 
+/* ĐỔI THÀNH GIAO DIỆN TỐI (DARK MODE) ĐỂ TẠO TƯƠNG PHẢN */
 .feature-card {
-  background: var(--garblo-white);
+  background: #111827; /* Màu đen nhám sang trọng */
   padding: 2rem;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgb(0 0 0 / 4%);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 8%);
   display: flex;
   gap: 1.5rem;
   align-items: flex-start;
-  border: 1px solid #f4f4f5;
+  border: 1px solid #1f2937;
   transition: all 0.3s ease;
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  border-color: #c7d2fe; /* Viền màu Indigo nhạt khi hover */
-  box-shadow: 0 20px 40px rgb(99 102 241 / 8%);
+  border-color: var(
+    --ifm-color-primary
+  ); /* Đổi viền sang màu xanh Indigo khi trỏ chuột */
+
+  box-shadow: 0 20px 40px rgb(99 102 241 / 15%);
 }
 
 .icon-box {
-  background: #eef2ff;
+  background: rgb(255 255 255 / 10%); /* Nền mờ cho icon */
   font-size: 1.75rem;
   width: 60px;
   height: 60px;
@@ -58,12 +62,12 @@
 .feature-info h3 {
   font-size: 1.25rem;
   margin: 0 0 0.5rem;
-  color: var(--garblo-black);
+  color: #fff; /* Chữ tiêu đề màu trắng */
 }
 
 .feature-info p {
   margin: 0;
-  color: var(--garblo-gray);
+  color: #9ca3af; /* Chữ mô tả màu xám sáng */
   line-height: 1.5;
   font-size: 1rem;
 }
@@ -117,9 +121,10 @@
   border-left: none;
 }
 
+/* ĐỔI SỐ LIỆU THÀNH MÀU ĐỎ NỔI BẬT */
 .stat-item h4 {
   font-size: 3rem;
-  color: var(--garblo-black);
+  color: #e11d48; /* Màu đỏ nổi bật */
   margin: 0;
   line-height: 1;
 }
