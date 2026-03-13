@@ -47,7 +47,9 @@ export class GeminiAdapter implements IImageGenerator {
     const parts = response.data.candidates[0]?.content?.parts ?? []
     const imagePart = parts.find((p) => p.inlineData)
     if (!imagePart?.inlineData) {
-      throw new Error('Gemini returned no image in response')
+      const textPart = parts.find((p) => p.text)
+      const detail = textPart?.text ? `: ${textPart.text}` : ''
+      throw new Error(`Gemini returned no image in response${detail}`)
     }
 
     return Buffer.from(imagePart.inlineData.data, 'base64')

@@ -1,7 +1,8 @@
 import 'dotenv/config'
-import express from 'express'
+import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import path from 'path'
+import multer from 'multer'
 import { connectDB } from './utils/db'
 import itemRoutes from './routes/items'
 import modelRoutes from './routes/models'
@@ -19,6 +20,15 @@ app.use('/api/models', modelRoutes)
 app.use('/api/outfits', outfitRoutes)
 
 app.get('/health', (_req, res) => res.json({ status: 'ok' }))
+
+// Centralized error handler: maps Multer errors (incl. fileFilter rejections) to 400
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+  if (err instanceof multer.MulterError) {
+    res.status(400).json({ error: err.message })
+    return
+  }
+  res.status(500).json({ error: err.message })
+})
 
 connectDB()
   .then(() => {

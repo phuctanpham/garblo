@@ -5,7 +5,6 @@ import Layout from '@theme/Layout';
 // Import đầy đủ cả 2 Section ở đây
 import Section1 from '@site/src/components/Home/section1';
 import Section3 from '@site/src/components/Home/section3';
-import HowItWorks from '@site/src/components/Home/HowItWorks'
 
 export default function Home(): JSX.Element {
   return (
@@ -16,7 +15,6 @@ export default function Home(): JSX.Element {
       <main>
         <Section1 />
         <Section3 />
-        <HowItWorks />
       </main>
       
     </Layout>

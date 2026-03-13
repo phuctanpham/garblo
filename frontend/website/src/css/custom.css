@@ -18,6 +18,9 @@
   --ifm-color-primary-lightest: #626a7a;
   --garblo-font-heading: 'Syne', sans-serif;
   --garblo-font-body: 'Plus Jakarta Sans', sans-serif;
+  --garblo-white: #ffffff;
+  --garblo-black: #111827;
+  --garblo-gray: #6b7280;
 }
 
 /* Áp dụng Font cho toàn trang */

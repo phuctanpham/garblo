@@ -1,3 +1,4 @@
+import type { ChangeEvent } from 'react'
 import { UploadCloud, Loader2 } from 'lucide-react'
 
 interface Props {
@@ -15,7 +16,7 @@ export default function UploadZone({
   accept = 'image/*',
   label = 'Upload',
 }: Props) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       onUpload(file)
