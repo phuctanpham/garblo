@@ -19,6 +19,17 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       return
     }
 
+    if (!Types.ObjectId.isValid(modelId)) {
+      res.status(400).json({ error: 'Invalid modelId' })
+      return
+    }
+
+    const invalidItemId = itemIds.find((id) => !Types.ObjectId.isValid(id))
+    if (invalidItemId !== undefined) {
+      res.status(400).json({ error: `Invalid itemId: ${invalidItemId}` })
+      return
+    }
+
     const [model, items] = await Promise.all([
       Model.findById(modelId),
       Item.find({ _id: { $in: itemIds.map((id) => new Types.ObjectId(id)) } }),

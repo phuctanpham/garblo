@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import path from 'path'
 import { Model } from '../models/Model'
 import { createStorage } from '../services/storage/storageFactory'
+import { ALLOWED_IMAGE_MIME_TYPES, ALLOWED_IMAGE_EXTENSIONS } from '../config/fileValidation'
 
 const storage = createStorage()
 
@@ -12,7 +13,17 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
-    const ext = path.extname(req.file.originalname) || '.jpg'
+    if (!ALLOWED_IMAGE_MIME_TYPES.includes(req.file.mimetype)) {
+      res.status(400).json({ error: 'Only image files are allowed (jpeg, png, webp, gif)' })
+      return
+    }
+
+    const ext = path.extname(req.file.originalname).toLowerCase()
+    if (!ALLOWED_IMAGE_EXTENSIONS.has(ext)) {
+      res.status(400).json({ error: 'Only image files are allowed (jpeg, png, webp, gif)' })
+      return
+    }
+
     const filename = `model-${Date.now()}${ext}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,

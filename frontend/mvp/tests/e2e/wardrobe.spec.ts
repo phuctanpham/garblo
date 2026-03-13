@@ -63,7 +63,9 @@ test.describe('Garblo Wardrobe', () => {
     // 7. Generate outfit
     await page.locator('[data-testid="generate-btn"]').click()
 
-    // 8. Wait for result (AI generation can take up to 60s)
-    await expect(page.locator('[data-testid="outfit-result"]')).toBeVisible({ timeout: 90_000 })
+    // 8. Wait for "AI Fitting Active" badge – confirms generation completed successfully
+    await expect(page.locator('span:has-text("AI Fitting Active")')).toBeVisible({
+      timeout: 90_000,
+    })
   })
 })
