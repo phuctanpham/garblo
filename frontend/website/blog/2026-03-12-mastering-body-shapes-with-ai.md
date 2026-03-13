@@ -6,6 +6,9 @@ tags: [Fashion Guide, Virtual Try-On, AI Recommendations]
 ---
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 <!-- truncate -->`
 
 We've all been there: you see a stunning dress online, add it to your cart, and wait excitedly for its arrival. But when you try it on, the proportions feel entirely wrong. The culprit? E-commerce has traditionally forced us to buy clothes based on how they look on a standard model, rather than how they complement our unique body shapes.
@@ -72,10 +75,14 @@ Instead of mentally calculating how a garment _might_ look, Garblo's AI allows s
 ### The Future of Shopping is Personal
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 By integrating Garblo's Virtual Try-On into your store, you aren't just selling clothes; you are providing a personalized styling experience.. When customers can visualize the perfect fit, confidence replaces hesitation, cart abandonment drops, and return rates plummet.
 =======
 By integrating Garblo's Virtual Try-On into your store, you aren't just selling clothes; you are providing a personalized styling experience. When customers can visualize the perfect fit, confidence replaces hesitation, cart abandonment drops, and return rates plummet.
 >>>>>>> f3c5824 (feat(blog): add new post on mastering body shapes with AI)
+=======
+By integrating Garblo's Virtual Try-On into your store, you aren't just selling clothes; you are providing a personalized styling experience.. When customers can visualize the perfect fit, confidence replaces hesitation, cart abandonment drops, and return rates plummet.
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 
 It’s time to stop guessing and start visualizing.
 

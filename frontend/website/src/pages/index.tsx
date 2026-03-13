@@ -35,6 +35,7 @@ import React from 'react';
 import Layout from '@theme/Layout';
 
 // Import đầy đủ cả 3 Section ở đây
+<<<<<<< HEAD
 import Section1 from '@site/src/components/Home/section1';
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -60,6 +61,11 @@ import Section2 from '@site/src/components/Home/section2';
 >>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
 import Section3 from '@site/src/components/Home/section3';
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
+=======
+import Section1 from '@site/src/components/Home/section1'
+import Section2 from '@site/src/components/Home/section2'
+import Section3 from '@site/src/components/Home/section3'
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
 
 export default function Home(): JSX.Element {
   return (
@@ -69,6 +75,7 @@ export default function Home(): JSX.Element {
       
       <main>
         <Section1 />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -102,6 +109,12 @@ export default function Home(): JSX.Element {
 >>>>>>> ce5e4d2 (chore(deps): bump the npm_and_yarn group across 3 directories with 5 updates (#11))
         <Section3 />
 >>>>>>> e2378e7 (feat(website): add new sections to homepage)
+=======
+        <div id="section2">
+          <Section2 />
+        </div>
+        <Section3 />
+>>>>>>> 5074470 (fix: resolve broken anchor links and stylelint errors)
       </main>
       
     </Layout>
