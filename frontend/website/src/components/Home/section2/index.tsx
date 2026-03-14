@@ -2,15 +2,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles.module.css'
 
 // Component đếm số tự động
-interface AnimatedStatProps {
-  endValue: number
-  suffix?: string
-}
-
-const AnimatedStat = ({ endValue, suffix = '' }: AnimatedStatProps) => {
+const AnimatedStat = ({ endValue, suffix = '' }) => {
   const [value, setValue] = useState(0)
-  const ref = useRef<HTMLHeadingElement | null>(null)
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
+  const ref = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,12 +13,11 @@ const AnimatedStat = ({ endValue, suffix = '' }: AnimatedStatProps) => {
           let start = 0
           const duration = 2000
           const step = endValue / (duration / 16)
-          timerRef.current = setInterval(() => {
+          const timer = setInterval(() => {
             start += step
-            if (step > 0 ? start >= endValue : start <= endValue) {
+            if (start <= endValue) {
               setValue(endValue)
-              clearInterval(timerRef.current!)
-              timerRef.current = null
+              clearInterval(timer)
             } else {
               setValue(Math.round(start))
             }
@@ -36,13 +29,7 @@ const AnimatedStat = ({ endValue, suffix = '' }: AnimatedStatProps) => {
     )
 
     if (ref.current) observer.observe(ref.current)
-    return () => {
-      observer.disconnect()
-      if (timerRef.current !== null) {
-        clearInterval(timerRef.current)
-        timerRef.current = null
-      }
-    }
+    return () => observer.disconnect()
   }, [endValue])
 
   return (
@@ -55,7 +42,7 @@ const AnimatedStat = ({ endValue, suffix = '' }: AnimatedStatProps) => {
 
 export default function Section2(): JSX.Element {
   return (
-    <section className={styles['section-container']}>
+    <section id="section2" className={styles['section-container']}>
       <div className={styles['section-wrapper']}>
         {/* CỘT TRÁI: 3 Khối tính năng theo yêu cầu mới */}
         <div className={styles['features-list']}>
