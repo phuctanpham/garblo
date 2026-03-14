@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles.module.css'
 
+// Component đếm số tự động
 const AnimatedStat = ({ endValue, suffix = '' }) => {
   const [value, setValue] = useState(0)
   const ref = useRef(null)
@@ -41,8 +42,9 @@ const AnimatedStat = ({ endValue, suffix = '' }) => {
 
 export default function Section2(): JSX.Element {
   return (
-    <section className={styles['section-container']}>
+    <section id="section2" className={styles['section-container']}>
       <div className={styles['section-wrapper']}>
+        {/* CỘT TRÁI: 3 Khối tính năng theo yêu cầu mới */}
         <div className={styles['features-list']}>
           <div className={styles['feature-card']}>
             <div className={styles['icon-box']}>✨</div>
@@ -78,6 +80,7 @@ export default function Section2(): JSX.Element {
           </div>
         </div>
 
+        {/* CỘT PHẢI: Nội dung và Số liệu đếm ngược */}
         <div className={styles['text-col']}>
           <div className={styles.subtitle}>Virtual Try-On Solution</div>
 
