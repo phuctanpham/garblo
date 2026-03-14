@@ -43,6 +43,10 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       res.status(404).json({ error: 'No items found' })
       return
     }
+    if (items.length !== itemIds.length) {
+      res.status(404).json({ error: 'One or more items not found' })
+      return
+    }
 
     const itemNames = items.map((i) => i.name).join(', ')
     const prompt = `A fashion model wearing ${itemNames}. Professional fashion photography, clean white background, full body shot, high quality.`

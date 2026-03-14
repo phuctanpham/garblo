@@ -1,4 +1,4 @@
-import { Router, Request, Response, NextFunction } from 'express'
+import { Router } from 'express'
 import multer from 'multer'
 import { uploadItem, getItems } from '../controllers/itemController'
 
@@ -9,29 +9,16 @@ const upload = multer({
     fileSize: 5 * 1024 * 1024, // 5MB max file size
     files: 1,
   },
-  fileFilter: (req, file, cb) => {
+  fileFilter: (_req, file, cb) => {
     if (file.mimetype && file.mimetype.startsWith('image/')) {
       cb(null, true)
     } else {
-      cb(new Error('Only image uploads are allowed'))
+      cb(new multer.MulterError('LIMIT_UNEXPECTED_FILE', file.fieldname))
     }
   },
 })
 
-router.post(
-  '/',
-  (req: Request, res: Response, next: NextFunction) => {
-    upload.single('image')(req, res, (err: any) => {
-      if (err) {
-        if (err instanceof Error && err.message === 'Only image uploads are allowed') {
-          return res.status(400).json({ error: err.message })
-        }
-        return next(err)
-      }
-      return uploadItem(req, res, next)
-    })
-  }
-)
+router.post('/', upload.single('image'), uploadItem)
 router.get('/', getItems)
 
 export default router
