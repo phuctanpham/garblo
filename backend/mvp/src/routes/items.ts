@@ -19,15 +19,17 @@ const upload = multer({
 })
 
 router.post('/', (req: Request, res: Response, next: NextFunction) => {
-  upload.single('image')(req, res, (err?: Error) => {
+  upload.single('image')(req, res, (err: unknown) => {
     if (err) {
       if (
         err instanceof Error &&
         err.message === 'Only image uploads are allowed'
       ) {
-        return res.status(400).json({ error: err.message })
+        res.status(400).json({ error: err.message })
+        return
       }
-      return next(err)
+      next(err)
+      return
     }
     uploadItem(req, res)
   })

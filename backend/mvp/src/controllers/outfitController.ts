@@ -49,6 +49,12 @@ export async function generateOutfit(
       res.status(404).json({ error: 'No items found' })
       return
     }
+    if (items.length !== itemIds.length) {
+      const foundIds = new Set(items.map((i) => String(i._id)))
+      const missingIds = itemIds.filter((id) => !foundIds.has(id))
+      res.status(404).json({ error: 'Some items not found', missingIds })
+      return
+    }
 
     const itemNames = items.map((i) => i.name).join(', ')
     const prompt = `A fashion model wearing ${itemNames}. Professional fashion photography, clean white background, full body shot, high quality.`
