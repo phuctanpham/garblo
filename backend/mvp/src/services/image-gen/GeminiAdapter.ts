@@ -11,8 +11,18 @@ export class GeminiAdapter implements IImageGenerator {
     apiKey = process.env.GEMINI_API_KEY ?? '',
     model = process.env.GEMINI_MODEL ?? 'gemini-2.0-flash-exp-image-generation',
   ) {
-    this.apiKey = apiKey
-    this.model = model
+    const normalizedApiKey = apiKey.trim()
+    if (!normalizedApiKey) {
+      throw new Error('GEMINI_API_KEY is not configured')
+    }
+
+    const normalizedModel = model.trim()
+    if (!normalizedModel) {
+      throw new Error('GEMINI_MODEL is not configured')
+    }
+
+    this.apiKey = normalizedApiKey
+    this.model = normalizedModel
   }
 
   async generate({ prompt }: GenerateOptions): Promise<Buffer> {
@@ -20,7 +30,12 @@ export class GeminiAdapter implements IImageGenerator {
 
     const response = await axios.post<{
       candidates: Array<{
-        content: { parts: Array<{ inlineData?: { data: string; mimeType: string }; text?: string }> }
+        content: {
+          parts: Array<{
+            inlineData?: { data: string; mimeType: string }
+            text?: string
+          }>
+        }
       }>
     }>(
       url,
@@ -37,7 +52,9 @@ export class GeminiAdapter implements IImageGenerator {
     const parts = response.data.candidates[0]?.content?.parts ?? []
     const imagePart = parts.find((p) => p.inlineData)
     if (!imagePart?.inlineData) {
-      throw new Error('Gemini returned no image in response')
+      const textPart = parts.find((p) => p.text)
+      const detail = textPart?.text ? `: ${textPart.text}` : ''
+      throw new Error(`Gemini returned no image in response${detail}`)
     }
 
     return Buffer.from(imagePart.inlineData.data, 'base64')

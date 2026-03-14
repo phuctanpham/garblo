@@ -9,11 +9,17 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
   ],
   // Assumes both servers are already running when running e2e tests.
-  // Start them with: cd backend && npm run dev  AND  cd frontend && npm run dev
+  // Start them with:
+  //   cd backend/mvp && npm run dev   (API on http://localhost:3001)
+  //   cd frontend/mvp && npm run dev  (Vite on http://localhost:5173)
 })
