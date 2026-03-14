@@ -12,7 +12,13 @@ const ALLOWED_MIME_TYPES = new Set<string>([
   'image/webp',
 ])
 
-const ALLOWED_EXTENSIONS = new Set<string>(['.jpg', '.jpeg', '.png', '.gif', '.webp'])
+const ALLOWED_EXTENSIONS = new Set<string>([
+  '.jpg',
+  '.jpeg',
+  '.png',
+  '.gif',
+  '.webp',
+])
 
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 // 5 MB
 

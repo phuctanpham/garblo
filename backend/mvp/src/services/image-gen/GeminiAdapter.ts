@@ -30,7 +30,12 @@ export class GeminiAdapter implements IImageGenerator {
 
     const response = await axios.post<{
       candidates: Array<{
-        content: { parts: Array<{ inlineData?: { data: string; mimeType: string }; text?: string }> }
+        content: {
+          parts: Array<{
+            inlineData?: { data: string; mimeType: string }
+            text?: string
+          }>
+        }
       }>
     }>(
       url,

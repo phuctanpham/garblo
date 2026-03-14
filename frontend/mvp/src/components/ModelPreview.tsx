@@ -9,7 +9,9 @@ interface Props {
 }
 
 export default function ModelPreview({ model, outfitUrl, generating }: Props) {
-  const src = outfitUrl ? resolveImageUrl(outfitUrl) : resolveImageUrl(model.imageUrl)
+  const src = outfitUrl
+    ? resolveImageUrl(outfitUrl)
+    : resolveImageUrl(model.imageUrl)
   const hasOutfit = Boolean(outfitUrl)
 
   return (
@@ -33,7 +35,11 @@ export default function ModelPreview({ model, outfitUrl, generating }: Props) {
                 : 'bg-white/80 text-black'
           }`}
         >
-          {generating ? 'Generating…' : hasOutfit ? 'AI Fitting Active' : 'Original Model'}
+          {generating
+            ? 'Generating…'
+            : hasOutfit
+              ? 'AI Fitting Active'
+              : 'Original Model'}
         </span>
       </div>
 

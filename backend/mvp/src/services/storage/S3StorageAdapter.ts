@@ -38,11 +38,18 @@ export class S3StorageAdapter implements IStorage {
     this.region = resolvedRegion
     this.client = new S3Client({
       region: resolvedRegion,
-      credentials: { accessKeyId: resolvedAccessKeyId, secretAccessKey: resolvedSecretAccessKey },
+      credentials: {
+        accessKeyId: resolvedAccessKeyId,
+        secretAccessKey: resolvedSecretAccessKey,
+      },
     })
   }
 
-  async save({ buffer, filename, mimetype = 'image/png' }: SaveOptions): Promise<string> {
+  async save({
+    buffer,
+    filename,
+    mimetype = 'image/png',
+  }: SaveOptions): Promise<string> {
     const key = `uploads/${filename}`
     await this.client.send(
       new PutObjectCommand({

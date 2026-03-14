@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import path from 'path'
 import { Item } from '../models/Item'
 import { createStorage } from '../services/storage/storageFactory'
 
