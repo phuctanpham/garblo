@@ -42,7 +42,7 @@ const AnimatedStat = ({ endValue, suffix = '' }) => {
 
 export default function Section2(): JSX.Element {
   return (
-    <section className={styles['section-container']}>
+    <section id="section2" className={styles['section-container']}>
       <div className={styles['section-wrapper']}>
         {/* CỘT TRÁI: 3 Khối tính năng theo yêu cầu mới */}
         <div className={styles['features-list']}>

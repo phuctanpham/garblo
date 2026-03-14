@@ -11,8 +11,6 @@
   overflow: hidden;
 }
 
-/* ... Giữ nguyên toàn bộ code cũ từ đoạn .hero-wrapper trở xuống ... */
-
 .hero-wrapper {
   max-width: 1280px;
   width: 100%;
@@ -54,14 +52,22 @@
 }
 
 .primary-btn {
-  background-color: #111827 !important; /* Đã sửa thành mã màu cứng */
+  background-color: #111827 !important;
   color: #fff !important;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.2s;
-  border: 1px solid var(--garblo-black);
+  border: 1px solid #111827;
+
+  /* Thêm lại transition mượt mà */
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-4px); /* Nút sẽ nảy lên 4px */
+  box-shadow: 0 10px 20px rgb(0 0 0 / 15%); /* Thêm bóng đổ cho sinh động */
+  background-color: #1f2937 !important;
 }
 
 .secondary-btn {
