@@ -56,8 +56,8 @@ h6 {
 }
 
 .primary-btn {
-  background-color: #111827 !important; /* Đã sửa thành mã màu cứng */
-  color: #fff !important;
+  background-color: #111827;
+  color: #fff;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 600;

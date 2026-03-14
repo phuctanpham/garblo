@@ -11,6 +11,7 @@
     pkgs.gnupg
     pkgs.openssh
     pkgs.inetutils
+    pkgs.sudo-rs
   ];
 
   # Environment variables
