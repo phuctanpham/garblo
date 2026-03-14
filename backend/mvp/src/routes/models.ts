@@ -3,11 +3,6 @@ import multer from 'multer'
 import { uploadModel, getModels } from '../controllers/modelController'
 
 const router = Router()
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 const upload = multer({
   storage: multer.memoryStorage(),
   limits: {
@@ -15,7 +10,12 @@ const upload = multer({
     files: 1,
   },
   fileFilter: (req, file, cb) => {
-    const allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp']
+    const allowedMimeTypes = [
+      'image/jpeg',
+      'image/png',
+      'image/gif',
+      'image/webp',
+    ]
     if (allowedMimeTypes.includes(file.mimetype)) {
       cb(null, true)
     } else {
@@ -23,15 +23,6 @@ const upload = multer({
     }
   },
 })
-=======
-const upload = multer({ storage: multer.memoryStorage() })
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-<<<<<<< HEAD
-=======
-const upload = multer({ storage: multer.memoryStorage() })
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 
 router.post('/', upload.single('image'), uploadModel)
 router.get('/', getModels)

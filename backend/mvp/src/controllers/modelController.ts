@@ -5,11 +5,6 @@ import { createStorage } from '../services/storage/storageFactory'
 
 const storage = createStorage()
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 const ALLOWED_MIME_TYPES = new Set<string>([
   'image/jpeg',
   'image/png',
@@ -17,17 +12,16 @@ const ALLOWED_MIME_TYPES = new Set<string>([
   'image/webp',
 ])
 
-const ALLOWED_EXTENSIONS = new Set<string>(['.jpg', '.jpeg', '.png', '.gif', '.webp'])
+const ALLOWED_EXTENSIONS = new Set<string>([
+  '.jpg',
+  '.jpeg',
+  '.png',
+  '.gif',
+  '.webp',
+])
 
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 // 5 MB
 
-=======
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-<<<<<<< HEAD
-=======
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
 export async function uploadModel(req: Request, res: Response): Promise<void> {
   try {
     if (!req.file) {
@@ -35,11 +29,6 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const { mimetype, originalname, size } = req.file
     const ext = (path.extname(originalname) || '.jpg').toLowerCase()
 
@@ -58,34 +47,11 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
-=======
-    const ext = path.extname(req.file.originalname) || '.jpg'
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-<<<<<<< HEAD
-=======
-    const ext = path.extname(req.file.originalname) || '.jpg'
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const filename = `model-${Date.now()}${ext}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
       mimetype,
-=======
-      mimetype: req.file.mimetype,
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-<<<<<<< HEAD
-=======
-      mimetype: req.file.mimetype,
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     })
 
     const model = await Model.create({

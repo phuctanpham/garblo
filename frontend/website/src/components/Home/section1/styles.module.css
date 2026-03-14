@@ -3,39 +3,8 @@
 .hero-container {
   position: relative;
   background-color: var(--garblo-white);
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
-=======
->>>>>>> 1433ee8 (feat(website): add new section and update existing components)
   padding: 0 2rem;
   min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
-=======
-  padding: 4rem 2rem;
-  min-height: 85vh;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
-=======
-  padding: 0 2rem;
-  min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
->>>>>>> 30701e0 (feat(website): add new section and update existing components)
-<<<<<<< HEAD
-=======
->>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
-=======
-  padding: 0 2rem;
-  min-height: 100vh; /* Tràn vừa vặn 100% màn hình */
->>>>>>> 30701e0 (feat(website): add new section and update existing components)
-=======
->>>>>>> cbb7a22 (feat(appConsumer): add virtual try-on section)
->>>>>>> a5478d8 (feat(appConsumer): add virtual try-on section)
-=======
->>>>>>> 1433ee8 (feat(website): add new section and update existing components)
   display: flex;
   align-items: center;
   justify-content: center;
@@ -86,33 +55,13 @@
 
 .primary-btn {
   background-color: #111827 !important; /* Đã sửa thành mã màu cứng */
-  color: #ffffff !important;
+  color: #fff !important;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 600;
   text-decoration: none;
   transition: transform 0.2s;
-<<<<<<< HEAD
-=======
   border: 1px solid var(--garblo-black);
-}
-
-.primary-btn {
-  background-color: #111827 !important; /* Đã sửa thành mã màu cứng */
-  color: #ffffff !important;
-  padding: 14px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s;
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> e2378e7 (feat(website): add new sections to homepage)
-=======
-=======
->>>>>>> 085c72e (feat(website): add new sections to homepage)
->>>>>>> e2378e7 (feat(website): add new sections to homepage)
-  border: 1px solid #111827;
 }
 
 .secondary-btn {

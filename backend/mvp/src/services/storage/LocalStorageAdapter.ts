@@ -12,21 +12,7 @@ export class LocalStorageAdapter implements IStorage {
 
   async save({ buffer, filename }: SaveOptions): Promise<string> {
     const dest = path.join(this.uploadDir, filename)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     await fs.promises.writeFile(dest, buffer)
-=======
-    fs.writeFileSync(dest, buffer)
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-<<<<<<< HEAD
-=======
-    fs.writeFileSync(dest, buffer)
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     return `/uploads/${filename}`
   }
 }

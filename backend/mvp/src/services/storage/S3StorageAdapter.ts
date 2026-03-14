@@ -7,11 +7,6 @@ export class S3StorageAdapter implements IStorage {
   private readonly region: string
 
   constructor(
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     bucket: string | undefined = process.env.S3_BUCKET,
     region: string | undefined = process.env.S3_REGION ?? 'us-east-1',
     accessKeyId: string | undefined = process.env.S3_ACCESS_KEY,
@@ -43,44 +38,18 @@ export class S3StorageAdapter implements IStorage {
     this.region = resolvedRegion
     this.client = new S3Client({
       region: resolvedRegion,
-<<<<<<< HEAD
-      credentials: { accessKeyId: resolvedAccessKeyId, secretAccessKey: resolvedSecretAccessKey },
-=======
-=======
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
-<<<<<<< HEAD
       credentials: {
         accessKeyId: resolvedAccessKeyId,
         secretAccessKey: resolvedSecretAccessKey,
       },
-=======
-      credentials: { accessKeyId: resolvedAccessKeyId, secretAccessKey: resolvedSecretAccessKey },
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
-    bucket = process.env.S3_BUCKET ?? '',
-    region = process.env.S3_REGION ?? 'us-east-1',
-    accessKeyId = process.env.S3_ACCESS_KEY ?? '',
-    secretAccessKey = process.env.S3_SECRET_KEY ?? '',
-  ) {
-    this.bucket = bucket
-    this.region = region
-    this.client = new S3Client({
-      region,
-      credentials: { accessKeyId, secretAccessKey },
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
->>>>>>> b61a30f (feat(mvp): implement backend MVP with controllers, services, and tests)
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     })
   }
 
-  async save({ buffer, filename, mimetype = 'image/png' }: SaveOptions): Promise<string> {
+  async save({
+    buffer,
+    filename,
+    mimetype = 'image/png',
+  }: SaveOptions): Promise<string> {
     const key = `uploads/${filename}`
     await this.client.send(
       new PutObjectCommand({

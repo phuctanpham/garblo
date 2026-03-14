@@ -1,5 +1,4 @@
 import { Request, Response } from 'express'
-import path from 'path'
 import { Item } from '../models/Item'
 import { createStorage } from '../services/storage/storageFactory'
 
@@ -12,11 +11,6 @@ export async function uploadItem(req: Request, res: Response): Promise<void> {
       return
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
     const allowedMimeTypes: Record<string, string> = {
       'image/png': '.png',
       'image/jpeg': '.jpg',
@@ -37,25 +31,6 @@ export async function uploadItem(req: Request, res: Response): Promise<void> {
       buffer: req.file.buffer,
       filename,
       mimetype: mimeType,
-=======
-<<<<<<< HEAD
-=======
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
-    const ext = path.extname(req.file.originalname) || '.png'
-    const filename = `item-${Date.now()}${ext}`
-    const imageUrl = await storage.save({
-      buffer: req.file.buffer,
-      filename,
-      mimetype: req.file.mimetype,
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
-=======
-=======
->>>>>>> fd8b683 (feat(mvp): implement backend MVP with controllers, services, and tests)
->>>>>>> aae9bf2 (feat(mvp): implement backend MVP with controllers, services, and tests)
     })
 
     const item = await Item.create({

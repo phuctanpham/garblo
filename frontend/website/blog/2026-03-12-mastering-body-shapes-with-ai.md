@@ -61,7 +61,7 @@ Instead of mentally calculating how a garment _might_ look, Garblo's AI allows s
 
 ### The Future of Shopping is Personal
 
-By integrating Garblo's Virtual Try-On into your store, you aren't just selling clothes; you are providing a personalized styling experience. When customers can visualize the perfect fit, confidence replaces hesitation, cart abandonment drops, and return rates plummet.
+By integrating Garblo's Virtual Try-On into your store, you aren't just selling clothes; you are providing a personalized styling experience.. When customers can visualize the perfect fit, confidence replaces hesitation, cart abandonment drops, and return rates plummet.
 
 It’s time to stop guessing and start visualizing.
 
