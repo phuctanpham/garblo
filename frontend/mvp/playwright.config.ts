@@ -9,9 +9,13 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   projects: [
+    // {
+    //   name: 'chromium',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
     },
   ],
   // Assumes both servers are already running when running e2e tests.
