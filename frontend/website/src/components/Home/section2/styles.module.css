@@ -141,14 +141,12 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-
   .features-list {
     order: 2;
   } /* Trên mobile thì 3 thẻ nằm dưới chữ */
   .text-col {
     order: 1;
   }
-
   .title {
     font-size: 2.25rem;
   }
