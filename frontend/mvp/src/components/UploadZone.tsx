@@ -1,4 +1,4 @@
-import { type ChangeEvent } from 'react'
+import type React from 'react'
 import { UploadCloud, Loader2 } from 'lucide-react'
 
 interface Props {

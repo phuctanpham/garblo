@@ -43,6 +43,7 @@
   border-color: var(
     --ifm-color-primary
   ); /* Đổi viền sang màu xanh Indigo khi trỏ chuột */
+
   box-shadow: 0 20px 40px rgb(99 102 241 / 15%);
 }
 
@@ -140,14 +141,12 @@
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-
   .features-list {
     order: 2;
   } /* Trên mobile thì 3 thẻ nằm dưới chữ */
   .text-col {
     order: 1;
   }
-
   .title {
     font-size: 2.25rem;
   }
