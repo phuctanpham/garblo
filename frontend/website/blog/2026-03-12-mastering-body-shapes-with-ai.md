@@ -5,6 +5,8 @@ authors: [nghibg]
 tags: [Fashion Guide, Virtual Try-On, AI Recommendations]
 ---
 
+<!-- truncate -->`
+
 We've all been there: you see a stunning dress online, add it to your cart, and wait excitedly for its arrival. But when you try it on, the proportions feel entirely wrong. The culprit? E-commerce has traditionally forced us to buy clothes based on how they look on a standard model, rather than how they complement our unique body shapes.
 
 <!-- truncate -->

@@ -1,4 +1,3 @@
-/* frontend/website/src/components/Section1/index.tsx */
 import React from 'react'
 import Link from '@docusaurus/Link'
 import styles from './styles.module.css'
@@ -30,13 +29,11 @@ export default function Section1(): JSX.Element {
         {/* CỘT PHẢI: Hình ảnh/Video minh họa */}
         <div className={styles['right-content']}>
           <video
-            autoPlay /* Tự động chạy khi load trang */
-            loop /* Lặp lại liên tục */
-            muted /* Bắt buộc phải tắt tiếng thì trình duyệt mới cho autoPlay */
-            playsInline /* Hỗ trợ chạy mượt trên Safari/iPhone */
-            className={
-              styles['mockup-image']
-            } /* Giữ nguyên class này để video vừa khít cái khung */
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={styles['mockup-image']}
           >
             <source src="/img/section1/IntroGarblo.mp4" type="video/mp4" />
           </video>
