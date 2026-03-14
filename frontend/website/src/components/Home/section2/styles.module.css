@@ -43,6 +43,7 @@
   border-color: var(
     --ifm-color-primary
   ); /* Đổi viền sang màu xanh Indigo khi trỏ chuột */
+
   box-shadow: 0 20px 40px rgb(99 102 241 / 15%);
 }
 
