@@ -17,12 +17,16 @@ test.describe('Garblo Wardrobe', () => {
     await expect(page.locator('input[type="password"]')).toBeVisible()
   })
 
-  test('submitting the login form advances to the model upload page', async ({ page }) => {
+  test('submitting the login form advances to the model upload page', async ({
+    page,
+  }) => {
     await page.goto('/')
     await page.fill('input[type="email"]', 'test@example.com')
     await page.fill('input[type="password"]', 'password123')
     await page.click('button[type="submit"]')
-    await expect(page.locator('h2')).toContainText('Setup Model', { timeout: 5_000 })
+    await expect(page.locator('h2')).toContainText('Setup Model', {
+      timeout: 5_000,
+    })
   })
 
   test('full journey: login → upload model → upload item → select → generate', async ({
@@ -33,7 +37,9 @@ test.describe('Garblo Wardrobe', () => {
     await page.fill('input[type="email"]', 'test@example.com')
     await page.fill('input[type="password"]', 'password123')
     await page.click('button[type="submit"]')
-    await expect(page.locator('h2')).toContainText('Setup Model', { timeout: 5_000 })
+    await expect(page.locator('h2')).toContainText('Setup Model', {
+      timeout: 5_000,
+    })
 
     // 2. Upload model photo
     await page.locator('[data-testid="model-file-input"]').setInputFiles({
@@ -43,7 +49,9 @@ test.describe('Garblo Wardrobe', () => {
     })
 
     // 3. Wait for Wardrobe page to load
-    await expect(page.locator('h2')).toContainText('Wardrobe', { timeout: 15_000 })
+    await expect(page.locator('h2')).toContainText('Wardrobe', {
+      timeout: 15_000,
+    })
 
     // 4. Upload a clothing item
     await page.locator('[data-testid="item-file-input"]').setInputFiles({
@@ -53,9 +61,11 @@ test.describe('Garblo Wardrobe', () => {
     })
 
     // 5. Wait for item card to appear
-    await expect(page.locator('[data-testid="item-card"]').first()).toBeVisible({
-      timeout: 10_000,
-    })
+    await expect(page.locator('[data-testid="item-card"]').first()).toBeVisible(
+      {
+        timeout: 10_000,
+      },
+    )
 
     // 6. Select the item
     await page.locator('[data-testid="item-card"]').first().click()
@@ -63,9 +73,10 @@ test.describe('Garblo Wardrobe', () => {
     // 7. Generate outfit
     await page.locator('[data-testid="generate-btn"]').click()
 
-    // 8. Wait for "AI Fitting Active" badge – confirms generation completed successfully
-    await expect(page.locator('span:has-text("AI Fitting Active")')).toBeVisible({
-      timeout: 90_000,
-    })
+    // 8. Wait for the status badge to transition from "Generating…" to "AI Fitting Active",
+    //    which confirms the API call completed successfully and the result was applied.
+    await expect(
+      page.locator('[data-testid="outfit-status-badge"]'),
+    ).toContainText('AI Fitting Active', { timeout: 90_000 })
   })
 })

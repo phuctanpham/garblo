@@ -10,9 +10,15 @@ const imageGen = createImageGenerator()
 const storage = createStorage()
 const provider = process.env.IMAGE_GEN_PROVIDER ?? 'pollinations'
 
-export async function generateOutfit(req: Request, res: Response): Promise<void> {
+export async function generateOutfit(
+  req: Request,
+  res: Response,
+): Promise<void> {
   try {
-    const { modelId, itemIds } = req.body as { modelId: string; itemIds: string[] }
+    const { modelId, itemIds } = req.body as {
+      modelId: string
+      itemIds: string[]
+    }
 
     if (!modelId || !Array.isArray(itemIds) || itemIds.length === 0) {
       res.status(400).json({ error: 'modelId and itemIds[] are required' })
@@ -25,7 +31,7 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
     }
 
     const invalidItemId = itemIds.find((id) => !Types.ObjectId.isValid(id))
-    if (invalidItemId !== undefined) {
+    if (invalidItemId) {
       res.status(400).json({ error: `Invalid itemId: ${invalidItemId}` })
       return
     }
@@ -44,20 +50,21 @@ export async function generateOutfit(req: Request, res: Response): Promise<void>
       return
     }
 
-    const foundItemIdSet = new Set(items.map((item) => item._id.toString()))
-    const missingItemIds = itemIds.filter((id) => !foundItemIdSet.has(id))
-    if (missingItemIds.length > 0) {
-      res.status(404).json({ error: 'Some items not found', missingItemIds })
-      return
-    }
-
     const itemNames = items.map((i) => i.name).join(', ')
     const prompt = `A fashion model wearing ${itemNames}. Professional fashion photography, clean white background, full body shot, high quality.`
 
-    const imageBuffer = await imageGen.generate({ prompt, width: 512, height: 768 })
+    const imageBuffer = await imageGen.generate({
+      prompt,
+      width: 512,
+      height: 768,
+    })
 
     const filename = `outfit-${Date.now()}.png`
-    const resultImageUrl = await storage.save({ buffer: imageBuffer, filename, mimetype: 'image/png' })
+    const resultImageUrl = await storage.save({
+      buffer: imageBuffer,
+      filename,
+      mimetype: 'image/png',
+    })
 
     const outfit = await Outfit.create({
       modelId: new Types.ObjectId(modelId),

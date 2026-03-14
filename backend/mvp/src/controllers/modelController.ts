@@ -2,9 +2,25 @@ import { Request, Response } from 'express'
 import path from 'path'
 import { Model } from '../models/Model'
 import { createStorage } from '../services/storage/storageFactory'
-import { ALLOWED_IMAGE_MIME_TYPES, ALLOWED_IMAGE_EXTENSIONS } from '../config/fileValidation'
 
 const storage = createStorage()
+
+const ALLOWED_MIME_TYPES = new Set<string>([
+  'image/jpeg',
+  'image/png',
+  'image/gif',
+  'image/webp',
+])
+
+const ALLOWED_EXTENSIONS = new Set<string>([
+  '.jpg',
+  '.jpeg',
+  '.png',
+  '.gif',
+  '.webp',
+])
+
+const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 // 5 MB
 
 export async function uploadModel(req: Request, res: Response): Promise<void> {
   try {
@@ -13,14 +29,21 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
       return
     }
 
-    if (!ALLOWED_IMAGE_MIME_TYPES.includes(req.file.mimetype)) {
-      res.status(400).json({ error: 'Only image files are allowed (jpeg, png, webp, gif)' })
+    const { mimetype, originalname, size } = req.file
+    const ext = (path.extname(originalname) || '.jpg').toLowerCase()
+
+    if (!ALLOWED_MIME_TYPES.has(mimetype)) {
+      res.status(400).json({ error: 'Only image uploads are allowed' })
       return
     }
 
-    const ext = path.extname(req.file.originalname).toLowerCase()
-    if (!ALLOWED_IMAGE_EXTENSIONS.has(ext)) {
-      res.status(400).json({ error: 'Only image files are allowed (jpeg, png, webp, gif)' })
+    if (!ALLOWED_EXTENSIONS.has(ext)) {
+      res.status(400).json({ error: 'Unsupported image file extension' })
+      return
+    }
+
+    if (typeof size === 'number' && size > MAX_FILE_SIZE_BYTES) {
+      res.status(413).json({ error: 'Uploaded file is too large' })
       return
     }
 
@@ -28,7 +51,7 @@ export async function uploadModel(req: Request, res: Response): Promise<void> {
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
-      mimetype: req.file.mimetype,
+      mimetype,
     })
 
     const model = await Model.create({

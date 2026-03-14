@@ -1,7 +1,6 @@
 import { Router } from 'express'
 import multer from 'multer'
 import { uploadModel, getModels } from '../controllers/modelController'
-import { ALLOWED_IMAGE_MIME_TYPES } from '../config/fileValidation'
 
 const router = Router()
 const upload = multer({
@@ -11,10 +10,16 @@ const upload = multer({
     files: 1,
   },
   fileFilter: (req, file, cb) => {
-    if (ALLOWED_IMAGE_MIME_TYPES.includes(file.mimetype)) {
+    const allowedMimeTypes = [
+      'image/jpeg',
+      'image/png',
+      'image/gif',
+      'image/webp',
+    ]
+    if (allowedMimeTypes.includes(file.mimetype)) {
       cb(null, true)
     } else {
-      cb(null, false)
+      cb(new multer.MulterError('LIMIT_UNEXPECTED_FILE', 'image'))
     }
   },
 })

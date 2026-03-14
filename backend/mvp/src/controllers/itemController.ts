@@ -1,8 +1,6 @@
 import { Request, Response } from 'express'
-import path from 'path'
 import { Item } from '../models/Item'
 import { createStorage } from '../services/storage/storageFactory'
-import { ALLOWED_IMAGE_MIME_TYPES, ALLOWED_IMAGE_EXTENSIONS } from '../config/fileValidation'
 
 const storage = createStorage()
 
@@ -13,22 +11,26 @@ export async function uploadItem(req: Request, res: Response): Promise<void> {
       return
     }
 
-    if (!ALLOWED_IMAGE_MIME_TYPES.includes(req.file.mimetype)) {
-      res.status(400).json({ error: 'Only image files are allowed (jpeg, png, webp, gif)' })
+    const allowedMimeTypes: Record<string, string> = {
+      'image/png': '.png',
+      'image/jpeg': '.jpg',
+      'image/jpg': '.jpg',
+      'image/webp': '.webp',
+    }
+
+    const mimeType = req.file.mimetype
+    const normalizedExt = allowedMimeTypes[mimeType]
+
+    if (!normalizedExt) {
+      res.status(400).json({ error: 'Unsupported file type' })
       return
     }
 
-    const ext = path.extname(req.file.originalname).toLowerCase()
-    if (!ALLOWED_IMAGE_EXTENSIONS.has(ext)) {
-      res.status(400).json({ error: 'Only image files are allowed (jpeg, png, webp, gif)' })
-      return
-    }
-
-    const filename = `item-${Date.now()}${ext}`
+    const filename = `item-${Date.now()}${normalizedExt}`
     const imageUrl = await storage.save({
       buffer: req.file.buffer,
       filename,
-      mimetype: req.file.mimetype,
+      mimetype: mimeType,
     })
 
     const item = await Item.create({

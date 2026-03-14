@@ -7,36 +7,49 @@ export class S3StorageAdapter implements IStorage {
   private readonly region: string
 
   constructor(
-    bucket = process.env.S3_BUCKET ?? '',
-    region = process.env.S3_REGION ?? 'us-east-1',
-    accessKeyId = process.env.S3_ACCESS_KEY ?? '',
-    secretAccessKey = process.env.S3_SECRET_KEY ?? '',
+    bucket: string | undefined = process.env.S3_BUCKET,
+    region: string | undefined = process.env.S3_REGION ?? 'us-east-1',
+    accessKeyId: string | undefined = process.env.S3_ACCESS_KEY,
+    secretAccessKey: string | undefined = process.env.S3_SECRET_KEY,
   ) {
-    if (!bucket) {
+    const resolvedBucket = bucket?.trim()
+    if (!resolvedBucket) {
       throw new Error(
-        'S3StorageAdapter configuration error: missing S3_BUCKET (bucket name must be provided).',
-      )
-    }
-    if (!accessKeyId) {
-      throw new Error(
-        'S3StorageAdapter configuration error: missing S3_ACCESS_KEY (access key ID must be provided).',
-      )
-    }
-    if (!secretAccessKey) {
-      throw new Error(
-        'S3StorageAdapter configuration error: missing S3_SECRET_KEY (secret access key must be provided).',
+        'S3StorageAdapter configuration error: S3 bucket is not configured. Set S3_BUCKET or pass a bucket name to the constructor.',
       )
     }
 
-    this.bucket = bucket
-    this.region = region
+    const resolvedRegion = region?.trim()
+    if (!resolvedRegion) {
+      throw new Error(
+        'S3StorageAdapter configuration error: S3 region is not configured. Set S3_REGION or pass a region to the constructor.',
+      )
+    }
+
+    const resolvedAccessKeyId = accessKeyId?.trim()
+    const resolvedSecretAccessKey = secretAccessKey?.trim()
+    if (!resolvedAccessKeyId || !resolvedSecretAccessKey) {
+      throw new Error(
+        'S3StorageAdapter configuration error: S3 credentials are not configured. Set S3_ACCESS_KEY and S3_SECRET_KEY or pass credentials to the constructor.',
+      )
+    }
+
+    this.bucket = resolvedBucket
+    this.region = resolvedRegion
     this.client = new S3Client({
-      region,
-      credentials: { accessKeyId, secretAccessKey },
+      region: resolvedRegion,
+      credentials: {
+        accessKeyId: resolvedAccessKeyId,
+        secretAccessKey: resolvedSecretAccessKey,
+      },
     })
   }
 
-  async save({ buffer, filename, mimetype = 'image/png' }: SaveOptions): Promise<string> {
+  async save({
+    buffer,
+    filename,
+    mimetype = 'image/png',
+  }: SaveOptions): Promise<string> {
     const key = `uploads/${filename}`
     await this.client.send(
       new PutObjectCommand({
