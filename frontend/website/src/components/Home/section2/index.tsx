@@ -5,19 +5,26 @@ import styles from './styles.module.css'
 const AnimatedStat = ({ endValue, suffix = '' }) => {
   const [value, setValue] = useState(0)
   const ref = useRef(null)
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
+    if (endValue === 0) {
+      setValue(0)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           let start = 0
           const duration = 2000
           const step = endValue / (duration / 16)
-          const timer = setInterval(() => {
+          timerRef.current = setInterval(() => {
             start += step
             if ((step > 0 && start >= endValue) || (step < 0 && start <= endValue)) {
               setValue(endValue)
-              clearInterval(timer)
+              clearInterval(timerRef.current!)
+              timerRef.current = null
             } else {
               setValue(Math.round(start))
             }
@@ -29,7 +36,13 @@ const AnimatedStat = ({ endValue, suffix = '' }) => {
     )
 
     if (ref.current) observer.observe(ref.current)
-    return () => observer.disconnect()
+    return () => {
+      observer.disconnect()
+      if (timerRef.current !== null) {
+        clearInterval(timerRef.current)
+        timerRef.current = null
+      }
+    }
   }, [endValue])
 
   return (
