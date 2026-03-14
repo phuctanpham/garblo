@@ -1,4 +1,4 @@
-import type React from 'react'
+import type { ChangeEvent } from 'react'
 import { UploadCloud, Loader2 } from 'lucide-react'
 
 interface Props {
@@ -16,7 +16,7 @@ export default function UploadZone({
   accept = 'image/*',
   label = 'Upload',
 }: Props) {
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       onUpload(file)
@@ -35,7 +35,9 @@ export default function UploadZone({
         ) : (
           <>
             <UploadCloud size={24} />
-            <span className="text-[10px] font-bold uppercase mt-2 tracking-widest">{label}</span>
+            <span className="text-[10px] font-bold uppercase mt-2 tracking-widest">
+              {label}
+            </span>
           </>
         )}
         <input
@@ -68,7 +70,9 @@ export default function UploadZone({
             <UploadCloud size={32} className="text-black" />
           )}
         </div>
-        <p className="font-bold text-slate-900">{uploading ? 'Uploading…' : 'Click to Upload'}</p>
+        <p className="font-bold text-slate-900">
+          {uploading ? 'Uploading…' : 'Click to Upload'}
+        </p>
       </div>
     </div>
   )
