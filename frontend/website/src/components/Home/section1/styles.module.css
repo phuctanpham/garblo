@@ -52,8 +52,8 @@
 }
 
 .primary-btn {
-  background-color: #111827 !important;
-  color: #fff !important;
+  background-color: #111827;
+  color: #fff;
   padding: 14px 28px;
   border-radius: 8px;
   font-weight: 600;
@@ -67,7 +67,7 @@
 .primary-btn:hover {
   transform: translateY(-4px); /* Nút sẽ nảy lên 4px */
   box-shadow: 0 10px 20px rgb(0 0 0 / 15%); /* Thêm bóng đổ cho sinh động */
-  background-color: #1f2937 !important;
+  background-color: #1f2937;
 }
 
 .secondary-btn {
