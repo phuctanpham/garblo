@@ -102,21 +102,37 @@
 }
 
 @media (width <= 996px) {
-  .hero-wrapper {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3rem;
+  .section-wrapper {
+    position: relative;
+    display: block; /* Bỏ dạng lưới để xếp chồng */
+    padding: 4rem 1rem;
+    overflow: hidden;
   }
 
   .left-content {
-    align-items: center;
-  }
-
-  .title {
-    font-size: 2.5rem;
+    position: relative;
+    z-index: 2; /* Nổi lên trên */
+    background: rgb(255 255 255 / 85%); /* Nền trắng mờ để chữ dễ đọc */
+    padding: 2rem;
+    border-radius: 16px;
+    backdrop-filter: blur(10px); /* Hiệu ứng kính mờ chuẩn Apple */
+    box-shadow: 0 10px 30px rgb(0 0 0 / 5%);
   }
 
   .right-content {
-    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Chìm xuống làm nền */
+    opacity: 0.3; /* Làm mờ video đi để không tranh chấp với chữ */
+    pointer-events: none;
+  }
+
+  .mockup-image {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0; /* Trải full viền */
   }
 }

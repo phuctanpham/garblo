@@ -18,6 +18,9 @@ export default function Section4(): JSX.Element {
         {/* Khối Form gửi dữ liệu */}
         <div className={styles['form-card']}>
           <form action="https://formspree.io/f/myknpynz" method="POST">
+            {/* Trường Honeypot chống bot spam (ẩn với người dùng) */}
+            <input type="text" name="_gotcha" style={{ display: 'none' }} />
+
             <div className={styles['form-group']}>
               <label htmlFor="name">Full Name</label>
               <input

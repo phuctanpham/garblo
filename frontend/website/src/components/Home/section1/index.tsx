@@ -18,11 +18,11 @@ export default function Section1(): JSX.Element {
             <strong>Pro Lookbooks</strong> instantly without studio costs.
           </p>
           <div className={styles.actions}>
-            <Link to="/#section4" className={styles['primary-btn']}>
+            <Link to="https://mvp.garblo.com" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="/#section2" className={styles['secondary-btn']}>
-              Explore Solutions
+            <Link to="#section4" className={styles['secondary-btn']}>
+              Contact Us
             </Link>
           </div>
         </div>
