@@ -129,18 +129,26 @@
 
 @media (width <= 996px) {
   .section-wrapper {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 3rem;
+    padding: 4rem 1.5rem;
+  }
+
+  /* Chữ lên trên */
+  .text-col {
+    order: 1;
+  }
+
+  /* Ảnh xuống dưới và thu gọn lại để không đè chữ */
+  .image-col {
+    order: 2;
+    height: 400px;
+    position: relative;
+    z-index: 1;
   }
   .title {
     font-size: 2.5rem;
-  }
-
-  .image-col {
-    height: 400px; /* Cố định chiều cao để không trào lên text */
-    position: relative;
-    z-index: 1;
-    margin-top: 1rem;
   }
 
   .img-before {
@@ -150,7 +158,7 @@
   }
 
   .img-after {
-    width: 70%;
+    width: 75%;
     right: 0;
     top: 0;
   }

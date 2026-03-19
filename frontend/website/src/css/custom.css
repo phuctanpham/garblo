@@ -65,3 +65,18 @@ h6 {
   transition: transform 0.2s;
   border: 1px solid #111827;
 }
+
+@media (width <= 768px) {
+  .footer-links {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important; /* Đẩy 2 cột ra 2 bên */
+    gap: 1rem !important;
+    padding: 0 1rem;
+  }
+
+  .footer-col {
+    margin: 0 !important;
+    text-align: left;
+  }
+}

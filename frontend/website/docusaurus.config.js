@@ -61,16 +61,12 @@ var config = {
     ],
   ],
   themeConfig: {
-    // Replace with your project's social card
     colorMode: {
       defaultMode: 'light',
-      disableSwitch: true, // Dòng này sẽ làm bốc hơi nút Mặt trăng/Mặt trời
+      disableSwitch: true, // Xóa sổ nút Mặt trăng/Mặt trời
       respectPrefersColorScheme: false,
     },
     image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      respectPrefersColorScheme: true,
-    },
     navbar: {
       title: 'Garblo',
       logo: {

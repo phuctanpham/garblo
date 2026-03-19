@@ -91,13 +91,13 @@
 .title {
   font-size: 2.75rem;
   line-height: 1.2;
-  color: var(--garblo-black);
+  color: #111827 !important;
   margin: 0;
 }
 
 .description {
   font-size: 1.15rem;
-  color: var(--garblo-gray);
+  color: #4b5563 !important;
   line-height: 1.6;
 }
 
@@ -138,33 +138,43 @@
 
 @media (width <= 996px) {
   .section-wrapper {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 1.5rem;
   }
-  .features-list {
-    order: 2;
-  } /* Trên mobile thì 3 thẻ nằm dưới chữ */
+
+  /* 1. Đưa cột Chữ (Tiêu đề) lên đầu */
   .text-col {
     order: 1;
   }
-  .title {
-    font-size: 2.25rem;
+
+  /* 2. Đưa 3 thẻ tính năng xuống giữa */
+  .features-list {
+    order: 2;
+    margin-top: 1rem;
   }
 
+  /* 3. Đưa Số liệu xuống cuối */
   .stats-grid {
-    flex-direction: column;
+    order: 3;
+    flex-direction: column; /* Số liệu xếp dọc */
     gap: 1.5rem;
+    margin-top: 2rem;
   }
 
   .stat-item {
-    padding-left: 0;
     border-left: none;
-    border-top: 2px solid #e4e4e7;
+    padding-left: 0;
+    border-top: 1px solid #e4e4e7; /* Đổi vạch ngăn thành nằm ngang */
     padding-top: 1.5rem;
   }
 
   .stat-item:first-child {
     border-top: none;
     padding-top: 0;
+  }
+  .title {
+    font-size: 2.5rem;
   }
 }

@@ -30,13 +30,13 @@
 .title {
   font-size: 3rem;
   line-height: 1.2;
-  color: var(--garblo-black);
+  color: #111827 !important;
   margin-bottom: 1rem;
 }
 
 .description {
   font-size: 1.15rem;
-  color: var(--garblo-gray);
+  color: #4b5563 !important;
   margin-bottom: 3rem;
 }
 
@@ -103,11 +103,13 @@
 }
 
 @media (width <= 768px) {
+  .section-container {
+    padding: 4rem 1.5rem;
+  }
   .title {
     font-size: 2.25rem;
   }
-
   .form-card {
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
   }
 }
