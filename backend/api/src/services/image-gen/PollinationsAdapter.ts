@@ -2,7 +2,11 @@ import axios from 'axios'
 import type { IImageGenerator, GenerateOptions } from './IImageGenerator'
 
 export class PollinationsAdapter implements IImageGenerator {
-  async generate({ prompt, width = 512, height = 768 }: GenerateOptions): Promise<Buffer> {
+  async generate({
+    prompt,
+    width = 512,
+    height = 768,
+  }: GenerateOptions): Promise<Buffer> {
     const encoded = encodeURIComponent(prompt)
     const url = `https://image.pollinations.ai/prompt/${encoded}?width=${width}&height=${height}&nologo=true&model=flux`
 

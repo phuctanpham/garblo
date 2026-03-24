@@ -18,7 +18,11 @@ describe('LocalStorageAdapter', () => {
 
   it('writes the buffer to disk and returns the correct URL path', async () => {
     const buffer = Buffer.from('test-image-content')
-    const url = await adapter.save({ buffer, filename: 'test.png', mimetype: 'image/png' })
+    const url = await adapter.save({
+      buffer,
+      filename: 'test.png',
+      mimetype: 'image/png',
+    })
 
     expect(url).toBe('/uploads/test.png')
     const written = fs.readFileSync(path.join(tmpDir, 'test.png'))

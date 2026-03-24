@@ -19,10 +19,19 @@ jobs:
         id: filter
         with:
           filters: |
+            api:
+              - 'backend/website/**'
             mvp:
               - 'frontend/mvp/**'
             website:
               - 'frontend/website/**'
+
+  api:
+    name: 'api'
+    needs: detect-changes
+    if: needs.detect-changes.outputs.api == 'true'
+    uses: ./.github/workflows/api.yml
+    secrets: inherit
 
   mvp:
     name: 'mvp'

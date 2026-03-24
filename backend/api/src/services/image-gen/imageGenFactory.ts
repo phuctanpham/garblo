@@ -6,7 +6,8 @@ import { GeminiAdapter } from './GeminiAdapter'
 export type ImageGenProvider = 'pollinations' | 'huggingface' | 'gemini'
 
 export function createImageGenerator(
-  provider: ImageGenProvider = (process.env.IMAGE_GEN_PROVIDER as ImageGenProvider) ?? 'pollinations',
+  provider: ImageGenProvider = (process.env
+    .IMAGE_GEN_PROVIDER as ImageGenProvider) ?? 'pollinations',
 ): IImageGenerator {
   switch (provider) {
     case 'huggingface':

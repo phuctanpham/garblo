@@ -5,7 +5,8 @@ import { S3StorageAdapter } from './S3StorageAdapter'
 export type StorageProvider = 'local' | 's3'
 
 export function createStorage(
-  provider: StorageProvider = (process.env.STORAGE_TYPE as StorageProvider) ?? 'local',
+  provider: StorageProvider = (process.env.STORAGE_TYPE as StorageProvider) ??
+    'local',
 ): IStorage {
   switch (provider) {
     case 's3':

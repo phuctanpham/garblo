@@ -5,7 +5,10 @@ jest.mock('axios')
 const mockedAxios = axios as jest.Mocked<typeof axios>
 
 describe('HFAdapter', () => {
-  const adapter = new HFAdapter('test-api-key', 'stabilityai/stable-diffusion-2')
+  const adapter = new HFAdapter(
+    'test-api-key',
+    'stabilityai/stable-diffusion-2',
+  )
   const fakeBuffer = Buffer.from('fake-image-data')
 
   beforeEach(() => {
@@ -36,6 +39,8 @@ describe('HFAdapter', () => {
 
   it('propagates API errors', async () => {
     mockedAxios.post.mockRejectedValue(new Error('401 Unauthorized'))
-    await expect(adapter.generate({ prompt: 'test' })).rejects.toThrow('401 Unauthorized')
+    await expect(adapter.generate({ prompt: 'test' })).rejects.toThrow(
+      '401 Unauthorized',
+    )
   })
 })

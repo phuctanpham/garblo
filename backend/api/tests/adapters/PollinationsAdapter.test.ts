@@ -36,6 +36,8 @@ describe('PollinationsAdapter', () => {
 
   it('propagates axios errors', async () => {
     mockedAxios.get.mockRejectedValue(new Error('network error'))
-    await expect(adapter.generate({ prompt: 'test' })).rejects.toThrow('network error')
+    await expect(adapter.generate({ prompt: 'test' })).rejects.toThrow(
+      'network error',
+    )
   })
 })
