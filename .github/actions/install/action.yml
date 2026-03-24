@@ -19,4 +19,4 @@ runs:
         cache: 'pnpm'
     - name: Install dependencies
       shell: bash
-      run: pnpm install --filter ${{ inputs.project }} --frozen-lockfile
+      run: pnpm install --filter ${{ inputs.project }}
