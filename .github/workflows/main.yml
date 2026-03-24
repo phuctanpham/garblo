@@ -9,6 +9,7 @@ jobs:
     name: 'Detect Changes'
     runs-on: ubuntu-latest
     outputs:
+      api: ${{ steps.filter.outputs.api }}
       mvp: ${{ steps.filter.outputs.mvp }}
       website: ${{ steps.filter.outputs.website }}
     steps:
