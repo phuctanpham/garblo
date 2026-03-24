@@ -1,18 +1,27 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "tasks": {
+  "globalDependencies": ["**/.env.*", "**/.env"],
+  "pipeline": {
     "build": {
       "dependsOn": ["^build"],
       "outputs": [".next/**", "dist/**", "build/**"]
     },
-    "lint": {},
+    "lint": {
+      "outputs": ["!*/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["!*/**"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
     },
-    "launch": {
-      "dependsOn": ["build"],
-      "env": ["CLOUDFLARE_API_TOKEN", "CLOUDFLARE_ACCOUNT_ID", "BRANCH"]
+    "deploy": {
+      "dependsOn": ["^build", "^test"]
+    },
+    "commit": {
+      "dependsOn": ["^build", "^test", "^lint"]
     }
   }
 }
