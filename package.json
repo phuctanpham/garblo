@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "commit": "git-cz",
+    "clean": "git clean -fdX",
     "lint": "turbo lint",
     "test": "turbo test",
     "build": "turbo build",
