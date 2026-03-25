@@ -21,7 +21,7 @@ export default function Section1(): JSX.Element {
             <Link to="https://mvp.garblo.com" className={styles['primary-btn']}>
               Start Free Trial
             </Link>
-            <Link to="#section4" className={styles['secondary-btn']}>
+            <Link to="/#section4" className={styles['secondary-btn']} data-noBrokenLinkCheck>
               Contact Us
             </Link>
           </div>

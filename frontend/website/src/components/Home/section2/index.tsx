@@ -9,7 +9,6 @@ const AnimatedStat = ({ endValue, suffix = '' }: { endValue: number; suffix?: st
 
   useEffect(() => {
     if (endValue === 0) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setValue(0)
       return
     }

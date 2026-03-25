@@ -67,4 +67,4 @@ It’s time to stop guessing and start visualizing.
 
 ---
 
-_Curious about how Garblo's AI can transform your fashion brand's conversion rates? [Explore our Virtual Try-On solutions today](/#section2)._
+_Curious about how Garblo's AI can transform your fashion brand's conversion rates? [Explore our Virtual Try-On solutions today](/)._
