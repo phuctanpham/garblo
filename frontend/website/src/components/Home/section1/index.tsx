@@ -3,7 +3,7 @@ import React from 'react'
 import Link from '@docusaurus/Link'
 import styles from './styles.module.css'
 
-export default function Section1(): JSX.Element {
+export default function Section1() {
   return (
     <section className={styles['hero-container']}>
       <div className={styles['hero-wrapper']}>

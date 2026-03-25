@@ -8,7 +8,7 @@ import Section2 from '@site/src/components/Home/section2'
 import Section3 from '@site/src/components/Home/section3'
 import Section4 from '@site/src/components/Home/section4'
 
-export default function Home(): JSX.Element {
+export default function Home() {
   return (
     <Layout
       title="Garblo - Reinvent Fashion"
