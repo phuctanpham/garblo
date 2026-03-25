@@ -31,5 +31,13 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
-  "packageManager": "pnpm@9.5.0"
+  "packageManager": "pnpm@9.5.0",
+  "pnpm": {
+      "overrides": {
+        "minimatch@>=9.0.0 <9.0.7": ">=9.0.7",
+        "serialize-javascript@<=7.0.2": ">=7.0.3",
+        "lodash@>=4.0.0 <=4.17.22": ">=4.17.23",
+        "tmp@<=0.2.3": ">=0.2.4"
+      }
+    }
 }
