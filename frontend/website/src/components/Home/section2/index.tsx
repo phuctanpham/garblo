@@ -2,13 +2,14 @@ import React, { useState, useEffect, useRef } from 'react'
 import styles from './styles.module.css'
 
 // Component đếm số tự động
-const AnimatedStat = ({ endValue, suffix = '' }) => {
+const AnimatedStat = ({ endValue, suffix = '' }: { endValue: number; suffix?: string; }) => {
   const [value, setValue] = useState(0)
   const ref = useRef(null)
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null)
 
   useEffect(() => {
     if (endValue === 0) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setValue(0)
       return
     }
@@ -103,8 +104,8 @@ export default function Section2(): JSX.Element {
           </h2>
 
           <p className={styles.description}>
-            Shoppers abandon carts because they can't visualize the fit.
-            Garblo's AI plug-in lets customers see themselves in your clothes
+            Shoppers abandon carts because they can&apos;t visualize the fit.
+            Garblo&apos;s AI plug-in lets customers see themselves in your clothes
             instantly, transforming hesitation into purchase confidence.
           </p>
 

@@ -17,7 +17,7 @@ export default function Section3(): JSX.Element {
           </h2>
 
           <p className={styles.description}>
-            Stop wasting weeks and thousands of dollars on photoshoots. Garblo's
+            Stop wasting weeks and thousands of dollars on photoshoots. Garblo&apos;s
             generative AI transforms simple flat-lay photos into stunning,
             studio-quality editorial images featuring diverse virtual models.
           </p>

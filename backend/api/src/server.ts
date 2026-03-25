@@ -1,5 +1,5 @@
 import 'dotenv/config'
-import express, { Request, Response } from 'express'
+import express, { NextFunction, Request, Response } from 'express'
 import cors from 'cors'
 import path from 'path'
 import multer from 'multer'
@@ -25,7 +25,7 @@ app.use('/api/outfits', outfitRoutes)
 app.get('/health', (_req, res) => res.json({ status: 'ok' }))
 
 // Centralized error handler: maps Multer errors (incl. fileFilter rejections) to 400
-app.use((err: Error, _req: Request, res: Response) => {
+app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
   if (err instanceof multer.MulterError) {
     res.status(400).json({ error: err.message })
     return

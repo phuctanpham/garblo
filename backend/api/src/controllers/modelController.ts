@@ -2,24 +2,12 @@ import { Request, Response } from 'express'
 import path from 'path'
 import { Model } from '../models/Model'
 import { createStorage } from '../services/storage/storageFactory'
+import { ALLOWED_IMAGE_MIME_TYPES, ALLOWED_IMAGE_EXTENSIONS } from '../config/fileValidation'
 
 const storage = createStorage()
 
-const ALLOWED_MIME_TYPES = new Set<string>([
-  'image/jpeg',
-  'image/png',
-  'image/gif',
-  'image/webp',
-])
-
-const ALLOWED_EXTENSIONS = new Set<string>([
-  '.jpg',
-  '.jpeg',
-  '.png',
-  '.gif',
-  '.webp',
-])
-
+const ALLOWED_MIME_TYPES = new Set<string>(ALLOWED_IMAGE_MIME_TYPES)
+const ALLOWED_EXTENSIONS = ALLOWED_IMAGE_EXTENSIONS
 const MAX_FILE_SIZE_BYTES = 5 * 1024 * 1024 // 5 MB
 
 export async function uploadModel(req: Request, res: Response): Promise<void> {

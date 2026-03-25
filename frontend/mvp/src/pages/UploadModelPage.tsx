@@ -5,7 +5,7 @@ import { uploadModel } from '../services/modelService'
 import type { IModel } from '../types'
 
 interface Props {
-  onModelReady: (model: IModel) => void
+  onModelReady: (_model: IModel) => void
 }
 
 export default function UploadModelPage({ onModelReady }: Props) {

@@ -11,8 +11,8 @@ export default function Section4(): JSX.Element {
           Ready to Revolutionize <br /> Your Brand?
         </h2>
         <p className={styles.description}>
-          Join the waitlist today to experience Garblo's Virtual Try-On and AI
-          Lookbook tools. We'll get back to you within 24 hours.
+          Join the waitlist today to experience Garblo&apos;s Virtual Try-On and AI
+          Lookbook tools. We&apos;ll get back to you within 24 hours.
         </p>
 
         {/* Khối Form gửi dữ liệu */}
