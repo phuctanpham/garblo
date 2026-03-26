@@ -6,5 +6,5 @@ export async function connectDB(): Promise<void> {
   await mongoose.connect(uri)
   // Log a sanitized URI to avoid leaking credentials in output
   const sanitized = uri.replace(/:\/\/[^@]+@/, '://<credentials>@')
-  console.log('MongoDB connected:', sanitized)
+  console.log('✅ MongoDB connected:', sanitized)
 }

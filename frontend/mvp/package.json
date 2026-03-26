@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:bg": "npx kill-port 5173 && nohup vite",
     "build": "tsc -b && vite build",
+    "kill": "npx kill-port 5173",
+    "preview": "npx serve ./dist --listen 5173",
+    "preview:bg": "nohup npx serve ./dist --listen 5173",
     "lint": "eslint . --ext .ts,.tsx",
-    "preview": "pnpm run build && vite preview",
     "deploy": "echo 'deploying mvp...'",
     "cf-typegen": "wrangler types",
     "clean": "rm -rf dist",

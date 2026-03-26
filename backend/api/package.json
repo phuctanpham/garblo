@@ -3,9 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev": "npx kill-port 3001 && ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev:bg": "npx kill-port 3001 && nohup ts-node-dev --respawn --transpile-only src/server.ts",
     "build": "tsc",
+    "kill": "npx kill-port 3001",
     "start": "node dist/server.js",
+    "start:bg": "nohup node dist/server.js",
     "test": "jest --runInBand",
     "lint": "eslint . --ext .ts",
     "deploy": "echo 'deploying api...'"

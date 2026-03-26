@@ -6,12 +6,14 @@
 
   # STRICT SYNTAX: No commas between items!
   packages = [
-    pkgs.nodejs_20
+    pkgs.nodejs_22
     pkgs.pnpm
     pkgs.gnupg
     pkgs.openssh
     pkgs.inetutils
     pkgs.sudo-rs
+    pkgs.mongosh
+    pkgs.xsel
   ];
 
   # Environment variables
