@@ -36,10 +36,7 @@ jobs:
         with:
           project: api
       - name: Create .env file
-        run: echo "${{ secrets.API_ENV }}" >> .env
-        with:
-          project: api
-          working-directory: ./backend
+        run: echo "${{ secrets.API_ENV }}" >> backend/api/.env
       - name: Build
         uses: ./.github/actions/builds
         with:
