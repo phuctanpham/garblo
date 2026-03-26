@@ -35,6 +35,11 @@ jobs:
         uses: ./.github/actions/install
         with:
           project: api
+      - name: Create .env file
+        run: echo "${{ secrets.API_ENV }}" >> .env
+        with:
+          project: api
+          working-directory: ./backend
       - name: Build
         uses: ./.github/actions/builds
         with:
@@ -47,3 +52,4 @@ jobs:
           command: deploy
           cloudflare-api-token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           cloudflare-account-id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      
