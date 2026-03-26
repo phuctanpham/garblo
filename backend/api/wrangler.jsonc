@@ -17,7 +17,14 @@
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
-	"preview_urls": false
+	"preview_urls": false,
+	"vars": {
+	  "STORAGE_TYPE": "s3",
+	  "S3_BUCKET": "s3garblo",
+	  "S3_REGION": "auto",
+	  "S3_ENDPOINT": "https://2b7903793ef6b8774257d856851be01b.r2.cloudflarestorage.com",
+	  "IMAGE_GEN_PROVIDER": "gemini"
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
