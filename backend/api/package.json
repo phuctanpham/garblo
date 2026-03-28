@@ -3,15 +3,18 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "npx kill-port 3001 && ts-node-dev --respawn --transpile-only src/server.ts",
-    "dev:bg": "npx kill-port 3001 && nohup ts-node-dev --respawn --transpile-only src/server.ts",
-    "build": "tsc",
-    "kill": "npx kill-port 3001",
-    "start": "node dist/server.js",
-    "start:bg": "nohup node dist/server.js",
-    "test": "jest --runInBand",
-    "lint": "eslint . --ext .ts",
-    "deploy": "echo 'deploying api...'"
+    "mock"      : "node scripts/seed-test-images.mjs",
+    "dev"         : "ts-node-dev --respawn --transpile-only src/server.ts",
+    "dev:bg"      : "nohup ts-node-dev --respawn --transpile-only src/server.ts",
+    "build"       : "tsc",
+    "start"       : "node dist/server.js",
+    "start:bg"    : "nohup node dist/server.js",
+    "cf:dev"      : "tsc && wrangler dev",
+    "cf:deploy"   : "tsc && wrangler deploy",
+    "kill"        : "npx kill-port 3001",
+    "test"        : "jest --runInBand",
+    "lint"        : "eslint . --ext .ts",
+    "deploy"      : "echo 'deploying api...'"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.600.0",

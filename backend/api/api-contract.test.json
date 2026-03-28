@@ -1,0 +1,607 @@
+{
+  "$meta": {
+    "description": "Single source of truth for api-contract.test.ts. Consumed by: the test suite (mock data), frontend/mvp/scripts/download-test-images.mjs (uploadFixtures), and backend/api/scripts/seed-test-images.mjs (storageFixtures).",
+    "routes": [
+      "GET  /api/items",
+      "POST /api/items",
+      "GET  /api/models",
+      "POST /api/models",
+      "POST /api/outfits/generate",
+      "GET  /api/outfits",
+      "GET  /healthcheck",
+      "GET  /uploads/:filename  (via resolveImageUrl)"
+    ]
+  },
+
+  "uploadFixtures": {
+    "$description": "Images downloaded by mvp/scripts/download-test-images.mjs into frontend/mvp/.test-images/ at postbuild time. Used as real File inputs for POST /api/items and POST /api/models tests. NEVER committed to the repo. Invalid/oversized files are generated synthetically in the script — no download needed.",
+    "valid": [
+      {
+        "localFilename": "test-item-jpeg.jpg",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/test-item-jpeg.jpg",
+        "mimeType": "image/jpeg",
+        "usedIn": ["POST /api/items — happy path JPEG", "POST /api/items — 201 shape check"],
+        "imagePrompt": "Blue denim jacket folded flat on a solid white background, product photography, studio lighting, no shadows, square crop"
+      },
+      {
+        "localFilename": "test-item-png.png",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/test-item-png.png",
+        "mimeType": "image/png",
+        "usedIn": ["POST /api/items — PNG mime type accepted"],
+        "imagePrompt": "White crew-neck cotton t-shirt on a solid white background, product photography, front view, square crop"
+      },
+      {
+        "localFilename": "test-item-webp.webp",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/test-item-webp.webp",
+        "mimeType": "image/webp",
+        "usedIn": ["POST /api/items — WebP mime type accepted"],
+        "imagePrompt": "Black leather belt on a solid white background, product photography, square crop"
+      },
+      {
+        "localFilename": "test-model-jpeg.jpg",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/test-model-jpeg.jpg",
+        "mimeType": "image/jpeg",
+        "usedIn": ["POST /api/models — happy path JPEG", "POST /api/models — 201 shape check"],
+        "imagePrompt": "Fashion model full body standing upright on clean white background, neutral pose, simple clothing, portrait orientation"
+      },
+      {
+        "localFilename": "test-model-png.png",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/test-model-png.png",
+        "mimeType": "image/png",
+        "usedIn": ["POST /api/models — PNG accepted"],
+        "imagePrompt": "Fashion model full body standing on white background, portrait orientation, summer outfit"
+      },
+      {
+        "localFilename": "test-model-webp.webp",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/test-model-webp.webp",
+        "mimeType": "image/webp",
+        "usedIn": ["POST /api/models — WebP accepted"],
+        "imagePrompt": "Fashion model full body on white background, portrait orientation, winter coat"
+      },
+      {
+        "localFilename": "test-model-gif.gif",
+        "downloadUrl": null,
+        "mimeType": "image/gif",
+        "note": "Generated synthetically in the script as a minimal valid 1x1 transparent GIF (35 bytes). No download required.",
+        "usedIn": ["POST /api/models — GIF accepted"],
+        "imagePrompt": "N/A — minimal 1x1 transparent GIF, no visual content needed"
+      }
+    ],
+    "invalid": {
+      "$description": "All invalid files are generated synthetically with fake bytes in the download script. No download URLs needed.",
+      "files": [
+        {
+          "localFilename": "test-invalid.pdf",
+          "syntheticBytes": "%PDF-1.4 fake",
+          "mimeType": "application/pdf",
+          "usedIn": ["POST /api/items — 400 unsupported mime type"]
+        },
+        {
+          "localFilename": "test-oversized-item.jpg",
+          "syntheticBytes": "Buffer.alloc(6 * 1024 * 1024 + 1, 0xff)",
+          "mimeType": "image/jpeg",
+          "usedIn": ["POST /api/items — 413 file too large"]
+        },
+        {
+          "localFilename": "test-invalid.csv",
+          "syntheticBytes": "a,b\n1,2",
+          "mimeType": "text/csv",
+          "usedIn": ["POST /api/models — 400 non-image mime type"]
+        },
+        {
+          "localFilename": "test-invalid.bmp",
+          "syntheticBytes": "BM fake bitmap",
+          "mimeType": "image/bmp",
+          "usedIn": ["POST /api/models — 400 disallowed extension (.bmp)"]
+        },
+        {
+          "localFilename": "test-oversized-model.jpg",
+          "syntheticBytes": "Buffer.alloc(6 * 1024 * 1024 + 1, 0xff)",
+          "mimeType": "image/jpeg",
+          "usedIn": ["POST /api/models — 413 file too large"]
+        }
+      ]
+    }
+  },
+
+  "storageFixtures": {
+    "$description": "Images downloaded by backend/api/scripts/seed-test-images.mjs and uploaded to R2 / VPS disk at predev/prestart/cf:dev/cf:deploy time. Their resulting storage keys become the imageUrls returned by GET endpoints. NEVER committed to the repo.",
+    "items": [
+      {
+        "seedFilename": "item-seed-jacket.jpg",
+        "storageKey": "item-seed-jacket.jpg",
+        "expectedImageUrl": "/uploads/item-seed-jacket.jpg",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/item-seed-jacket.jpg",
+        "mimeType": "image/jpeg",
+        "imagePrompt": "Blue denim jacket folded flat on a solid white background, product photography, studio lighting, no shadows, square crop"
+      },
+      {
+        "seedFilename": "item-seed-shirt.png",
+        "storageKey": "item-seed-shirt.png",
+        "expectedImageUrl": "/uploads/item-seed-shirt.png",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/item-seed-shirt.png",
+        "mimeType": "image/jpeg",
+        "note": "Stored with .png extension; bytes are JPEG — acceptable for seed/test purposes",
+        "imagePrompt": "White crew-neck cotton t-shirt on a solid white background, product photography, front view, square crop"
+      }
+    ],
+    "models": [
+      {
+        "seedFilename": "model-seed-summer.jpg",
+        "storageKey": "model-seed-summer.jpg",
+        "expectedImageUrl": "/uploads/model-seed-summer.jpg",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/model-seed-summer.jpg",
+        "mimeType": "image/jpeg",
+        "imagePrompt": "Fashion model full body standing upright on clean white background, neutral pose, simple summer clothing, portrait orientation"
+      },
+      {
+        "seedFilename": "model-seed-winter.jpg",
+        "storageKey": "model-seed-winter.jpg",
+        "expectedImageUrl": "/uploads/model-seed-winter.jpg",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/model-seed-winter.jpg",
+        "mimeType": "image/jpeg",
+        "imagePrompt": "Fashion model full body standing on white background, portrait orientation, winter coat and boots"
+      }
+    ],
+    "outfits": [
+      {
+        "seedFilename": "outfit-seed-001.png",
+        "storageKey": "outfit-seed-001.png",
+        "expectedImageUrl": "/uploads/outfit-seed-001.png",
+        "downloadUrl": "https://pub-cfc7f47a619f4a53846b33c263c982b9.r2.dev/uploads/outfit-seed-001.png",
+        "mimeType": "image/jpeg",
+        "note": "Stored with .png extension; bytes are JPEG — acceptable for seed/test purposes",
+        "imagePrompt": "Fashion model wearing a blue denim jacket over a white t-shirt, professional fashion photography, full body, clean white studio background, portrait orientation"
+      }
+    ]
+  },
+
+  "mockData": {
+    "$description": "Mock database records used in api-contract.test.ts. imageUrls reference storageFixtures.expectedImageUrl values.",
+    "items": [
+      {
+        "_id": "64b1f1a2e4b0c72d3f8a1234",
+        "name": "Blue Denim Jacket",
+        "category": "outerwear",
+        "imageUrl": "/uploads/item-seed-jacket.jpg",
+        "createdAt": "2024-07-15T10:00:00.000Z"
+      },
+      {
+        "_id": "64b1f1a2e4b0c72d3f8a5678",
+        "name": "White Cotton T-Shirt",
+        "category": "tops",
+        "imageUrl": "/uploads/item-seed-shirt.png",
+        "createdAt": "2024-07-15T11:00:00.000Z"
+      }
+    ],
+    "models": [
+      {
+        "_id": "64b2f2b3e5c1d83e4g9b1111",
+        "name": "Summer Model",
+        "imageUrl": "/uploads/model-seed-summer.jpg",
+        "createdAt": "2024-07-15T09:00:00.000Z"
+      },
+      {
+        "_id": "64b2f2b3e5c1d83e4g9b2222",
+        "name": "Winter Model",
+        "imageUrl": "/uploads/model-seed-winter.jpg",
+        "createdAt": "2024-07-15T08:00:00.000Z"
+      }
+    ],
+    "outfits": [
+      {
+        "_id": "64b3f3c4f6d2e94f5h0c3333",
+        "modelId": "64b2f2b3e5c1d83e4g9b1111",
+        "itemIds": [
+          "64b1f1a2e4b0c72d3f8a1234",
+          "64b1f1a2e4b0c72d3f8a5678"
+        ],
+        "resultImageUrl": "/uploads/outfit-seed-001.png",
+        "provider": "pollinations",
+        "createdAt": "2024-07-15T12:00:00.000Z"
+      }
+    ]
+  },
+
+  "endpoints": {
+    "GET /api/items": {
+      "method": "GET",
+      "path": "/api/items",
+      "description": "Returns all wardrobe items sorted by createdAt descending",
+      "expected": [
+        {
+          "scenario": "happy path — returns IItem[]",
+          "status": 200,
+          "bodyShape": "IItem[]",
+          "shapeFields": ["_id:string", "name:string", "category:string", "imageUrl:string", "createdAt:string"],
+          "forbiddenFields": ["password", "__v"],
+          "notes": "imageUrl must start with '/' or 'http'"
+        },
+        {
+          "scenario": "empty wardrobe — returns []",
+          "status": 200,
+          "body": []
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "DB failure",
+          "status": 500,
+          "body": { "error": "<string — error message>" }
+        },
+        {
+          "scenario": "backend misconfiguration returns object instead of array",
+          "status": 200,
+          "body": { "error": "wrong shape" },
+          "notes": "Consumer must guard Array.isArray()"
+        }
+      ]
+    },
+
+    "POST /api/items": {
+      "method": "POST",
+      "path": "/api/items",
+      "description": "Uploads a wardrobe item image via multipart/form-data. Fields: image (File), name? (string), category? (string).",
+      "contentType": "multipart/form-data",
+      "formFields": {
+        "required": ["image"],
+        "optional": ["name", "category"]
+      },
+      "allowedMimeTypes": ["image/jpeg", "image/jpg", "image/png", "image/webp"],
+      "maxFileSizeBytes": 5242880,
+      "expected": [
+        {
+          "scenario": "happy path JPEG — returns IItem (201)",
+          "uploadFile": "test-item-jpeg.jpg",
+          "status": 201,
+          "bodyShape": "IItem",
+          "shapeFields": ["_id:string", "name:string", "category:string", "imageUrl:string", "createdAt:string"]
+        },
+        {
+          "scenario": "PNG accepted",
+          "uploadFile": "test-item-png.png",
+          "status": 201,
+          "bodyShape": "IItem"
+        },
+        {
+          "scenario": "WebP accepted",
+          "uploadFile": "test-item-webp.webp",
+          "status": 201,
+          "bodyShape": "IItem"
+        },
+        {
+          "scenario": "optional name and category appended to FormData when provided",
+          "formFields": ["image", "name", "category"],
+          "status": 201
+        },
+        {
+          "scenario": "optional name and category omitted from FormData when not provided",
+          "formFields": ["image"],
+          "status": 201
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "no file uploaded",
+          "status": 400,
+          "body": { "error": "No file uploaded" }
+        },
+        {
+          "scenario": "unsupported mime type (application/pdf)",
+          "uploadFile": "test-invalid.pdf",
+          "status": 400,
+          "body": { "error": "Unsupported file type" }
+        },
+        {
+          "scenario": "file exceeds 5 MB (multer LIMIT_FILE_SIZE)",
+          "uploadFile": "test-oversized-item.jpg",
+          "status": 413,
+          "body": { "error": "<multer size error>" }
+        },
+        {
+          "scenario": "storage backend failure",
+          "status": 500,
+          "body": { "error": "<string>" }
+        }
+      ]
+    },
+
+    "GET /api/models": {
+      "method": "GET",
+      "path": "/api/models",
+      "description": "Returns all model photos sorted by createdAt descending",
+      "expected": [
+        {
+          "scenario": "happy path — returns IModel[]",
+          "status": 200,
+          "bodyShape": "IModel[]",
+          "shapeFields": ["_id:string", "name:string", "imageUrl:string", "createdAt:string"]
+        },
+        {
+          "scenario": "no models — returns []",
+          "status": 200,
+          "body": []
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "DB failure",
+          "status": 500,
+          "body": { "error": "<string>" }
+        }
+      ]
+    },
+
+    "POST /api/models": {
+      "method": "POST",
+      "path": "/api/models",
+      "description": "Uploads a model photo via multipart/form-data. Fields: image (File), name? (string).",
+      "contentType": "multipart/form-data",
+      "formFields": {
+        "required": ["image"],
+        "optional": ["name"]
+      },
+      "allowedMimeTypes": ["image/jpeg", "image/png", "image/gif", "image/webp"],
+      "allowedExtensions": [".jpg", ".jpeg", ".png", ".webp", ".gif"],
+      "maxFileSizeBytes": 5242880,
+      "expected": [
+        {
+          "scenario": "happy path JPEG — returns IModel (201)",
+          "uploadFile": "test-model-jpeg.jpg",
+          "status": 201,
+          "bodyShape": "IModel",
+          "shapeFields": ["_id:string", "name:string", "imageUrl:string", "createdAt:string"]
+        },
+        {
+          "scenario": "PNG accepted",
+          "uploadFile": "test-model-png.png",
+          "status": 201
+        },
+        {
+          "scenario": "WebP accepted",
+          "uploadFile": "test-model-webp.webp",
+          "status": 201
+        },
+        {
+          "scenario": "GIF accepted",
+          "uploadFile": "test-model-gif.gif",
+          "status": 201
+        },
+        {
+          "scenario": "optional name omitted from FormData when not provided",
+          "formFields": ["image"],
+          "status": 201
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "no file uploaded",
+          "status": 400,
+          "body": { "error": "No file uploaded" }
+        },
+        {
+          "scenario": "non-image mime type (text/csv)",
+          "uploadFile": "test-invalid.csv",
+          "status": 400,
+          "body": { "error": "Only image uploads are allowed" }
+        },
+        {
+          "scenario": "image mime but disallowed extension (.bmp)",
+          "uploadFile": "test-invalid.bmp",
+          "status": 400,
+          "body": { "error": "Unsupported image file extension" }
+        },
+        {
+          "scenario": "file exceeds 5 MB",
+          "uploadFile": "test-oversized-model.jpg",
+          "status": 413,
+          "body": { "error": "Uploaded file is too large" }
+        },
+        {
+          "scenario": "storage backend failure",
+          "status": 500,
+          "body": { "error": "<string>" }
+        }
+      ]
+    },
+
+    "POST /api/outfits/generate": {
+      "method": "POST",
+      "path": "/api/outfits/generate",
+      "description": "Generates an AI outfit image by combining a model with one or more wardrobe items.",
+      "contentType": "application/json",
+      "body": {
+        "modelId": "string (MongoDB ObjectId)",
+        "itemIds": "string[] (MongoDB ObjectIds, non-empty)"
+      },
+      "expected": [
+        {
+          "scenario": "happy path — returns IOutfit (201)",
+          "requestBody": {
+            "modelId": "64b2f2b3e5c1d83e4g9b1111",
+            "itemIds": ["64b1f1a2e4b0c72d3f8a1234", "64b1f1a2e4b0c72d3f8a5678"]
+          },
+          "status": 201,
+          "bodyShape": "IOutfit",
+          "shapeFields": ["_id:string", "modelId:string", "itemIds:string[]", "resultImageUrl:string", "provider:string", "createdAt:string"]
+        },
+        {
+          "scenario": "resultImageUrl is a routable path",
+          "notes": "Must start with '/' or 'http'"
+        },
+        {
+          "scenario": "provider is a known value",
+          "allowedValues": ["pollinations", "gemini", "hf"]
+        },
+        {
+          "scenario": "returned itemIds array length matches submitted itemIds",
+          "notes": "len(response.itemIds) === len(request.itemIds)"
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "missing modelId",
+          "requestBody": { "modelId": "", "itemIds": ["64b1f1a2e4b0c72d3f8a1234"] },
+          "status": 400,
+          "body": { "error": "modelId and itemIds[] are required" }
+        },
+        {
+          "scenario": "empty itemIds array",
+          "requestBody": { "modelId": "64b2f2b3e5c1d83e4g9b1111", "itemIds": [] },
+          "status": 400,
+          "body": { "error": "modelId and itemIds[] are required" }
+        },
+        {
+          "scenario": "modelId is not a valid ObjectId",
+          "requestBody": { "modelId": "not-an-objectid", "itemIds": ["64b1f1a2e4b0c72d3f8a1234"] },
+          "status": 400,
+          "body": { "error": "Invalid modelId" }
+        },
+        {
+          "scenario": "one of itemIds is not a valid ObjectId",
+          "requestBody": { "modelId": "64b2f2b3e5c1d83e4g9b1111", "itemIds": ["bad-id"] },
+          "status": 400,
+          "body": { "error": "Invalid itemId: bad-id" }
+        },
+        {
+          "scenario": "modelId valid ObjectId but model does not exist in DB",
+          "status": 404,
+          "body": { "error": "Model not found" }
+        },
+        {
+          "scenario": "none of the itemIds exist in DB",
+          "status": 404,
+          "body": { "error": "No items found" }
+        },
+        {
+          "scenario": "only some itemIds found (partial mismatch)",
+          "status": 404,
+          "body": { "error": "One or more items not found" }
+        },
+        {
+          "scenario": "image generation service failure",
+          "status": 500,
+          "body": { "error": "<string>" }
+        }
+      ]
+    },
+
+    "GET /api/outfits": {
+      "method": "GET",
+      "path": "/api/outfits",
+      "description": "Returns all generated outfits with populated modelId and itemIds, sorted by createdAt descending.",
+      "expected": [
+        {
+          "scenario": "happy path — returns IOutfit[]",
+          "status": 200,
+          "bodyShape": "IOutfit[]",
+          "shapeFields": ["_id:string", "modelId:string", "itemIds:string[]", "resultImageUrl:string", "provider:string", "createdAt:string"],
+          "notes": "modelId and itemIds are serialised ObjectId strings even though they are populated"
+        },
+        {
+          "scenario": "no outfits — returns []",
+          "status": 200,
+          "body": []
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "DB populate failure",
+          "status": 500,
+          "body": { "error": "<string>" }
+        }
+      ]
+    },
+
+    "GET /healthcheck": {
+      "method": "GET",
+      "path": "/healthcheck",
+      "description": "Reports liveness of all configured services (MongoDB, Gemini if configured, S3/R2 if configured).",
+      "expected": [
+        {
+          "scenario": "all services healthy",
+          "status": 200,
+          "body": {
+            "status": "ok",
+            "services": {
+              "mongodb": { "ok": true, "message": "connected" }
+            }
+          }
+        },
+        {
+          "scenario": "mongodb entry always present",
+          "notes": "services.mongodb is guaranteed; services.gemini and services.s3 are conditional on env vars"
+        },
+        {
+          "scenario": "each service entry shape",
+          "shapeFields": ["ok:boolean", "message:string"]
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "any service degraded — 503",
+          "status": 503,
+          "body": {
+            "status": "degraded",
+            "services": {
+              "mongodb": { "ok": false, "message": "<string>" },
+              "gemini":  { "ok": false, "message": "HTTP 403: API key invalid" },
+              "s3":      { "ok": false, "message": "S3 credentials incomplete in .env" }
+            }
+          }
+        }
+      ]
+    },
+
+    "GET /uploads/:filename": {
+      "method": "GET",
+      "path": "/uploads/:filename",
+      "description": "Resolved client-side via resolveImageUrl(path). Not called directly — api.ts prepends API_BASE to relative paths.",
+      "expected": [
+        {
+          "scenario": "relative /uploads/item path — prefixed with API_BASE",
+          "input": "/uploads/item-seed-jacket.jpg",
+          "output": "http://localhost:3001/uploads/item-seed-jacket.jpg"
+        },
+        {
+          "scenario": "relative /uploads/model path — prefixed with API_BASE",
+          "input": "/uploads/model-seed-summer.jpg",
+          "output": "http://localhost:3001/uploads/model-seed-summer.jpg"
+        },
+        {
+          "scenario": "relative /uploads/outfit path — prefixed with API_BASE",
+          "input": "/uploads/outfit-seed-001.png",
+          "output": "http://localhost:3001/uploads/outfit-seed-001.png"
+        },
+        {
+          "scenario": "absolute S3 URL — returned unchanged",
+          "input": "https://my-bucket.s3.amazonaws.com/uploads/item-abc.png",
+          "output": "https://my-bucket.s3.amazonaws.com/uploads/item-abc.png"
+        },
+        {
+          "scenario": "absolute Cloudflare R2 URL — returned unchanged",
+          "input": "https://pub-abc.r2.dev/item-123.jpg",
+          "output": "https://pub-abc.r2.dev/item-123.jpg"
+        },
+        {
+          "scenario": "empty string — empty string (no-image placeholder)",
+          "input": "",
+          "output": ""
+        }
+      ],
+      "unexpected": [
+        {
+          "scenario": "non-/uploads relative path still gets API_BASE prefix",
+          "input": "/other/asset.jpg",
+          "output": "http://localhost:3001/other/asset.jpg",
+          "notes": "Backend should only return /uploads/... paths. Consumer must handle gracefully."
+        },
+        {
+          "scenario": "http (non-https) absolute URL returned unchanged",
+          "input": "http://legacy-cdn.example.com/img.jpg",
+          "output": "http://legacy-cdn.example.com/img.jpg"
+        }
+      ]
+    }
+  }
+}

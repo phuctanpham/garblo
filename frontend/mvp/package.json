@@ -7,6 +7,7 @@
     "dev": "vite",
     "dev:bg": "npx kill-port 5173 && nohup vite",
     "build": "tsc -b && vite build",
+    "mock": "node scripts/download-test-images.mjs && vitest run --reporter=verbose src/services/__tests__/api-contract.test.ts",
     "kill": "npx kill-port 5173",
     "preview": "npx serve ./dist --listen 5173",
     "preview:bg": "nohup npx serve ./dist --listen 5173",
