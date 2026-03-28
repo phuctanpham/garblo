@@ -144,10 +144,12 @@
     position: relative;
     z-index: 3;
     width: 100%;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
-    backdrop-filter: none;
+    background: rgb(17 24 39 / 60%) !important; /* Nền đen mờ 60% */
+    backdrop-filter: blur(12px); /* Hiệu ứng kính mờ Apple */
+    backdrop-filter: blur(12px);
+    padding: 2rem 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgb(255 255 255 / 10%);
   }
 
   /* Ép chữ thành màu trắng */

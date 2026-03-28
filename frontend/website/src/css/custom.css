@@ -70,13 +70,14 @@ h6 {
   .footer-links {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: space-around !important; /* Đẩy 2 cột ra 2 bên */
+    justify-content: space-between !important;
     gap: 1rem !important;
-    padding: 0 1rem;
+    padding: 0 1.5rem !important;
   }
 
   .footer-col {
     margin: 0 !important;
-    text-align: left;
+    flex: 1 !important; /* Chia đều 50/50 */
+    text-align: left !important;
   }
 }
