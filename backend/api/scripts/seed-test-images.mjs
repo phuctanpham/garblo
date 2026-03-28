@@ -4,7 +4,7 @@
  * ── What it does ──────────────────────────────────────────────────────────────
  *
  *   1. Resolves config from TWO sources (see "Config resolution" below).
- *   2. Reads storageFixtures[].downloadUrl from frontend/mvp/api-contract.test.json.
+ *   2. Reads storageFixtures[].downloadUrl from backend/api/api-contract.test.json.
  *   3. Downloads each fixture image into backend/api/.seed-images/ (persistent cache).
  *   4. Uploads/copies each image to the right storage destination:
  *        STORAGE_TYPE=local  →  backend/api/public/uploads/   (served by Express)
@@ -34,7 +34,7 @@
  * ── Image download URLs ────────────────────────────────────────────────────────
  *
  *   Put your public image URLs in:
- *     frontend/mvp/api-contract.test.json → storageFixtures.items[].downloadUrl
+ *     backend/api/api-contract.test.json → storageFixtures.items[].downloadUrl
  *                                         → storageFixtures.models[].downloadUrl
  *                                         → storageFixtures.outfits[].downloadUrl
  *
@@ -104,11 +104,11 @@ const STORAGE_TYPE = (process.env.STORAGE_TYPE ?? 'local').toLowerCase().trim()
 
 // ── 2. Locate fixture file ─────────────────────────────────────────────────────
 
-const FIXTURE_PATH = join(REPO_ROOT, 'frontend', 'mvp', 'api-contract.test.json')
+const FIXTURE_PATH = join(REPO_ROOT, 'backend', 'api', 'api-contract.test.json')
 
 if (!existsSync(FIXTURE_PATH)) {
   console.error(`[seed] fixture not found: ${FIXTURE_PATH}`)
-  console.error('  Make sure frontend/mvp/api-contract.test.json exists.')
+  console.error('  Make sure backend/api/api-contract.test.json exists.')
   process.exit(1)
 }
 

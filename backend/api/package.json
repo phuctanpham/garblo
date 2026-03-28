@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "mock"      : "node scripts/seed-test-images.mjs",
+    "prestart"    : "node scripts/seed-test-images.mjs",
     "dev"         : "ts-node-dev --respawn --transpile-only src/server.ts",
     "dev:bg"      : "nohup ts-node-dev --respawn --transpile-only src/server.ts",
     "build"       : "tsc",
@@ -11,6 +11,7 @@
     "start:bg"    : "nohup node dist/server.js",
     "cf:dev"      : "tsc && wrangler dev",
     "cf:deploy"   : "tsc && wrangler deploy",
+    "cf:log"      : "wrangler tail",
     "kill"        : "npx kill-port 3001",
     "test"        : "jest --runInBand",
     "lint"        : "eslint . --ext .ts",
