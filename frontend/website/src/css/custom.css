@@ -66,17 +66,22 @@ h6 {
   border: 1px solid #111827;
 }
 
-@media (width <= 768px) {
-  .footer-links {
+@media (max-width: 768px) {
+  .footer__links {
     display: flex !important;
-    flex-direction: row !important;
-    justify-content: space-around !important; /* Đẩy 2 cột ra 2 bên */
-    gap: 1rem !important;
-    padding: 0 1rem;
+    flex-direction: row !important; /* Ép nằm ngang tuyệt đối */
+    flex-wrap: nowrap !important; /* Cấm rớt dòng */
+    justify-content: center !important;
+    gap: 4rem !important; /* Khoảng cách giữa 2 cột */
+    padding: 0 !important;
   }
-
-  .footer-col {
+  .footer__col {
     margin: 0 !important;
-    text-align: left;
+    flex: none !important;
+    text-align: left !important;
+  }
+  .footer__title {
+    margin-bottom: 0.5rem !important;
+    font-size: 1rem !important;
   }
 }
