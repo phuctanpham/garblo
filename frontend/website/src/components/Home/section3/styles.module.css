@@ -127,23 +127,31 @@
   opacity: 0.4; /* Làm mờ đi để tôn ảnh kia lên */
 }
 
-@media (max-width: 996px) {
+@media (width <= 996px) {
   .section-container {
     min-height: 100vh;
     padding: 2rem 1.5rem;
   }
-  .section-wrapper { 
+
+  .section-wrapper {
     display: flex;
-    flex-direction: column; 
-    gap: 2rem; 
+    flex-direction: column;
+    gap: 2rem;
     justify-content: center;
   }
-  .text-col { order: 1; text-align: center; }
-  .feature-list { align-items: center; } /* Căn giữa các dấu tick */
-  
+
+  .text-col {
+    order: 1;
+    text-align: center;
+  }
+
+  .feature-list {
+    align-items: center;
+  } /* Căn giữa các dấu tick */
+
   /* Tạo một cái lồng giữ chặt ảnh không cho văng ra ngoài */
-  .image-col { 
-    order: 2; 
+  .image-col {
+    order: 2;
     height: 350px; /* Chiều cao cố định trên điện thoại */
     width: 100%;
     position: relative;
@@ -152,18 +160,19 @@
     justify-content: center;
     margin-top: 1rem;
   }
-  
+
   /* Định hình lại 2 ảnh cho vừa vặn */
-  .img-before { 
-    width: 55%; 
-    left: 5%; 
-    bottom: 5%; 
+  .img-before {
+    width: 55%;
+    left: 5%;
+    bottom: 5%;
     position: absolute;
   }
-  .img-after { 
-    width: 65%; 
-    right: 5%; 
-    top: 5%; 
+
+  .img-after {
+    width: 65%;
+    right: 5%;
+    top: 5%;
     position: absolute;
   }
 }
