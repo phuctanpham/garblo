@@ -69,20 +69,15 @@ h6 {
 @media (width <= 768px) {
   .footer-links {
     display: flex !important;
-    flex-flow: row nowrap !important; /* Ép nằm ngang tuyệt đối */ /* Cấm rớt dòng */
-    justify-content: center !important;
-    gap: 4rem !important; /* Khoảng cách giữa 2 cột */
-    padding: 0 !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    padding: 0 1.5rem !important;
   }
 
   .footer-col {
     margin: 0 !important;
-    flex: none !important;
+    flex: 1 !important; /* Chia đều 50/50 */
     text-align: left !important;
-  }
-
-  .footer-title {
-    margin-bottom: 0.5rem !important;
-    font-size: 1rem !important;
   }
 }
